@@ -1,0 +1,1 @@
+# ckanext-custom-schema
