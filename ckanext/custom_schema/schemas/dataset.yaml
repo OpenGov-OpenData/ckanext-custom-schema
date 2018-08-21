@@ -57,8 +57,6 @@ dataset_fields:
   required: True
 
 
-
-
 ## "research_area"
 - field_name: research_area
   label: Research Area
@@ -2625,6 +2623,14 @@ dataset_fields:
   - label: X-Vest
     value: 1316
 
+## "investigator"
+- field_name: investigator
+  label: Investigator
+  choices_helper: scheming_datastore_choices
+  datastore_choices_resource: e4ce0a87-d2ff-4b18-aa70-4fcf68b69d39
+  datastore_choices_columns:
+  - label: Investigator Name
+    value: Investigator ID
 
 ## "license_id"
 - field_name: license_id
