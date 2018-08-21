@@ -2626,6 +2626,7 @@ dataset_fields:
 ## "investigator"
 - field_name: investigator
   label: Investigator
+  preset: select
   choices_helper: scheming_datastore_choices
   datastore_choices_resource: e4ce0a87-d2ff-4b18-aa70-4fcf68b69d39
   datastore_choices_columns:
