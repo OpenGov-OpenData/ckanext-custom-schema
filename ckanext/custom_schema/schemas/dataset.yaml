@@ -214,8 +214,6 @@ dataset_fields:
   label: Experiment Title
   preset: select
   required: False
- - label:
-   value:
   - label: Ability of Polyethylene Glycol Interleukin-2 (PEG-IL2) to Counteract the Effect of Spaceflight on the Rat Immune System (CPIMM01)
     value: 661
   - label: Achilles Tendon Reflex (ASTP003)
@@ -1047,8 +1045,6 @@ dataset_fields:
   preset: select
   required: False
   choices:
-  - label:
-    value:
   - label: Apollo 10
     value: 32
   - label: Apollo 11
@@ -1358,8 +1354,6 @@ dataset_fields:
   preset: select
   required: False
   choices:
-  - label:
-    value:
   - label: Advanced Plant Experiments 01
     value: APEX_01A
   - label: Advanced Plant Experiments 01
@@ -1855,8 +1849,6 @@ dataset_fields:
   preset: select
   required: False
   choices:
-  - label:
-    value:
   - label: 4-Channel Ambient Temperature Recorder
     value: 162
   - label: Accelerometer Recording Unit (ARU)
