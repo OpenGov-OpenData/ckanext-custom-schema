@@ -130,7 +130,7 @@ dataset_fields:
   - label: Toxicology
     value: Toxicology
 
-## "research_area"
+## "species"
 - field_name: species
   label: Species
   preset: select
@@ -209,11 +209,12 @@ dataset_fields:
 
 
 
-## "research_area"
+## "experiment"
 - field_name: experiment
   label: Experiment Title
   preset: select
   required: False
+  choices:
   - label: Ability of Polyethylene Glycol Interleukin-2 (PEG-IL2) to Counteract the Effect of Spaceflight on the Rat Immune System (CPIMM01)
     value: 661
   - label: Achilles Tendon Reflex (ASTP003)
@@ -1004,7 +1005,7 @@ dataset_fields:
     value: 28
   - label: Validation of Predictive Tests and Countermeasures for Space Motion Sickness (DSO 401)
     value: 536
-  - label: 'Veggie' Vegetable Production System Proof of Concept Flight (KSC00XX02)
+  - label: Veggie Vegetable Production System Proof of Concept Flight (KSC00XX02)
     value: 13890
   - label: Vestibular Influences on Autonomic Cardiovascular Control (NAG56276)
     value: 1221
