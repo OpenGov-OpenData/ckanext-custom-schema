@@ -2627,11 +2627,581 @@ dataset_fields:
 - field_name: investigator
   label: Investigator
   preset: select
-  choices_helper: scheming_datastore_choices
-  datastore_choices_resource: e4ce0a87-d2ff-4b18-aa70-4fcf68b69d39
-  datastore_choices_columns:
-  - label: Investigator Name
-    value: Investigator ID
+  required: False
+  choices:
+  - label: Adams, Constance M.
+    value: 2549
+  - label: Alberts, Jeffrey R.
+    value: 6
+  - label: Alexander, Harold L.
+    value: 2574
+  - label: Alexander, W. Carter
+    value: 2184
+  - label: Alfrey, Clarence P.
+    value: 453
+  - label: Allen, Josephine
+    value: 4029
+  - label: Allen, Robert E.
+    value: 1523
+  - label: Amin, Shreyasee
+    value: 3303
+  - label: Anderson, Page A. W.
+    value: 2151
+  - label: Arzamozov, German S.
+    value: 843
+  - label: Badhwar, Gautam D.
+    value: 496
+  - label: Bagian, James P.
+    value: 436
+  - label: Bailey, Vernon J.
+    value: 2244
+  - label: Bakulin, A. V.
+    value: 21
+  - label: Baldwin, Kenneth M.
+    value: 22
+  - label: Bandurski, Robert S.
+    value: 534
+  - label: Bartelloni, Peter J.
+    value: 2333
+  - label: Benton, Eugene V.
+    value: 33
+  - label: Bergman, Stuart A.
+    value: 2314
+  - label: Berry, Charles A.
+    value: 2356
+  - label: Berthoz, Alain F.
+    value: 740
+  - label: Blomqvist, C. Gunnar
+    value: 479
+  - label: Bloomberg, Jacob J.
+    value: 504
+  - label: Blume, Jennifer
+    value: 2706
+  - label: Boskey, Adele L.
+    value: 1461
+  - label: Brady, Joseph V.
+    value: 2386
+  - label: Brockett, Royce M.
+    value: 2183
+  - label: Brown, Jeri W.
+    value: 1578
+  - label: Brown, Lee R.
+    value: 2526
+  - label: Buchanan, Paul
+    value: 2773
+  - label: Budinger, T. F.
+    value: 2510
+  - label: Bungo, Michael W.
+    value: 499
+  - label: Burchard, Eduard C.
+    value: 2268
+  - label: Burns, Fredric J.
+    value: 2746
+  - label: Butler, Bruce D.
+    value: 2728
+  - label: Callahan, Paul X.
+    value: 548
+  - label: Cann, Christopher E.
+    value: 52
+  - label: Charles, John B.
+    value: 495
+  - label: Chatterjee, Aloke
+    value: 2637
+  - label: Christofidou-Solomidou, Melpo
+    value: 3571
+  - label: Chylack, Leo T.
+    value: 2646
+  - label: Clark, Jonathan B.
+    value: 2671
+  - label: Clark, Kathryn I.
+    value: 1457
+  - label: Cogoli, Augusto
+    value: 456
+  - label: Connell, Richard
+    value: 1637
+  - label: Conrad, Gary W.
+    value: 2149
+  - label: Crandall, Craig G.
+    value: 3173
+  - label: Criswell, Sue B.
+    value: 489
+  - label: Cronin, M.
+    value: 563
+  - label: Czeisler, Charles A.
+    value: 1012
+  - label: Dalton, Bonnie P.
+    value: 76
+  - label: Deme, Sandor
+    value: 2546
+  - label: DeSantis, Mark Edward
+    value: 1458
+  - label: Dickman, D. J.
+    value: 84
+  - label: Dietlein, Lawrence F.
+    value: 1516
+  - label: diPrampero, Pietro E.
+    value: 749
+  - label: Doty, Stephen B.
+    value: 86
+  - label: Duntley, Seibert Q.
+    value: 1535
+  - label: Dyachkova, Ludmilla N.
+    value: 95
+  - label: Eckberg, Dwain L.
+    value: 494
+  - label: Edgerton, V. Reginald
+    value: 98
+  - label: Elefteriou, Florent
+    value: 4025
+  - label: Evetts, Simon
+    value: 3022
+  - label: Farhi, Leon E.
+    value: 458
+  - label: Ferguson, James Kelton
+    value: 1518
+  - label: Ferl, Robert
+    value: 2543
+  - label: Fermin, Cesar D.
+    value: 2148
+  - label: Ferrando, Arny A.
+    value: 844
+  - label: Fischer, Craig L.
+    value: 2181
+  - label: Fitts, Robert H.
+    value: 752
+  - label: Foley, Tico
+    value: 2668
+  - label: Fortney- Schneider, Suzanne M.
+    value: 1653
+  - label: Freed, Lisa E.
+    value: 3744
+  - label: Fritzsch, Bernd
+    value: 1459
+  - label: Fuller, Charles A.
+    value: 118
+  - label: Gabrion, Jacqueline
+    value: 121
+  - label: Gernhardt, Michael L.
+    value: 2692
+  - label: Gershtein, L. M.
+    value: 124
+  - label: Gerzer, Rupert
+    value: 125
+  - label: Gharib, Claude C.
+    value: 754
+  - label: Gilroy, Simon
+    value: 4591
+  - label: Globus, Ruth
+    value: 2270
+  - label: Gooch, Carolyn P.
+    value: 2399
+  - label: Goodwin, Thomas J.
+    value: 3041
+  - label: Graves, Richard C.
+    value: 2182
+  - label: Greenisen, Michael C.
+    value: 755
+  - label: Grigoriev, Anatoli I.
+    value: 2233
+  - label: Grindeland, Richard E.
+    value: 140
+  - label: Hagan, R. Donald
+    value: 2865
+  - label: Hannig, Kurt H.
+    value: 1550
+  - label: Hargens, Alan R.
+    value: 153
+  - label: Harm, Deborah L.
+    value: 506
+  - label: Harrison, Lynn
+    value: 4038
+  - label: Hawkins, Willard Royce
+    value: 2242
+  - label: Hayes, Judith C.
+    value: 1664
+  - label: Henry, James P.
+    value: 2366
+  - label: Highstein, Stephan M.
+    value: 964
+  - label: Hoath, Steven B.
+    value: 1463
+  - label: Hoban- Higgins, Tana M.
+    value: 1482
+  - label: Hobson, J. Allan
+    value: 2262
+  - label: Hoffler, G. Wyckliffe
+    value: 2315
+  - label: Hoffman, Rudolf A.
+    value: 2397
+  - label: Hoh, Joseph Foon- Yoong
+    value: 167
+  - label: Holland, Albert W.
+    value: 2715
+  - label: Holstein, Gay Robbins
+    value: 966
+  - label: Homick, Jerry L.
+    value: 1590
+  - label: Hordinsky, Jerry R.
+    value: 2772
+  - label: Horrigan, David J., Jr.
+    value: 2711
+  - label: Hsieh, Adam
+    value: 4033
+  - label: Hughes- Fulford, Millie
+    value: 2173
+  - label: Iliakis, George
+    value: 2734
+  - label: Inners, Lamar Daniel
+    value: 727
+  - label: Ivanova, Svetlana Y.
+    value: 174
+  - label: Jahns, Gary C.
+    value: 175
+  - label: James, John T.
+    value: 513
+  - label: Jaweed, Mazher
+    value: 508
+  - label: Johnson, Phillip C., Jr.
+    value: 616
+  - label: Johnson, Robert L.
+    value: 2666
+  - label: Johnson, Roger B.
+    value: 1464
+  - label: Kanas, Nick
+    value: 2192
+  - label: Kaplansky, Alexandre S.
+    value: 187
+  - label: Kaufmann, Horacio
+    value: 2745
+  - label: Keshishian, Haig S.
+    value: 2269
+  - label: Kimzey, Stephen L.
+    value: 1522
+  - label: Kiss, John Z.
+    value: 2276
+  - label: Kondo, Sohei
+    value: 2566
+  - label: Konstantinova, Irina V.
+    value: 204
+  - label: Kosik, Kenneth S.
+    value: 970
+  - label: Kozlovskaya, Inessa B.
+    value: 206
+  - label: Krasnov, Igor B.
+    value: 209
+  - label: Kubis, Joseph F.
+    value: 733
+  - label: Kulesh, David A.
+    value: 2271
+  - label: Lackner, James R.
+    value: 2579
+  - label: LaFevers, Earl V.
+    value: 2785
+  - label: Lambert, James L.
+    value: 1465
+  - label: Lambertsen, Christian J.
+    value: 1596
+  - label: Landis, William J.
+    value: 1466
+  - label: Lane, Helen W.
+    value: 763
+  - label: Lange, Robert D.
+    value: 217
+  - label: LaPinta, Charles K.
+    value: 2332
+  - label: Larina, Irina M.
+    value: 1575
+  - label: Layne, Charles S.
+    value: 1685
+  - label: Leach- Huntoon, Carolyn S.
+    value: 460
+  - label: LeBlanc, Adrian D.
+    value: 624
+  - label: Lee, Stuart M. C.
+    value: 1688
+  - label: Leontovich, T. A.
+    value: 224
+  - label: Lesnyak, Andrei T.
+    value: 225
+  - label: Lloyd, Charles W.
+    value: 522
+  - label: Lockhart, Lillian H.
+    value: 2565
+  - label: Logan, James S.
+    value: 2672
+  - label: Lupton, Joanne R.
+    value: 2804
+  - label: Mack, Pauline Berry
+    value: 232
+  - label: Mader, Thomas
+    value: 3099
+  - label: Majeska, Robert J.
+    value: 1467
+  - label: Markham, Charles H.
+    value: 2532
+  - label: Massa, Gioia D.
+    value: 4482
+  - label: Maule, Jake G.
+    value: 2700
+  - label: McCarron, David A.
+    value: 2273
+  - label: McCollum, Gary W.
+    value: 446
+  - label: McMonigal, Kathleen A.
+    value: 2551
+  - label: McNaughton, Bruce L.
+    value: 973
+  - label: Meck, Janice Fritsch- Yelle
+    value: 484
+  - label: Meehan, Richard T.
+    value: 2170
+  - label: Mengel, Charles E.
+    value: 2180
+  - label: Mieszkuc, Bernard J.
+    value: 1549
+  - label: Mikhaylov, Valeriy
+    value: 1564
+  - label: Miles, Judith S.
+    value: 1526
+  - label: Miller, Earl F., II
+    value: 2380
+  - label: Moldofsky, Harvey
+    value: 2251
+  - label: Monk, Timothy
+    value: 765
+  - label: Montgomery, P. O'Brien
+    value: 2398
+  - label: Moore, Alan D., Jr.
+    value: 1706
+  - label: Moore, Tom P.
+    value: 825
+  - label: Morey- Holton, Emily R.
+    value: 268
+  - label: Morrison, Dennis R.
+    value: 1489
+  - label: Mosely, John D.
+    value: 2367
+  - label: Mount, Frances E.
+    value: 851
+  - label: Musgrave, Mary E.
+    value: 992
+  - label: Natochin, Yuri V.
+    value: 278
+  - label: Newman, Dava J.
+    value: 1709
+  - label: Nicholson, Wayne
+    value: 4286
+  - label: Nickerson, Cheryl A.
+    value: 2682
+  - label: Nicogossian, Arnauld E.
+    value: 2267
+  - label: Novikova, Natalia D.
+    value: 2202
+  - label: Nowakowski, Richard S.
+    value: 976
+  - label: Oganov, Victor S.
+    value: 284
+  - label: Osborne, W. Zachary
+    value: 2395
+  - label: Ott, C. Mark
+    value: 2609
+  - label: Palmer, Peter T.
+    value: 1572
+  - label: Paloski, William H.
+    value: 768
+  - label: Pandey, Santosh
+    value: 4028
+  - label: Parker, Donald E.
+    value: 507
+  - label: Partridge, Nicola C.
+    value: 292
+  - label: Paul, Anna-Lisa
+    value: 4571
+  - label: Petrov, Vladislav
+    value: 2194
+  - label: Pierson, Duane L.
+    value: 512
+  - label: Pilmanis, Andrew A.
+    value: 2674
+  - label: Pompeiano, Ottavio
+    value: 978
+  - label: Ponomareva, Irina
+    value: 2259
+  - label: Popova, Irena A.
+    value: 305
+  - label: Purdy, Ralph E.
+    value: 2758
+  - label: Putcha, Lakshmi
+    value: 1585
+  - label: Rabin, Bernard M.
+    value: 2729
+  - label: Rambaut, Paul C.
+    value: 468
+  - label: Raven, Peter B.
+    value: 2733
+  - label: Raymond, Jacqueline
+    value: 979
+  - label: Reitz, Guenther F.
+    value: 2190
+  - label: Renegar, Randall Harrell
+    value: 1468
+  - label: Reschke, Millard F.
+    value: 503
+  - label: Rhoten, William R.
+    value: 3299
+  - label: Rice, Kelly
+    value: 4034
+  - label: Rickus, Jenna
+    value: 4687
+  - label: Riley, Danny A.
+    value: 323
+  - label: Rippstein, Wayland J., Jr.
+    value: 2548
+  - label: Ritzmann, Stephan E.
+    value: 2141
+  - label: Roberts, Donna
+    value: 3268
+  - label: Roberts, W. Eugene
+    value: 324
+  - label: Roden, Sean K.
+    value: 3021
+  - label: Ross, Charles E.
+    value: 2771
+  - label: Ross, Muriel D.
+    value: 327
+  - label: Rubin, Clinton T.
+    value: 2614
+  - label: Rummel, John A.
+    value: 2318
+  - label: Russo, Dane M.
+    value: 1728
+  - label: Salisbury, Frank B.
+    value: 2279
+  - label: Salnitskiy, Vyacheslav P.
+    value: 2193
+  - label: Sams, Clarence F.
+    value: 2138
+  - label: Sauer, Richard L.
+    value: 1565
+  - label: Savina, Valentina
+    value: 1573
+  - label: Sawin, Charles
+    value: 342
+  - label: Schaffler, Mitchell B.
+    value: 3240
+  - label: Schneider, Howard J.
+    value: 448
+  - label: Schnoes, Heinrich K.
+    value: 2583
+  - label: Schoeller, Dale A.
+    value: 1731
+  - label: Schott, Jobst Ulrich
+    value: 2384
+  - label: Schultz, John R.
+    value: 2260
+  - label: Seely, John F.
+    value: 2742
+  - label: Serova, Luba V.
+    value: 351
+  - label: Setlow, Richard B.
+    value: 2697
+  - label: Seubert, Christoph
+    value: 2765
+  - label: Shackelford, Linda Carol
+    value: 770
+  - label: Sheehan, Florence H.
+    value: 2741
+  - label: Shi, Shang- Jin
+    value: 2910
+  - label: Shimizu, Tsuyoshi
+    value: 980
+  - label: Sinyak, Yuri E.
+    value: 1566
+  - label: Smirnov, K. V.
+    value: 363
+  - label: Smith, Malcolm C., Jr.
+    value: 694
+  - label: Smith, Michael L.
+    value: 2807
+  - label: Smith, Scott M.
+    value: 1568
+  - label: Sonnenfeld, Gerald
+    value: 371
+  - label: Souza, Kenneth A.
+    value: 372
+  - label: Spangenberg, Dorothy B.
+    value: 374
+  - label: Spaulding, Glenn F.
+    value: 3118
+  - label: Stein, T. Peter
+    value: 378
+  - label: Stenger, B. Michael
+    value: 3035
+  - label: Stoecker, Barbara J.
+    value: 2738
+  - label: Stuster, Jack
+    value: 2814
+  - label: Szylit, Odette
+    value: 385
+  - label: Taylor, Gerald R.
+    value: 386
+  - label: Tesch, Per A.
+    value: 774
+  - label: Thomas, James D.
+    value: 2732
+  - label: Thornton, William E.
+    value: 824
+  - label: Tischler, Marc E.
+    value: 701
+  - label: Turner, Nancy D.
+    value: 2808
+  - label: Turner, Russell T.
+    value: 2622
+  - label: Tuxhorn, Jennifer
+    value: 3005
+  - label: Van Dongen, Hans P. A.
+    value: 2753
+  - label: Viktorov, Alexandre N.
+    value: 2235
+  - label: Waligora, James M.
+    value: 2710
+  - label: Walton, Kerry D.
+    value: 984
+  - label: Wassersug, Richard
+    value: 958
+  - label: Waters, Wendy W.
+    value: 2876
+  - label: Webb, James T.
+    value: 2675
+  - label: Weinstock, George M.
+    value: 1754
+  - label: Wentworth, Bernard C.
+    value: 2147
+  - label: West, John B.
+    value: 474
+  - label: Wheeler, Harry O.
+    value: 2530
+  - label: Whitmore, Mihriban
+    value: 1756
+  - label: Whitson, Peggy A.
+    value: 729
+  - label: Wiederhold, Michael L.
+    value: 956
+  - label: Wilfinger, William W.
+    value: 2278
+  - label: Wolgemuth, Debra J.
+    value: 424
+  - label: Wooley, Bennie C.
+    value: 2266
+  - label: Woolford, Barbara
+    value: 3334
+  - label: Zaloguev, S. N.
+    value: 2156
+  - label: Zieglschmid, John F.
+    value: 2243
+  - label: Zimmerman, Robert J.
+    value: 2277
+
 
 ## "license_id"
 - field_name: license_id
