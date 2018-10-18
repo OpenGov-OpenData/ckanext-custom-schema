@@ -63,7 +63,7 @@ dataset_fields:
 
 ## "accrualPeriodicity"
 #  ISO8601FTW
-- field_name: accrual_periodicity
+- field_name: accrualPeriodicity
   label: Frequency
   preset: select
   required: True
