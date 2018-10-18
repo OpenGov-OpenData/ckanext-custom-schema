@@ -113,9 +113,9 @@ dataset_fields:
 
 ## "author"
 #  Use core CKAN field for author
-- field_name: author,
-  label: Author,
-  form_placeholder: Joe Bloggs,
+- field_name: author
+  label: Author
+  form_placeholder: Joe Bloggs
   preset: user
   display_property: dc:creator
 
