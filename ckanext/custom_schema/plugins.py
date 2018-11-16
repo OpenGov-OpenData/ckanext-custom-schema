@@ -21,7 +21,7 @@ ckanext.custom_schema:schemas/dataset.yaml
     def before_map(self,m):
         m.connect(
             '/metadata_download/{package_id}',
-            controller='ckanext.custom_schema.controller:customSchemaController',
+            controller='ckanext.custom_schema.controller:CustomSchemaController',
             action='metadata_download'
         )
         return m

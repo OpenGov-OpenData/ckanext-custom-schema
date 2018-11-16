@@ -19,7 +19,7 @@ from pylons import config
 from ckanext.scheming import helpers
 
 
-class ChhsSchemaController(base.BaseController):
+class CustomSchemaController(base.BaseController):
     def metadata_download(self, package_id):
         context = {
             'model': model,
