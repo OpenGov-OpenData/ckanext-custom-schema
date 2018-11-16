@@ -1,7 +1,7 @@
 scheming_version: 1
 dataset_type: dataset
-about: California Health and Human Services (CHHS) Data Model
-about_url: https://github.com/OpenGov-OpenData/ckanext-chhs_schema
+about: California Department of Technology Data Model
+about_url: https://github.com/OpenGov-OpenData/ckanext-custom_schema
 
 
 ## CKAN Package/Dataset Fields
@@ -158,7 +158,7 @@ dataset_fields:
   preset: select
   required: True
   choices:
-  - label: Use of this data is subject to the CHHS Terms of Use and any copyright and proprietary notices incorporated in or accompanying the individual files.
+  - label: Use of this data is subject to the California Department of Technology Terms of Use and any copyright and proprietary notices incorporated in or accompanying the individual files.
     value: Limitations
 
 ## "additional_limitations"
@@ -191,7 +191,7 @@ dataset_fields:
   label: Citation
   form_snippet: markdown.html
 
-## "twitter checkbox"  
+## "twitter checkbox"
 - field_name: twitter_popup
   label: Show Twitter Popup
   preset: multiple_checkbox

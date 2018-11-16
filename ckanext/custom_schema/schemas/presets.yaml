@@ -1,6 +1,6 @@
 scheming_presets_version: 1
-about: Scheming presets for California Health and Human Services (CHHS) Data Model
-about_url: https://github.com/OpenGov-OpenData/ckanext-chhs_schema
+about: Scheming presets for California Department of Technology Data Model
+about_url: https://github.com/OpenGov-OpenData/ckanext-custom_schema
 
 presets:
 
