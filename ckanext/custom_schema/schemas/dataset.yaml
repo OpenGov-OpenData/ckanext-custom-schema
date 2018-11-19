@@ -53,7 +53,7 @@ dataset_fields:
 
 ## "author"
 - field_name: author
-  label: Program
+  label: Author
   display_property: dc:creator
   form_placeholder: eg. Office of Statewide Health Planning and Development
   required: True
@@ -67,20 +67,21 @@ dataset_fields:
   required: True
 
 ## "temporalNotes"
-#  fluent markdown field
+## This field needs revisiting regarding the free form nature of the text box vs. dropdown
 - field_name: temporal_coverage
   label: Temporal Coverage
   form_snippet: markdown.html
   required: True
 
+## "spatialGeoCoverage"
+- field_name: spatial_geo_coverage
+  label: Spatial / Geographic Coverage Location
+
 ## "spatial"
-#  fluent text field
-- field_name: geo_coverage
-  label: Spatial/Geographic Coverage
-  form_snippet: markdown.html
+- field_name: spatial
+  label: Spatial / Geographical Coverage Area
 
 ## "geographic_granularity"
-#  fluent markdown field
 - field_name: geographic_granularity
   label: Geographic Granularity
   preset: geographic_granularity_choices
@@ -123,7 +124,6 @@ dataset_fields:
     value: annually
 
 ## "de_identification_method"
-#  fluent markdown field
 - field_name: de_identification_method
   label: De-Identification Method
   form_snippet: markdown.html
@@ -137,7 +137,6 @@ dataset_fields:
   display_snippet: link.html
 
 ## "data_collection_tool"
-#  fluent markdown field
 - field_name: data_collection_tool
   label: Data Collection Tool
   form_snippet: markdown.html
@@ -162,42 +161,29 @@ dataset_fields:
     value: Limitations
 
 ## "additional_limitations"
-#  fluent markdown field
 - field_name: additional_limitations
   label: Additional Limitations
   form_snippet: markdown.html
 
 ## "additional_information"
-#  fluent markdown field
 - field_name: additional_information
   label: Additional Information
   form_snippet: markdown.html
 
 ## "related_resources"
-#  fluent markdown field
 - field_name: related_resources
   label: Related Resources
   form_snippet: markdown.html
 
 ## "secondary_sources"
-#  fluent markdown field
 - field_name: secondary_sources
   label: Secondary Sources
   form_snippet: markdown.html
 
 ## "citation"
-#  fluent markdown field
 - field_name: citation
   label: Citation
   form_snippet: markdown.html
-
-## "twitter checkbox"
-- field_name: twitter_popup
-  label: Show Twitter Popup
-  preset: multiple_checkbox
-  choices:
-    - label: Enable Twitter Popup
-      value: Twitter_Popup
 
 
 ## CKAN Resource Fields
@@ -224,9 +210,3 @@ resource_fields:
   label: Format
   preset: resource_format_autocomplete
 
-- field_name: accept_popup
-  label: Terms of Use
-  preset: multiple_checkbox
-  choices:
-    - label: Display Popup
-      value: Display
