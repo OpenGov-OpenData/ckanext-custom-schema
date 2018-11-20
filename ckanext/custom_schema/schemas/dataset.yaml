@@ -35,8 +35,13 @@ dataset_fields:
 - field_name: tag_string
   label: Tags
   preset: tag_string_autocomplete
-  form_placeholder: Meaningful tags
-  required: True
+  form_placeholder: eg. economy, mental health, government
+
+## "license_id"
+- field_name: license_id
+  label: License'
+  form_snippet: license.html
+  help_text: License definitions and additional information can be found at http://opendefinition.org/
 
 ## "department"
 #  The Department field will be mapped to CKAN organizations
@@ -44,11 +49,17 @@ dataset_fields:
   label: Department
   preset: dataset_organization
 
+## "contact_name"
+- field_name: contact_name
+  label: Contact Name
+  form_placeholder: eg. Division of Traffic Operations, Office of Performance, Traffic Data Branch
+  required: True
+
 ## "contact_email"
 - field_name: contact_email
   label: Contact Email
   display_snippet: email.html
-  form_placeholder: eg. opendata@oshpd.ca.gov
+  form_placeholder: eg. opendata@dot.ca.gov
   required: True
 
 ## "author"
@@ -64,69 +75,74 @@ dataset_fields:
   form_placeholder: http://example.com
   display_property: foaf:homepage
   display_snippet: link.html
-  required: True
 
 ## "temporalNotes"
 ## This field needs revisiting regarding the free form nature of the text box vs. dropdown
 - field_name: temporal_coverage
   label: Temporal Coverage
   form_snippet: markdown.html
-  required: True
 
-## "spatialGeoCoverage"
-- field_name: spatial_geo_coverage
-  label: Spatial / Geographic Coverage Location
+## "geoCoverage"
+- field_name: geo_coverage
+  label: Geographic Coverage Location
+  form_placeholder: eg. State
 
 ## "spatial"
 - field_name: spatial
-  label: Spatial / Geographical Coverage Area
+  label: Spatial
 
-## "geographic_granularity"
-- field_name: geographic_granularity
-  label: Geographic Granularity
-  preset: geographic_granularity_choices
-  # copied from select preset because we're using preset for controlled list
-  form_snippet: select.html
-  display_snippet: select.html
-  required: True
-  validators: scheming_required scheming_choices
+# ## "geographic_granularity"
+# - field_name: geographic_granularity
+#   label: Geographic Granularity
+#   preset: geographic_granularity_choices
+#   # copied from select preset because we're using preset for controlled list
+#   form_snippet: select.html
+#   display_snippet: select.html
+#   required: True
+#   validators: scheming_required scheming_choices
 
 ## "language"
 - field_name: language
   label: Language
   form_snippet: text.html
-  required: True
 
 ## "accrualPeriodicity"
 #  ISO8601FTW
-- field_name: accrual_periodicity
+- field_name: accrualPeriodicity
   label: Frequency
   preset: select
   required: True
   choices:
-  - label: Other
-    value: other
-  - label: Point in time
-    value: point in time
+  - label: Irregular
+    value: irregular
+  - label: Continuously updated
+    value: R/PT1S
+  - label: Hourly
+    value: R/PT1H
   - label: Daily
-    value: daily
+    value: R/P1D
+  - label: Twice a week
+    value: R/P0.5W
+  - label: Semiweekly
+    value: R/P3.5D
   - label: Weekly
-    value: weekly
-  - label: Biweekly
-    value: biweekly
+    value: R/P1W
+  - label: Semimonthly
+    value: R/P0.5M
   - label: Monthly
-    value: monthly
-  - label: Bimonthly
-    value: bimonthly
+    value: R/P1M
+  - label: Every Two Months
+    value: R/P2M
   - label: Quarterly
-    value: quarterly
-  - label: Annually
-    value: annually
-
-## "de_identification_method"
-- field_name: de_identification_method
-  label: De-Identification Method
-  form_snippet: markdown.html
+    value: R/P3M
+  - label: Semiannual
+    value:  R/P6M
+  - label: Annual
+    value:  R/P1Y
+  - label: Biennial
+    value:  R/P2Y
+  - label: Decennial
+    value:  R/P10Y
 
 ## "url"
 #  Use core CKAN datase url field
@@ -136,34 +152,10 @@ dataset_fields:
   display_property: foaf:homepage
   display_snippet: link.html
 
-## "data_collection_tool"
-- field_name: data_collection_tool
-  label: Data Collection Tool
-  form_snippet: markdown.html
-
-## "license_id"
-- field_name: data_license
-  label: License
-  preset: select
-  required: True
-  display_snippet: terms.html
-  choices:
-  - label: See Terms of Use
-    value: Terms of Use
-
-## "limitations"
-- field_name: limitations
-  label: Limitations
-  preset: select
-  required: True
-  choices:
-  - label: Use of this data is subject to the California Department of Technology Terms of Use and any copyright and proprietary notices incorporated in or accompanying the individual files.
-    value: Limitations
-
-## "additional_limitations"
-- field_name: additional_limitations
-  label: Additional Limitations
-  form_snippet: markdown.html
+# ## "data_collection_tool"
+# - field_name: data_collection_tool
+#   label: Data Collection Tool
+#   form_snippet: markdown.html
 
 ## "additional_information"
 - field_name: additional_information
