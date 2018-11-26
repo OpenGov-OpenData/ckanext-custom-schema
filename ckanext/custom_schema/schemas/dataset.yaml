@@ -111,7 +111,6 @@ dataset_fields:
 - field_name: accrualPeriodicity
   label: Frequency
   preset: select
-  required: True
   choices:
   - label: Irregular
     value: irregular
