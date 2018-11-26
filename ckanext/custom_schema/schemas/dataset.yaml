@@ -39,7 +39,7 @@ dataset_fields:
 
 ## "license_id"
 - field_name: license_id
-  label: License'
+  label: License
   form_snippet: license.html
   help_text: License definitions and additional information can be found at http://opendefinition.org/
 
@@ -78,7 +78,7 @@ dataset_fields:
 
 ## "temporalNotes"
 ## This field needs revisiting regarding the free form nature of the text box vs. dropdown
-- field_name: temporal_coverage
+- field_name: temporal
   label: Temporal Coverage
   form_snippet: markdown.html
 
