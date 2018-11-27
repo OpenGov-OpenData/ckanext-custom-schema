@@ -70,7 +70,7 @@ dataset_fields:
   required: True
 
 ## "homepage_url"
-- field_name: program_web_page
+- field_name: landingPage
   label: Homepage URL
   form_placeholder: http://example.com
   display_property: foaf:homepage
