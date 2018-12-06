@@ -144,7 +144,7 @@ dataset_fields:
 ## This field needs revisiting regarding the free form nature of the text box vs. dropdown
 - field_name: granularity
   label: Granularity
-  form_placeholder: eg. county, census track, monthly, daily
+  form_placeholder: eg. County, Census Track, Monthly, Daily
 
 ## "geoCoverage"
 - field_name: geo_coverage
