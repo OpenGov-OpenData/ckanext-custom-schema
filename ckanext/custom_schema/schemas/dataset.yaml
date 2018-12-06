@@ -44,20 +44,39 @@ dataset_fields:
   help_text: License definitions and additional information can be found at http://opendefinition.org/
 
 ## "department"
-#  The Department field will be mapped to CKAN organizations
+#  The Group field will be mapped to CKAN organizations
 - field_name: owner_org
-  label: Department
+  label: Group
   preset: dataset_organization
 
+## "accessLevel"
+- field_name: accessLevel
+  label: Public Access Level
+  preset: select
+  required: True
+  choices:
+  - label: Public
+    value: public
+  - label: Restricted
+    value: restricted public
+  - label: Non-public
+    value: non-public
+    
+## "rights"
+- field_name: rights
+  label: Rights
+  form_placeholder: eg. No restrictions on public use
+  required: True
+  
 ## "contact_name"
 - field_name: contact_name
-  label: Contact Name
+  label: Program Contact Name
   form_placeholder: eg. Division of Traffic Operations, Office of Performance, Traffic Data Branch
   required: True
 
 ## "contact_email"
 - field_name: contact_email
-  label: Contact Email
+  label: Program Contact Email
   display_snippet: email.html
   form_placeholder: eg. opendata@dot.ca.gov
   required: True
@@ -67,7 +86,6 @@ dataset_fields:
   label: Author
   display_property: dc:creator
   form_placeholder: eg. Office of Statewide Health Planning and Development
-  required: True
 
 ## "homepage_url"
 - field_name: landingPage
@@ -76,41 +94,12 @@ dataset_fields:
   display_property: foaf:homepage
   display_snippet: link.html
 
-## "temporalNotes"
-## This field needs revisiting regarding the free form nature of the text box vs. dropdown
-- field_name: temporal
-  label: Temporal Coverage
-  form_snippet: markdown.html
-
-## "geoCoverage"
-- field_name: geo_coverage
-  label: Geographic Coverage Location
-  form_placeholder: eg. State
-
-## "spatial"
-- field_name: spatial
-  label: Spatial
-
-# ## "geographic_granularity"
-# - field_name: geographic_granularity
-#   label: Geographic Granularity
-#   preset: geographic_granularity_choices
-#   # copied from select preset because we're using preset for controlled list
-#   form_snippet: select.html
-#   display_snippet: select.html
-#   required: True
-#   validators: scheming_required scheming_choices
-
-## "language"
-- field_name: language
-  label: Language
-  form_snippet: text.html
-
 ## "accrualPeriodicity"
 #  ISO8601FTW
 - field_name: accrualPeriodicity
   label: Frequency
   preset: select
+  required: True
   choices:
   - label: Irregular
     value: irregular
@@ -142,6 +131,50 @@ dataset_fields:
     value:  R/P2Y
   - label: Decennial
     value:  R/P10Y
+    
+## "temporalNotes"
+## This field needs revisiting regarding the free form nature of the text box vs. dropdown
+## Start and end date for the data in the dataset
+- field_name: temporal
+  label: Temporal Coverage
+  form_snippet: markdown.html
+
+## "granularity"
+## This field needs revisiting regarding the free form nature of the text box vs. dropdown
+- field_name: granularity
+  label: Granularity
+  form_placeholder: eg. county, census track, monthly, daily
+
+## "geoCoverage"
+- field_name: geo_coverage
+  label: Geographic Coverage Location
+  form_placeholder: eg. State
+
+## "spatial"
+- field_name: spatial
+  label: Spatial
+
+# ## "geographic_granularity"
+# - field_name: geographic_granularity
+#   label: Geographic Granularity
+#   preset: geographic_granularity_choices
+#   # copied from select preset because we're using preset for controlled list
+#   form_snippet: select.html
+#   display_snippet: select.html
+#   required: True
+#   validators: scheming_required scheming_choices
+
+
+## "conformsTo"
+- field_name: conformsTo
+  label: Data Standard
+  form_snippet: text.html
+
+
+## "language"
+- field_name: language
+  label: Language
+  form_snippet: text.html
 
 ## "url"
 #  Use core CKAN datase url field
