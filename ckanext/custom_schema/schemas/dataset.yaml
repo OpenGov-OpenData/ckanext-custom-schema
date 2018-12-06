@@ -44,9 +44,10 @@ dataset_fields:
   help_text: License definitions and additional information can be found at http://opendefinition.org/
 
 ## "department"
-#  The Group field will be mapped to CKAN organizations
+#  The Publisher field will be mapped to CKAN organizations
+#  Note in Project Open Data Metadata Schema v1.1 publisher is its own field
 - field_name: owner_org
-  label: Group
+  label: Publisher
   preset: dataset_organization
 
 ## "accessLevel"
