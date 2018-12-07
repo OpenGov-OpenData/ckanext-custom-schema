@@ -54,7 +54,6 @@ dataset_fields:
 - field_name: accessLevel
   label: Public Access Level
   preset: select
-  required: True
   choices:
   - label: Public
     value: public
@@ -67,7 +66,6 @@ dataset_fields:
 - field_name: rights
   label: Rights
   form_placeholder: eg. No restrictions on public use
-  required: True
   
 ## "contact_name"
 - field_name: contact_name
