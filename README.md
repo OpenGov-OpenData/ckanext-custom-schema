@@ -21,4 +21,4 @@ python setup.py develop
 
 Then in your CKAN .ini file, add `custom_schema` to your ckan.plugins line:
 
-ckan.plugins = (other plugins here...) scheming_datasets custom_schema
+ckan.plugins = (other plugins here...) custom_schema scheming_datasets
