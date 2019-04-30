@@ -14,6 +14,8 @@ setup(
     zip_safe=False,
     entry_points = """
         [ckan.plugins]
-        fiscal_schema = ckanext.fiscal.plugins:customSchema
+        cademo_schema = ckanext.custom_schema.cademo.plugins:customSchema
+        fiscal_schema = ckanext.custom_schema.fiscal.plugins:customSchema
+        nasalsda_schema = ckanext.custom_schema.nasalsda.plugins:customSchema
     """
 )

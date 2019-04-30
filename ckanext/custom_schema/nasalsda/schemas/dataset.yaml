@@ -1,0 +1,3304 @@
+scheming_version: 1
+dataset_type: dataset
+about: NASA Life Science Data Archive (LSDA) Data Model
+about_url:
+
+## CKAN Package/Dataset Fields
+dataset_fields:
+
+## "title"
+#  Use core CKAN field for title
+- field_name: title
+  label: Title
+  preset: title
+  form_placeholder: eg. A descriptive title
+  required: True
+
+## "name"
+#  Use core CKAN field for dataset URL slug, generated from title with JS
+- field_name: name
+  label: URL
+  preset: dataset_slug
+  form_placeholder: eg. my-dataset
+
+## "notes"
+#  Use core CKAN field for notes
+- field_name: notes
+  label: Description
+  form_snippet: markdown.html
+  form_placeholder: eg. Some useful notes about the data
+  required: True
+
+## "keywords"
+#  Use core CKAN free-form tag field
+- field_name: tag_string
+  label: Tags
+  preset: tag_string_autocomplete
+  form_placeholder: Enter descriptive keywords.
+  required: True
+
+## "organization"
+- field_name: owner_org
+  label: Organization
+  preset: dataset_organization
+
+## "contact_name"
+- field_name: contact_name
+  label: Contact Name
+  form_snippet: text.html
+  form_placeholder: Enter the name of the contact who maintains the dataset.
+  required: True
+
+## "contact_email"
+- field_name: contact_email
+  label: Contact Email
+  form_placeholder: The email for the dataset maintainer.
+  display_snippet: email.html
+  required: True
+
+
+## "research_area"
+- field_name: research_area
+  label: Research Area
+  preset: select
+  required: False
+  choices:
+  - label: Behavior and performance
+    value: Behavior and performance
+  - label: Biomedical countermeasures
+    value: Biomedical countermeasures
+  - label: Bone and calcium physiology
+    value: Bone and calcium physiology
+  - label: Cardiovascular physiology
+    value: Cardiovascular physiology
+  - label: Cell and molecular biology
+    value: Cell and molecular biology
+  - label: Cellular and molecular biology
+    value: Cellular and molecular biology
+  - label: Chronobiology
+    value: Chronobiology
+  - label: Clinical medicine
+    value: Clinical medicine
+  - label: Developmental biology
+    value: Developmental biology
+  - label: Endocrinology
+    value: Endocrinology
+  - label: Environmental monitoring
+    value: Environmental monitoring
+  - label: Extravehicular Activity (EVA)
+    value: Extravehicular Activity (EVA)
+  - label: Gastrointestinal physiology
+    value: Gastrointestinal physiology
+  - label: Hardware evaluation
+    value: Hardware evaluation
+  - label: Hematology
+    value: Hematology
+  - label: Human factors
+    value: Human factors
+  - label: Hyper- and hypobaric physiology
+    value: Hyper- and hypobaric physiology
+  - label: Immunology
+    value: Immunology
+  - label: Interdisciplinary physiology
+    value: Interdisciplinary physiology
+  - label: Life support systems
+    value: Life support systems
+  - label: Metabolism and nutrition
+    value: Metabolism and nutrition
+  - label: Microbiology
+    value: Microbiology
+  - label: Muscle physiology
+    value: Muscle physiology
+  - label: Neurophysiology
+    value: Neurophysiology
+  - label: Pharmacology
+    value: Pharmacology
+  - label: Physiology
+    value: Physiology
+  - label: Plant biology
+    value: Plant biology
+  - label: Pulmonary physiology
+    value: Pulmonary physiology
+  - label: Radiation biology
+    value: Radiation biology
+  - label: Radiation health
+    value: Radiation health
+  - label: Renal, fluid and electrolyte physiology
+    value: Renal, fluid and electrolyte physiology
+  - label: Toxicology
+    value: Toxicology
+
+## "species"
+- field_name: species
+  label: Species
+  preset: select
+  required: False
+  choices:
+  - label: Bacteria
+    value: Bacteria
+  - label: Bacterium
+    value: Bacterium
+  - label: Beetle
+    value: Beetle
+  - label: Cells, human
+    value: Cells, human
+  - label: Chicken
+    value: Chicken
+  - label: Chimpanzee
+    value: Chimpanzee
+  - label: Corn
+    value: Corn
+  - label: Dog
+    value: Dog
+  - label: fern
+    value: fern
+  - label: Fish, Medaka
+    value: Fish, Medaka
+  - label: Frog, Tree
+    value: Frog, Tree
+  - label: Fruit fly
+    value: Fruit fly
+  - label: Fungi
+    value: Fungi
+  - label: Horse
+    value: Horse
+  - label: Human
+    value: Human
+  - label: Human (Homo sapiens)
+    value: Human (Homo sapiens)
+  - label: Jellyfish
+    value: Jellyfish
+  - label: Medaka fish
+    value: Medaka fish
+  - label: Mouse
+    value: Mouse
+  - label: Mouse-ear cress
+    value: Mouse-ear cress
+  - label: N/A
+    value: N/A
+  - label: Nematode
+    value: Nematode
+  - label: Newt
+    value: Newt
+  - label: Norwalk virus
+    value: Norwalk virus
+  - label: Not applicable
+    value: Not applicable
+  - label: Outredgeous lettuce
+    value: Outredgeous lettuce
+  - label: Oyster toadfish
+    value: Oyster toadfish
+  - label: Quail
+    value: Quail
+  - label: Rabbit
+    value: Rabbit
+  - label: Rat
+    value: Rat
+  - label: Snail
+    value: Snail
+  - label: Spider
+    value: Spider
+  - label: Turnip
+    value: Turnip
+  - label: Wheat
+    value: Wheat
+  - label: Yeast
+    value: Yeast
+
+
+
+## "experiment"
+- field_name: experiment
+  label: Experiment Title
+  preset: select
+  required: False
+  choices:
+  - label: Ability of Polyethylene Glycol Interleukin-2 (PEG-IL2) to Counteract the Effect of Spaceflight on the Rat Immune System (CPIMM01)
+    value: 661
+  - label: Achilles Tendon Reflex (ASTP003)
+    value: 396
+  - label: Acoustic Noise During the Phase III Chamber Test (LMLSTP3.3)
+    value: 925
+  - label: Active Dosimetry of Charged Particles (9401681)
+    value: 763
+  - label: Acute Adaptation of Bone to Spaceflight (DC85LS04)
+    value: 656
+  - label: Adaptation in Artificial Gravity Environments (NAG91038)
+    value: 1222
+  - label: Aging and Cardiopulmonary Function (LSAHNEWSV9_2_2)
+    value: 1057
+  - label: Alterations in Postural Equilibrium Control Associated with Long Duration Space Flight (4.2.4c)
+    value: 348
+  - label: Alternative Compression Garment (Flight Analog) (BEDREST_ACG)
+    value: 1781
+  - label: An Experiment to Study the Role of Gravity in the Development of the Optic Nerve (9303026)
+    value: 676
+  - label: Analysis of Volatile Organic Compounds on Mir Station (9401666)
+    value: 752
+  - label: Anatomical Observation (DSO 422)
+    value: 555
+  - label: Anatomical Studies of Central Vestibular Adaptation (9301127 1_2)
+    value: 716
+  - label: Animal Enclosure Module In-flight Test (DSO 421)
+    value: 554
+  - label: Animal Studies on Spacelab-3 (SL3 1.1)
+    value: 238
+  - label: Anthropometric Data from the William E. Thornton Collection (Thornton_Anthro)
+    value: 1811
+  - label: Anticipatory Postural Activity (9400423)
+    value: 770
+  - label: Anticipatory Postural Activity (POSA) (4.2.4b)
+    value: 353
+  - label: Apollo Flight Crew Cardiovascular Evaluations (AP005)
+    value: 376
+  - label: Apollo Flight Crew Health Stabilization Program (APHSP)
+    value: 863
+  - label: Apollo Flight Crew Vestibular Assessment (AP006)
+    value: 370
+  - label: Apollo Light Flash Investigations (AP009)
+    value: 380
+  - label: Apoptosis in Microgravity-Sensitive Cells After Space Flight (97NTSP01001)
+    value: 510
+  - label: Architecture and Mechanical Function in Bone with Recovery from Disuse Osteoporosis (NAG91097)
+    value: 1068
+  - label: Artificial Gravity Exercise for Maintaining Fitness During Prolonged Space Flight (NAG91425)
+    value: 1032
+  - label: Assessment of Circadian Shifting in Astronauts by Bright Light (DSO 484)
+    value: 1711
+  - label: Assessment of Human Factors (DSO 904)
+    value: 207
+  - label: Assessment of Humoral Immune Function During Long Duration Space Flight (9401621)
+    value: 771
+  - label: Assessment of Humoral Immune Function During Long-Duration Space Flight (2.4.2)
+    value: 356
+  - label: Assessment of Sleep Dynamics in a Simulated Space Station Environment (LMLSTP3.4)
+    value: 926
+  - label: Association Between Aging and Specific Physiological Measurements (LSAHNEWSV7_2_2)
+    value: 1059
+  - label: Asthma in the LSAH Population (LSAHNEWSV10_2_2)
+    value: 1050
+  - label: Autonomic Mechanisms During Prolonged Weightlessness (9401709)
+    value: 775
+  - label: Behavior of Postnatal Rats After Space Flight (E122B)
+    value: 740
+  - label: Bioassays of Body Fluids (M005)
+    value: 360
+  - label: Bioavailability and Performance Effects of Promethazine (PMZ) During Space Flight (DSO 490)
+    value: 972
+  - label: Biochemistry of 3-D Tissue Engineering in the BTS (Bio3D)
+    value: 759
+  - label: Biomechanics of Movement During Locomotion (4.2.4a)
+    value: 352
+  - label: Biostereometric Analysis of Body Form (SKYFORM)
+    value: 1077
+  - label: Blood Pressure Monitoring During Reentry (DSO 441)
+    value: 564
+  - label: Blood Pressure Variability During Space Flight (DSO 602)
+    value: 602
+  - label: Body Mass Changes in NASA/Mir Astronauts (LSAHNEWSV7_2_1)
+    value: 1058
+  - label: Bone Biomechanics (SLS1 BSP2)
+    value: 18
+  - label: Bone Demineralization (M006)
+    value: 389
+  - label: Bone Health and Physical Activity in LSAH Participants (LSAHNEWSV13_2_1)
+    value: 1520
+  - label: Bone, Calcium, and Spaceflight (178194 1_2)
+    value: 14
+  - label: Bone, Calcium, and Spaceflight (178194 2_2)
+    value: 313
+  - label: Cabin Air Monitoring (DTO 623)
+    value: 1708
+  - label: Calbindins and Apoptosis After Short-term Spaceflight (NAG21194)
+    value: 1006
+  - label: Calcium Metabolism and Vascular Function in Rats after Spaceflight (9401686)
+    value: 704
+  - label: Canal and Otolith Integration Studies (COIS) (9307570)
+    value: 325
+  - label: Cancer Induction by Repeated Doses of High-LET Radiation (NAG91024)
+    value: 1219
+  - label: Cardiovascular Conditioning (M001)
+    value: 364
+  - label: Cardiovascular Deconditioning Countermeasure Assessment (DSO 402)
+    value: 537
+  - label: Cardiovascular Evaluations (ASTP006)
+    value: 406
+  - label: Cardiovascular Responses to Lower Body Negative Pressure Following Space Flight (DSO 607)
+    value: 608
+  - label: Carotid Baroreflex Function during Prolonged Exercise (NAG5-4668)
+    value: 1214
+  - label: Cartilage in Space (BTS-Cart)
+    value: 760
+  - label: Catecholamines, Vasopressin, Atrial Natriuretic Factor (ANF) and ANF Receptors in the Rat Brain (SLS1 BSP19)
+    value: 38
+  - label: Cell Attachment in Microgravity (DSO 413)
+    value: 548
+  - label: Cell Kenetic and Histomorphometric Analysis of Microgravitational Osteopenia (DC85LS03)
+    value: 655
+  - label: Cellular Immune Response (MA-031)
+    value: 402
+  - label: Changes in Baroreceptor Reflex Function After Space Flight (DSO 601)
+    value: 202
+  - label: Changes in Endocrine Regulation of Orthostatic Tolerance Following Space Flight (DSO 613)
+    value: 612
+  - label: Changes in Total Body Water During Space Flight (DSO 460)
+    value: 316
+  - label: Characterization of Microbial Transfer Among Crewmembers During Space Flight (DSO 491)
+    value: 599
+  - label: Characterization of Respirable Airborne Particulate Matter in Shuttle Atmosphere (DSO 471)
+    value: 584
+  - label: Choroid Plexus, Brain and Heart Natriuretic Peptide Development in Space (9303011)
+    value: 673
+  - label: Chromosome Analyses of Gemini Astronauts (GEMCYTO)
+    value: 894
+  - label: Chronic Recording of Otolith Nerves in Microgravity (9301088 1_2)
+    value: 952
+  - label: Clinical Aspects of Crew Health (AP001)
+    value: 374
+  - label: Clinical Biochemistry (AP004)
+    value: 375
+  - label: Clinical Characterization of Space Motion Sickness (SMS) (DSO 455)
+    value: 571
+  - label: Clinical Nutritional Assessment (Flight Analog) (MR016G)
+    value: 1357
+  - label: Clinical Nutritional Assessment (NEEMO-MR016L)
+    value: 1096
+  - label: Clinical Trial of the Efficacy of Melatonin as a Countermeasure for Entrainment to the Sleep/Wake Schedules Required during Shuttle Missions (NAG91035)
+    value: 1216
+  - label: CNS Control of Rhythms and Homeostasis During Space Flight (9301132)
+    value: 727
+  - label: Collecting Mir Source and Reclaimed Waters for Postflight Analysis (9401592)
+    value: 751
+  - label: Collection of Shuttle Humidity Condensate for Analytical Evaluation (DSO 317)
+    value: 1468
+  - label: Colorectal Cancer in LSAH Participants and a Comparison Population (LSAHNEWSV16_2_1)
+    value: 1526
+  - label: Confirmation of Ability of Polyethylene Glycol Interleukin-2 (PEG-IL2) to Counteract the Effect of Space Flight on the Rat Immune System (CPIMM02)
+    value: 663
+  - label: Confirmation of Ability of Sustained-Release Insulin-like Growth Factor I (IGF-I) to Counteract the Effect of Space Flight on the Rat Immune and Skeletal Systems (CPIMM03)
+    value: 741
+  - label: Constellation Program (CxP) EVA Systems Test 1 - Metabolic Costs and Biomechanics of a Planetary Suit (IST_1)
+    value: 1794
+  - label: Constellation Program (CxP) EVA Systems Test 2 - Metabolic Costs and Biomechanics of Exploration Tasks in a Planetary Suit (IST_2)
+    value: 1793
+  - label: Constellation Program (CxP) EVA Systems Test 3 - Effect of Center of Gravity on Metabolic Costs and Biomechanics of Ambulation in a Planetary Suit (IST_3)
+    value: 1800
+  - label: Contractile Properties of Skeletal Muscles (SLS1 BSP14)
+    value: 30
+  - label: Correlation of Disconjugate Eye Torsion with the Time Course of the Space Adaptation Syndrome (17-USA)
+    value: 912
+  - label: Crew Health (ASTP011)
+    value: 408
+  - label: Crew Height Measurement (ASTP002)
+    value: 390
+  - label: Crewmember and Crew-Ground Interactions During International Space Station Missions (96-E096)
+    value: 898
+  - label: Crewmember and Crew-Ground Interactions During NASA-Mir (9401628)
+    value: 767
+  - label: Cytochemistry of Neurons (SLS1 BSP13)
+    value: 29
+  - label: Cytogenetic Studies of Blood (M111)
+    value: 422
+  - label: Determination of ANF Receptors and of Particulate Guanylate Cyclase from Rats Flown in Weightlessness (SLS1 BSP25)
+    value: 35
+  - label: Determination of Cardiac Size From Chest Roentgenograms Following Skylab Missions (SKYRAY)
+    value: 1037
+  - label: Development and Function of the Avian Otolith System in Normal and Altered Gravity Environments (9802272)
+    value: 934
+  - label: Development of a Flash X-ray Radiography and Tomography System to Measure Bone Mineral Density (T5282W)
+    value: 1224
+  - label: Development of Sensory Receptors in Skeletal Muscle (9303006)
+    value: 671
+  - label: Development of the Aortic Baroreflex under Conditions of Microgravity (9301034)
+    value: 724
+  - label: Development of the Fish Medaka in Microgravity (9401617)
+    value: 701
+  - label: Development of Vestibular Organs in Microgravity (9301004 2_2)
+    value: 726
+  - label: Developmental Abnormalities (PARE.04C)
+    value: 681
+  - label: Dietary Calcium Intake in LSAH Participants and U.S. General Population (LSAHNEWSV13_2_2)
+    value: 1521
+  - label: Dietary Fat Consumption of U.S. General Population and LSAH Participants (LSAHNEWSV13_1_1)
+    value: 1518
+  - label: Dietary Intake Can Predict and Protect Against Changes in Bone Metabolism During Space Flight and Recovery (ProK)
+    value: 1515
+  - label: Direct Measurement of the Initial Bone Response to Space Flight in Humans (284074)
+    value: 326
+  - label: Documentation of the Action of Metoclopramide (DSO 439)
+    value: 562
+  - label: Dosimetric Mapping (96-E094)
+    value: 900
+  - label: Early Development of a Gravity-Receptor Organ in Microgravity (8913083 1_3)
+    value: 668
+  - label: Effect of Microgravity on Afferent Innervation (9306002 1_3)
+    value: 867
+  - label: Effect of Microgravity on Afferent Innervation (9306002 2_3)
+    value: 868
+  - label: Effect of Microgravity on Afferent Innervation (9306002 3_3)
+    value: 869
+  - label: Effect of Microgravity on Epidermal Development in the Rat (9303028)
+    value: 674
+  - label: Effect of Microgravity on the Relations Between Microbiological and Epithelial Tissue and Functions of the Gastrointestinal Tract (SLS1 BSP20)
+    value: 42
+  - label: Effect of Prolonged Space Flight on Human Skeletal Muscle (96-E400)
+    value: 909
+  - label: Effect of Spaceflight Factors on the Functional Activity of Immune Cells (SLS1 BSP9)
+    value: 25
+  - label: Effect of Spaceflight on Development of Immune Responses (9303009)
+    value: 679
+  - label: Effect of Spaceflight on TGF-Beta Expression by hFOB Cells (9304007 1_2)
+    value: 683
+  - label: Effect of Spaceflight on TGF-Beta Expression by hFOB Cells (9304007 2_2)
+    value: 729
+  - label: Effect of Weightlessness on Development of Amphibian Eggs (178256)
+    value: 644
+  - label: Effect of Weightlessness on Tissue Regeneration in Rodents (CPPSE03)
+    value: 657
+  - label: Effective Dose Measurement during EVA (9401704)
+    value: 750
+  - label: Effects of Circadian Rhythms on Decompression Outcome (NAG91040)
+    value: 1212
+  - label: Effects of Exposure to Heavy Particles (NAG91190)
+    value: 1923
+  - label: Effects of Gravity on Insect Circadian Rhythm (9401698)
+    value: 744
+  - label: Effects of Gravity on the Attachment of Tendon to Bone (9303021)
+    value: 675
+  - label: Effects of Microgravity on Aurelia Ephyra Behavior and Development (8913069)
+    value: 667
+  - label: Effects of Microgravity on Bone Cell Gene Expression (OSTEO) (9403056 1_2)
+    value: 737
+  - label: Effects of Microgravity on Bone Development (9303025)
+    value: 684
+  - label: Effects of Microgravity on Gene Expression in the Brain (9301118)
+    value: 720
+  - label: Effects of Microgravity on Growth Hormone Concentration and Distribution in Plants (GHCD-1)
+    value: 234
+  - label: Effects Of Microgravity On Postnatal Motor Development (9301150)
+    value: 725
+  - label: Effects of Microgravity on the Biomechanical and Bioenergetic Characteristics of Human Skeletal Muscle (E407)
+    value: 321
+  - label: Effects of Microgravity-Induced Weightlessness on Aurelia Ephyra Differentiation and Statolith Synthesis (DCL_SLS_1)
+    value: 17
+  - label: Effects of Resistance Training, Using Flywheel Technology, on Size and Function of Unloaded Skeletal Muscle (NAG91061)
+    value: 1228
+  - label: Effects of Simulated Microgravity on the Anesthetic Properties of Propofol (NNJ04HF74G)
+    value: 1233
+  - label: Effects of Skeletal Unloading and Vitamin E on Bone in Mature Rats (NAG91159)
+    value: 1227
+  - label: Effects of Space Travel on Mammalian Gravity Receptors (178238 1_2)
+    value: 15
+  - label: Effects of Spaceflight on Anterior Pituitary Receptors (SLS1 BSP21)
+    value: 36
+  - label: Effects of Spaceflight on Muscles and Nerves (9303019)
+    value: 670
+  - label: Effects of Spaceflight on the Development of the Circadian Timing System (9303024)
+    value: 686
+  - label: Effects of Stem Cell Morphology and Motility on Osteogenesis in Microgravity (NNX13AM06G)
+    value: 13470
+  - label: Effects of Weightlessness on Quail Eye Development (9306010 1_3)
+    value: 876
+  - label: Effects of Weightlessness on Quail Eye Development (9306010 2_3)
+    value: 877
+  - label: Effects of Weightlessness on Quail Eye Development (9306010 3_3)
+    value: 878
+  - label: Effects of Weightlessness on Vestibular Development (9303003)
+    value: 672
+  - label: Effects of Zero-Gravity Exposure on Biochemical and Metabolic Properties of Skeletal Muscle (178127 1_3)
+    value: 39
+  - label: Effects of Zero-Gravity Exposure on Biochemical and Metabolic Properties of Skeletal Muscle (178127 3_3)
+    value: 312
+  - label: Efficacy of Vitamin D Supplementation in an Antarctic Ground Analog of Space Flight (ROI_VITAMIN_D)
+    value: 1298
+  - label: Electromyographic Analysis of Skeletal Muscle (ASTP009)
+    value: 395
+  - label: Electron Microscopy, Light Microscopy, and Protease Activity of Rat Hindlimb Muscles (178303 1_2)
+    value: 16
+  - label: Electrophoresis Experiment (MA-014)
+    value: 403
+  - label: Electrophoresis Technology (MA-011)
+    value: 399
+  - label: Endocrine, Electrolyte, and Fluid Volume Changes Associated with Apollo Missions (AP008)
+    value: 377
+  - label: Energy and Metabolic Requirements for Extended Duration Space Flight (Energy Utilization) (DSO 612)
+    value: 611
+  - label: Engineering Test of Carry-on Incubator and Cell Attachment in Microgravity (DSO 432)
+    value: 560
+  - label: Ensemble Neural Coding of Place and Direction in Zero-G (9301100)
+    value: 719
+  - label: Environmental Biomedical Stress Data Center (EBSDC)
+    value: 836
+  - label: Environmental Monitoring Air Quality (LMLSTP4.1)
+    value: 936
+  - label: Environmental Radiation Measurements on Mir Station (9401620)
+    value: 762
+  - label: Epidemiologic Analyses of Risk Factors for Bone Loss and Recovery Related to Long Duration Space Flight (NNX08AQ20G)
+    value: 1535
+  - label: EVA Walkback Test (EWT)
+    value: 1795
+  - label: Evaluation of Host-Pathogen Interactions during Exposure to Microgravity Analogues (NNJ04HF75G)
+    value: 1248
+  - label: Evaluation of Intermittent Bright Light Exposure as a Space Flight Countermeasure (NAG53952)
+    value: 1217
+  - label: Evaluation of Samples Obtained from the Urine Monitoring System (DSO 323)
+    value: 533
+  - label: Evaluation of Skeletal Muscle Performance and Characteristics (4.1.1)
+    value: 343
+  - label: Evaluation of the Ergometer Vibration Isolation System (DTO 658)
+    value: 851
+  - label: Evaluation of the Kentavr as a Countermeasure to Orthostatic Intolerance (ROI_KENTAVR)
+    value: 1296
+  - label: Evoked Potentials (DSO 424)
+    value: 557
+  - label: Exercise Countermeasures Demonstration Projects During The Lunar-Mars Life Support Test Project Phases IIa and III (LMLSTP5.2)
+    value: 911
+  - label: Exercise Response (AP012)
+    value: 379
+  - label: Expression of Contractile Protein Isoforms in Microgravity (9306013 1_3)
+    value: 882
+  - label: Expression of Contractile Protein Isoforms in Microgravity (9306013 2_3)
+    value: 883
+  - label: Expression of Contractile Protein Isoforms in Microgravity (9306013 3_3)
+    value: 884
+  - label: Factors Modulating Radiation-Induced G2 Delays (NAG91023)
+    value: 1229
+  - label: Fecundity of Quail in Spacelab Microgravity (9306015 1_3)
+    value: 888
+  - label: Fecundity of Quail in Spacelab Microgravity (9306015 2_3)
+    value: 889
+  - label: Fecundity of Quail in Spacelab Microgravity (9306015 3_3)
+    value: 890
+  - label: Flight Crew Health Stabilization Program (ASTP005)
+    value: 405
+  - label: Fluid And Electrolyte Homeostasis (2.1.1)
+    value: 336
+  - label: Fluid Electrolyte Metabolism (PARE.04A)
+    value: 678
+  - label: Fluid Therapy System (FTS)
+    value: 450
+  - label: Fractional Gravity Studies of Sensory Mechanism in Root Phototropism - a Completion of TROPI-1 (TROPI-2) (9902079 2_2)
+    value: 1714
+  - label: Frames of Reference for Sensorimotor Transformations (9401701)
+    value: 749
+  - label: Gene Expression Profile Analysis as a Prognostic Indicator of Normal Tissue Response to Simulated Space Radiations (NAG91522)
+    value: 1270
+  - label: GeneLab Process Verification Test (KSC00XX03)
+    value: 13900
+  - label: Germ Cell Mutagenesis in Medaka Fish Following Exposure to Heavy, High Energy Cosmic Ray Nuclei (T5270W)
+    value: 1084
+  - label: Global Transcriptome Profiling to Identify Cellular Stress Mechanisms Responsible for Spaceflight-Induced Antibiotic Resistance (NNX14AT38G)
+    value: 13621
+  - label: Graded Exercise Test to Volitional Exertion (Bruce protocol) (BRUCE)
+    value: 1437
+  - label: Haughton Mars Immune Assessment (HMIA) (ROI_DEVON)
+    value: 1292
+  - label: Haughton Mars Walkback (HMP_Walkback)
+    value: 1803
+  - label: Hearing Loss Among LSAH Participants (LSAHNEWSV14_1_1)
+    value: 1523
+  - label: Hematological and Immunological Studies (ASTP008)
+    value: 392
+  - label: Hematology and Immunology Studies (AP007)
+    value: 368
+  - label: Histochemistry of Hypothalamus (SLS1 BSP17)
+    value: 33
+  - label: Histologic Examination of Lung Tissue (SLS1 BSP1)
+    value: 37
+  - label: Histological Effects of Microgravity on Rat Body Wall Musculature (9303017)
+    value: 687
+  - label: Human Cerebral Cortex Plasticity in Response to Long-term Bedrest as an Analog to Microgravity (NSBRI20010036)
+    value: 1286
+  - label: Human Lymphocyte Locomotion in Microgravity (DSO 322)
+    value: 532
+  - label: Hyperosmotic Fluid Countermeasure (DSO 479)
+    value: 590
+  - label: Immunological Assessment of Crewmembers (DSO 487)
+    value: 596
+  - label: In vivo Testing Confirms a Blunting of the Human Cell-Mediated Immune Mechanism During Space Flight (DSO 473)
+    value: 585
+  - label: Inflight Aerobic Exercise (DSO 476)
+    value: 201
+  - label: In-flight Assessment of Renal Stone Risk (DSO 610)
+    value: 610
+  - label: In-flight Evaluation of a Portable Clinical Blood Analyzer (DSO 492)
+    value: 600
+  - label: In-flight Holter Monitoring (DSO 463)
+    value: 577
+  - label: In-flight LBNP Test of Countermeasures and End-of-Mission Countermeasure Trial (DSO 623)
+    value: 622
+  - label: Inflight Lower Limb Volume Measurement (ASTP007)
+    value: 391
+  - label: In-flight Pharmacokinetics of Acetaminophen in Saliva (DSO 458)
+    value: 573
+  - label: In-flight Radiation Detection (ASTP001)
+    value: 394
+  - label: Inflight Radiation Dose Distribution (DSO 469)
+    value: 200
+  - label: Inflight Radiation Measurements (5.2.1)
+    value: 340
+  - label: Inflight Study of Cardiovascular Deconditioning (178066)
+    value: 2
+  - label: In-flight Urine Collection Absorber Evaluation (IUCAs) (DSO 328)
+    value: 534
+  - label: In-flight Use of Florinef to Improve Orthostatic Intolerance Postflight (DSO 621)
+    value: 1255
+  - label: Influence of Center of Gravity on Human Performance in Partial Gravity (EPSP_CG)
+    value: 1805
+  - label: Influence of Spaceflight on Bone Cell Cultures (9304021 1_2)
+    value: 660
+  - label: Influence of Weightlessness on Baroreflex Function (DSO 467)
+    value: 580
+  - label: Influence of Weightlessness Upon Human Autonomic Cardiovascular Control (178022)
+    value: 3
+  - label: Integrated plant experiments on Mir (Greenhouse I)
+    value: 689
+  - label: Integration of Neural Cardiovascular Control in Space (9301294)
+    value: 458
+  - label: Integrative Response of C. elegans to Environmental Stresses in Microgravity (NNX12AO60G)
+    value: 13460
+  - label: Inter Limb Resistance Device Evaluation (DTO 683)
+    value: 1873
+  - label: Interaction of the Space Shuttle Launch and Entry Suit and Sustained Weightlessness on Egress Locomotion (DSO 331)
+    value: 1796
+  - label: Intraocular Pressure (DSO 472)
+    value: 625
+  - label: Intraocular Pressure in the LSAH Population (LSAHNEWSV4_1_2)
+    value: 1052
+  - label: Investigation of Microgravity Effects on Physiology, Global Gene Expression, and Biofilm Phenotypes of the Caries-Causing Bacterium Streptococcus mutans (NNX13AM09G)
+    value: 13475
+  - label: Leg Plethysmography (DSO 446)
+    value: 567
+  - label: Leg Plethysmography (DSO 461)
+    value: 575
+  - label: Light Flash Observations (MA-106)
+    value: 398
+  - label: Lipid Peroxidation and Antioxidant Defense System (SLS1 BSP5)
+    value: 21
+  - label: Lymphocyte Proliferation in Weightlessness (178240)
+    value: 6
+  - label: Magnetic Resonance Imaging (DSO 628)
+    value: 815
+  - label: Magnetic Resonance Imaging (MRI) after Exposure to Microgravity (9401586)
+    value: 983
+  - label: Magnetic Resonance Imaging after Exposure to Microgravity (284054)
+    value: 318
+  - label: Measurement of Body Composition for Nutritional Assessment in Microgravity (NAG91039)
+    value: 1249
+  - label: Measurement of Formaldehyde Using Passive Dosimetry (DSO 488)
+    value: 597
+  - label: Mechanism of Formation of the Gastric Hypersecretory Syndrome of the Stomach<br> (SLS1 BSP6)
+    value: 22
+  - label: Mechanisms of Changes in the Exocrine Functions of the Pancreas (SLS1 BSP7)
+    value: 23
+  - label: Mechanisms of Microgravity Effect on Vascular Functions (NAG91149)
+    value: 1251
+  - label: Medical Microbiological Analysis of U.S. Crew Members (ASTP014)
+    value: 400
+  - label: Mental Workload and Performance Experiment (15-IML-1)
+    value: 455
+  - label: Metabolic and Structural Changes in Bone and Systems Regulating Bone Growth and Metabolism (SLS1 BSP3)
+    value: 19
+  - label: Metabolic Cost of Experimental Exercise (EPSP_Metabolic)
+    value: 1804
+  - label: Metabolic Response to Exercise (2.2.3)
+    value: 333
+  - label: Metabolism and Heat Dissipation During Apollo EVA Periods (AP013)
+    value: 378
+  - label: Microbial Analysis of International Space Station (ISS) Air, Surfaces and Water (ISS_Micro_Analysis)
+    value: 13823
+  - label: Microbial Exchange (AR-002)
+    value: 404
+  - label: Microbial Interaction in the Mir Space Station Environment (9401703)
+    value: 908
+  - label: Microbial Response to Space Environment (M191)
+    value: 373
+  - label: Microbial Screening (DSO 409)
+    value: 544
+  - label: Microbiological Evaluation of the Lunar-Mars Life Support Test Project Chambers and Crew (LMLSTP4.3)
+    value: 937
+  - label: Microbiological Investigations (AP002)
+    value: 372
+  - label: Microcirculatory Adjustments to Simulated Microgravity Exposure in Humans (NAG91033)
+    value: 1215
+  - label: Microgravity and Development of Vestibular Circuits (9301143)
+    value: 721
+  - label: Microgravity and Placental Development (9303012)
+    value: 677
+  - label: Microgravity Effects on Bone Cell Gene Expression (9307174)
+    value: 736
+  - label: Microgravity Effects on Bone Cell Gene Expression (9403056 2_2)
+    value: 738
+  - label: Microgravity Effects on the Function of Vascular Stem Cells (NNX13AM03G)
+    value: 13462
+  - label: Microgravity, Sleep/Wake Immune Functions (SWIF) in Humans (9401710)
+    value: 848
+  - label: Midodrine as a Countermeasure Against Postflight Orthostatic Hypotension (DSO 503S)
+    value: 1508
+  - label: Molecular and Cellular Analysis of Space Flown Myoblasts (9304018 1_2)
+    value: 659
+  - label: Molecular and Cellular Analysis of Space Flown Myoblasts (9304018 2_2)
+    value: 665
+  - label: Molecular Biology of Plant Development in the Space Flight Environment (CARA) (KSC00XX04)
+    value: 13957
+  - label: Monitoring of Sweat Calcium Using Skin Patches (NAG91151)
+    value: 1223
+  - label: Morphologic and Histochemical Studies of Bone Cells from SL-3 Rats (SL3 BSP9)
+    value: 247
+  - label: Morphology of Neurons of the Brain Cortex (SLS1 BSP18)
+    value: 34
+  - label: Motor Adaptation to Coriolis and Contact Forces (NAG1037)
+    value: 1082
+  - label: Multidisciplinary Studies of Neural Plasticity in Space (9301085)
+    value: 723
+  - label: Muscle Biopsy (DSO 475)
+    value: 587
+  - label: Muscle Size and Lipids (DSO 606)
+    value: 205
+  - label: Muscular Deconditioning and its Prevention in Space Flight (SkyMusc)
+    value: 866
+  - label: Neural Thyroid Interaction on Skeletal Isomyosin Expression in Zero-G (9301103)
+    value: 714
+  - label: Neuromuscular Development and Regulation of Myosin Expression (9303030)
+    value: 685
+  - label: Neuronal Development Under Conditions of Space Flight (9301123)
+    value: 718
+  - label: Neuronal Morphology (SLS1 BSP11)
+    value: 27
+  - label: Noninvasive Estimation of Central Venous Pressure During Space Flight (DSO 462)
+    value: 576
+  - label: Novel Double-Hit Mouse Model to Investigate Oxidative Damage from Radiation/ Hyperoxia Related to Space Exploration - Evaluation of Dietary Flaxseed as Countermeasure (NNX12AK19G)
+    value: 2097
+  - label: Nutritional Intake of LSAH Participants (LSAHNEWSV10_1)
+    value: 1054
+  - label: Nutritional Intervention to Improve Muscle Protein Metabolism during Stress (NAG91155)
+    value: 1220
+  - label: Nutritional Status Assessment during Phases IIa and III of the Lunar-Mars Life Support Test Project (LMLSTP5.1)
+    value: 939
+  - label: Nutritional Studies (AP010)
+    value: 371
+  - label: Operational Evaluation of In-suit Doppler (NEEMO-DOPPLER)
+    value: 1069
+  - label: Operational Monitoring of Blood Parameters for First Time Shuttle Flyers (LSAHNEWSV6_2)
+    value: 1055
+  - label: Operational Psychology Countermeasures During the Lunar-Mars Life Support Test Project (LMLSTP3.5)
+    value: 927
+  - label: Optimization of a Biomechanical Countermeasure for Disuse Osteoporosis (NAG53950)
+    value: 1252
+  - label: Orthostatic Function During Entry, Landing and Egress (DSO 603B)
+    value: 203
+  - label: Orthostatic Function During Entry, Landing, and Egress (DSO 603)
+    value: 841
+  - label: Osteoblast Adhesion and Phenotype in Microgravity (9304022 1_2)
+    value: 682
+  - label: Osteoblast Adhesion and Phenotype in Microgravity (9304022 2_2)
+    value: 728
+  - label: Otoconial Morphology in Space-Flown Rats (SL3 BSP19)
+    value: 257
+  - label: Otolith Tilt-Translation Reinterpretation (DSO 459)
+    value: 574
+  - label: Overweight and Obesity in the LSAH Population (LSAHNEWSV13_1_2)
+    value: 1519
+  - label: Particulate Containment Demonstration Test (PCDT) (PCDT)
+    value: 40
+  - label: Pharmacological Intervention To Prevent Disuse Osteopenia (NAG91150)
+    value: 1067
+  - label: Phenotypic and Functional Analysis of Peripheral Mononuclear Cells During Long Duration Space Flight (2.4.4)
+    value: 357
+  - label: Physical Activity Profiles of LSAH Participants (LSAHNEWSV12_2)
+    value: 1044
+  - label: Physical Fitness Evaluation Oxygen Uptake Measurement (PFEOUM)
+    value: 1401
+  - label: Physiologic Monitoring (NEEMO-PHYS)
+    value: 1101
+  - label: Physiological and Anatomical Rodent Experiment 1 (DC85LS27)
+    value: 646
+  - label: Physiological Effects of Iodinated Water on Thyroid Function (LMLSTP5.5)
+    value: 928
+  - label: Physiological Responses During Descent on the Space Shuttle (3.3.1)
+    value: 347
+  - label: Physiological Systems Experiment (PSE-1)
+    value: 270
+  - label: Physiological Variables of EVA Participants (LSAHNEWSV7_2_3)
+    value: 1060
+  - label: Physiological Variables of EVA Participants--An Update (LSAHNEWSV11_1)
+    value: 1098
+  - label: Postural Equilibrium Control During Landing/Egress (DSO 605)
+    value: 204
+  - label: Pre- and Postflight Cardiac Assessment (DSO 466)
+    value: 579
+  - label: Pre- and Postflight Echocardiography (DSO 465)
+    value: 1464
+  - label: Pre- and Postflight Measurement of Cardiorespiratory Responses to Submaximal Exercise (DSO 624)
+    value: 623
+  - label: Precise Assessment of Prevalence and Progression Rates of Lens Opacities in Astronauts as a Function of Radiation Exposure during Space Flight and Development of Improved Routine Clinical Assessment of Ocular Lens Status (NAG91491)
+    value: 1031
+  - label: Predicting Vulnerability to Performance Impairment from Sleep Loss (NAG91161)
+    value: 1218
+  - label: Prevalence of Hypertension in LSAH Participants (LSAHNEWSV9_1_1)
+    value: 1045
+  - label: Project Data in Support of SLS1 (SLS1 Proj)
+    value: 1323
+  - label: Project Mercury Ballistic and Orbital Chimpanzee Flights (CHIMP)
+    value: 907
+  - label: Promoting Sensorimotor Response Generalizability (98-E120)
+    value: 921
+  - label: Protein Metabolism During Long Term Space Flights (9401613)
+    value: 745
+  - label: Radiation Measurements in Shuttle Crew Compartment (DTO 684)
+    value: 1707
+  - label: Radiation Protection and Instrumentation (AP003)
+    value: 369
+  - label: Radiological Protection and Medical Dosimetry for the Skylab Crew (SKYRAD)
+    value: 840
+  - label: Reactivation of Latent Viruses During the Lunar-Mars Life Support Test Project (LMLSTP5.3)
+    value: 940
+  - label: Recovery of Neurological Function in Long Duration Crewmembers (MSD075)
+    value: 2122
+  - label: Red Blood Cell Mass and Survival (2.2.5)
+    value: 335
+  - label: Regulation of Blood Volume During Spaceflight (178141 1_2)
+    value: 13
+  - label: Regulation of Blood Volume During Spaceflight (178141 2_2)
+    value: 277
+  - label: Regulation of Erythropoiesis During Spaceflight (178012 1_2)
+    value: 11
+  - label: Relationship of Long-Term Electromyographic Activity and Hormonal Function to Muscle Atrophy and Performance (284036)
+    value: 319
+  - label: Renal Stone Risk Assessment During Long Duration Space Flight (2.1.3)
+    value: 332
+  - label: Reported Levels of Physical Activity by LSAH Participants (LSAHNEWSV9_2_1)
+    value: 1056
+  - label: Resistance Exercise as a Countermeasure to Disuse-induced Bone Loss (ECP-EB-1)
+    value: 1344
+  - label: Results of Pulmonary Function Tests (ASTP012)
+    value: 393
+  - label: Retinal Photography (DSO 474)
+    value: 586
+  - label: Risk of Cancer Mortality Among LSAH Participants (LSAHNEWSV6_1)
+    value: 951
+  - label: Rodent Dam/Neonate Animal Enclosure Module Nursing Facility Development Experiment (E122A)
+    value: 739
+  - label: Rodent Research 1 (ARC00XX146)
+    value: 13380
+  - label: Rodent Research 2 (RR2) (ARC00XX197)
+    value: 13960
+  - label: Rodent Research 3 (RR3) (ARC00XX198)
+    value: 13961
+  - label: Rodent Research 4 (RR4) (ARC00XX199)
+    value: 13962
+  - label: Rodent Research 5 (RR5) (ARC00XX203)
+    value: 13963
+  - label: Rodent Research 9 (RR9) (ARC00XX200)
+    value: 13964
+  - label: Skeletal Development (PARE.04B)
+    value: 680
+  - label: Skeletal Development in Embryonic Quail (9802307)
+    value: 935
+  - label: Skeletal Development in Long Duration Spaceflight (9306003 3_3)
+    value: 872
+  - label: Skeletal Myosin Isoenzymes in Rats Exposed to Zero-Gravity (178247)
+    value: 12
+  - label: Skeletal Response (AP011)
+    value: 381
+  - label: Skylab Crew Health (skych)
+    value: 837
+  - label: Skylab Environmental and Crew Microbiology Studies (SKYMIC)
+    value: 859
+  - label: Skylab Oral Health Studies (SkyOral)
+    value: 923
+  - label: Sleep and Vestibular Adaptation (9401663)
+    value: 846
+  - label: Sleeping Short (NAG91036)
+    value: 1225
+  - label: Small Mass Measuring Instrument (SMMI) (SMMI)
+    value: 41
+  - label: Smoking Prevalence of LSAH Participants (LSAHNEWSV10_2_1)
+    value: 1049
+  - label: Sociokinetic Analysis as a Tool for Optimization of Environmental Design (LMLSTP3.7)
+    value: 929
+  - label: Spaceflight Effects on Mammalian Development (9303031 1_2)
+    value: 669
+  - label: Spaceflight Effects on Mammalian Development (9303031 2_2)
+    value: 688
+  - label: Spectral imaging within the EDEN ISS Project - Antarctic planetary and exploration analog for In Situ Resource Utilization and Advanced Life Support (KSC00XX01)
+    value: 13875
+  - label: Spinal Cord and Dorsal Root Ganglion Morphology and Histochemistry (SLS1 BSP16)
+    value: 32
+  - label: Stability and Precision of Human Performance During a Spaceflight Mission (8913010)
+    value: 844
+  - label: Stability of Nutrition Compounds (SMO Stability)
+    value: 1383
+  - label: Stability of Pharmacotherapeutic Compounds (SMO_Stability_Pharm)
+    value: 1791
+  - label: Staged Decompression with an Argon-Oxygen (ARGOX) Breathing Mixture to 3.5 PSIA (T982W)
+    value: 1070
+  - label: Studies of Mechanisms Underlying Orthostatic Intolerance using Ambulatory Monitoring, Baroreflex Testing, and the Valsalva Maneuver (3.1.2)
+    value: 345
+  - label: Studies of Orthostatic Intolerance with the Use of LBNP (3.1.1)
+    value: 344
+  - label: Study of the Digestive Transportation Function of the Small Intestine (SLS1 BSP8)
+    value: 24
+  - label: Surveillance of Health Risks Among Older Adults (LSAHNEWSV11_2_1)
+    value: 1330
+  - label: Synaptogenesis in Microgravity (9301042 1_2)
+    value: 945
+  - label: Synaptogenesis in Microgravity (9301042 2_2)
+    value: 1071
+  - label: Synergistic Effect of Zero-g and Radiation on White Blood Cells (S004)
+    value: 388
+  - label: Test of Interactions Between Midodrine as a Countermeasure Against Postflight Orthostatic Hypotension and Promethazine as an Anti-emetic (ROI_MIDO_PMZ)
+    value: 1297
+  - label: The Effect of Increasing Mass upon Locomotion (ROI_TMLS)
+    value: 1303
+  - label: The Effect of Microgravity on Mycobacteria (NNX13AM02G)
+    value: 13484
+  - label: The Effect of Spaceflight on Cartilage Cell Cycling and Differentiation (9601378)
+    value: 956
+  - label: The Effects of EVA and Long-Term Exposure to Microgravity on Pulmonary Function (96-E044)
+    value: 903
+  - label: The Effects of Hypogravity on Osteoblast Differentiation (9304011 1_2)
+    value: 658
+  - label: The Effects of Hypogravity on Osteoblast Differentiation (9304011 2_2)
+    value: 664
+  - label: The Effects of Long-Duration Space Flight on Eye, Head, and Trunk Coordination During Locomotion (9307191)
+    value: 747
+  - label: The Effects of Micro-Gravity on Bone Cell Cultures (9304021 2_2)
+    value: 666
+  - label: The Effects of Micro-Gravity on In Vitro Calcification (9304016 1_3)
+    value: 731
+  - label: The Effects of Micro-Gravity on In Vitro Calcification (9304016 2_3)
+    value: 733
+  - label: The Effects of Micro-Gravity on In Vitro Calcification (9304016 3_3)
+    value: 734
+  - label: The Effects of Microgravity on Neuromuscular Development (9301122)
+    value: 722
+  - label: The Effects of Prolonged Space Flight on Head and Gaze Stability During Locomotion (DSO 614)
+    value: 857
+  - label: The Effects of Weightlessness on Human Single Muscle Fiber Function (8913020)
+    value: 323
+  - label: The Evaluation of Concentric and Eccentric Skeletal Muscle Contractions Following Space Flight (DSO 477)
+    value: 588
+  - label: The Influence of Environmental Stress on Cell-Mediated Immune Function (LMLSTP5.4)
+    value: 941
+  - label: The Relationship of Space Adaptation Syndrome to Middle Cerebral Artery Blood Velocity Measured in Flight by Doppler (DSO 470)
+    value: 583
+  - label: The Response of Single Human Cells to Zero Gravity (S015)
+    value: 424
+  - label: Thyroid Disease Investigated Among LSAH Population (LSAHNEWSV7_1_1)
+    value: 1047
+  - label: Time and Motion Study (M151)
+    value: 412
+  - label: Tissue Fluid-Electrolyte Composition (SLS1 BSP15)
+    value: 31
+  - label: Toxicological Aspects of the Skylab Program (SKYTOX)
+    value: 842
+  - label: Toxicological Assessment of Air Contaminants (5.3a)
+    value: 354
+  - label: Toxicological Assessment of Airborne Volatile Organic Compounds (MSD007)
+    value: 850
+  - label: Transgenic Plant Biomonitors of Space Flight Exposure (9802299)
+    value: 1308
+  - label: Ultrastructure of the Brain Cortex (SLS1 BSP12)
+    value: 28
+  - label: Validation of Predictive Tests and Countermeasures for Space Motion Sickness (DSO 401)
+    value: 536
+  - label: Veggie Vegetable Production System Proof of Concept Flight (KSC00XX02)
+    value: 13890
+  - label: Vestibular Influences on Autonomic Cardiovascular Control (NAG56276)
+    value: 1221
+  - label: Vestibular Modulation of Autonomic Responses to Orthostasis (NAG91262)
+    value: 1269
+  - label: Viral Reactivation (2.4.3)
+    value: 355
+  - label: Vision and Aging in the Astronaut Population (LSAHNEWSV11_2_2)
+    value: 1331
+  - label: Visual Acuity Changes in Shuttle Astronauts (LSAHNEWSV8_1)
+    value: 942
+  - label: Visual Acuity in the Space Environment (S008)
+    value: 367
+  - label: Visual Anatomic Guidance to Facilitate Ultrasound Image Acquisition (NAG91258)
+    value: 1226
+  - label: Visual Light Flash Phenomena (M106)
+    value: 415
+  - label: Visual-Vestibular Integration (DSO 604)
+    value: 1525
+  - label: Vitamin D Endocrine System After Short-term Spaceflight (9302006)
+    value: 1005
+  - label: Vitamin D Metabolites and Bone Demineralization (LS-1)
+    value: 447
+  - label: Water Chemistry Monitoring (LMLSTP4.2)
+    value: 930
+  - label: Water Microbiological Monitoring (WMM)
+    value: 753
+  - label: Water Quality Monitor (WQM)
+    value: 758
+  - label: Web Formation (ED52)
+    value: 428
+  - label: Women Astronaut Health (LSAHNEWSV7_1_2)
+    value: 1048
+
+## "research_area"
+- field_name: mission_id
+  label: Mission
+  preset: select
+  required: False
+  choices:
+  - label: Apollo 10
+    value: 32
+  - label: Apollo 11
+    value: 33
+  - label: Apollo 12
+    value: 34
+  - label: Apollo 13
+    value: 35
+  - label: Apollo 14
+    value: 36
+  - label: Apollo 15
+    value: 37
+  - label: Apollo 16
+    value: 38
+  - label: Apollo 17
+    value: 39
+  - label: Apollo 7
+    value: 29
+  - label: Apollo 8
+    value: 30
+  - label: Apollo 9
+    value: 31
+  - label: ASTP
+    value: 43
+  - label: BRC
+    value: 215
+  - label: Campaign 1
+    value: 217
+  - label: Campaign 17
+    value: 324
+  - label: Campaign 3
+    value: 236
+  - label: Campaign 5
+    value: 247
+  - label: ECP
+    value: 250
+  - label: EPSP
+    value: 332
+  - label: Expedition 13
+    value: 224
+  - label: Expedition 14
+    value: 225
+  - label: Expedition 2
+    value: 185
+  - label: Expedition 22
+    value: 271
+  - label: Expedition 3
+    value: 187
+  - label: Expedition 5
+    value: 189
+  - label: Expedition 8
+    value: 193
+  - label: Gemini 10
+    value: 26
+  - label: Gemini 11
+    value: 27
+  - label: Gemini 12
+    value: 28
+  - label: Gemini 3
+    value: 19
+  - label: Gemini 4
+    value: 20
+  - label: Gemini 5
+    value: 21
+  - label: Gemini 6
+    value: 23
+  - label: Gemini 7
+    value: 22
+  - label: Gemini 9
+    value: 25
+  - label: Ground
+    value: 296
+  - label: LAFS
+    value: 264
+  - label: LMLSTP
+    value: 206
+  - label: LSAH
+    value: 218
+  - label: Mercury 2
+    value: 164
+  - label: Mercury 5
+    value: 165
+  - label: Mir 17
+    value: 167
+  - label: Mir 18
+    value: 90
+  - label: Mir 19
+    value: 95
+  - label: Mir 20
+    value: 168
+  - label: Mir 21
+    value: 177
+  - label: Mir 22
+    value: 178
+  - label: Mir 23
+    value: 179
+  - label: Mir 24
+    value: 180
+  - label: Mir 25
+    value: 181
+  - label: NASA 2
+    value: 105
+  - label: NASA 3
+    value: 106
+  - label: NASA 4
+    value: 107
+  - label: NASA 5
+    value: 108
+  - label: NASA 6
+    value: 109
+  - label: NASA 7
+    value: 110
+  - label: NEEMO 1
+    value: 210
+  - label: NEEMO 5
+    value: 214
+  - label: Pilot
+    value: 219
+  - label: ROI
+    value: 237
+  - label: Skylab 2
+    value: 40
+  - label: Skylab 3
+    value: 41
+  - label: Skylab 4
+    value: 42
+  - label: SpaceX_3
+    value: 1372
+  - label: SpaceX_4
+    value: 351
+  - label: SpaceX_6
+    value: 1373
+  - label: SpaceX_9
+    value: 1392
+  - label: STS-1
+    value: 64
+  - label: STS-106
+    value: 161
+  - label: STS-108
+    value: 156
+  - label: STS-109
+    value: 207
+  - label: STS-121
+    value: 228
+  - label: STS-129
+    value: 297
+  - label: STS-2
+    value: 65
+  - label: STS-26
+    value: 78
+  - label: STS-27
+    value: 116
+  - label: STS-28
+    value: 136
+  - label: STS-29
+    value: 53
+  - label: STS-3
+    value: 50
+  - label: STS-30
+    value: 137
+  - label: STS-31
+    value: 118
+  - label: STS-32
+    value: 47
+  - label: STS-33
+    value: 119
+  - label: STS-34
+    value: 49
+  - label: STS-35
+    value: 79
+  - label: STS-36
+    value: 120
+  - label: STS-37
+    value: 121
+  - label: STS-39
+    value: 123
+  - label: STS-4
+    value: 66
+  - label: STS-40
+    value: 3
+  - label: STS-41
+    value: 51
+  - label: STS-41C
+    value: 128
+  - label: STS-41D
+    value: 129
+  - label: STS-41G
+    value: 130
+  - label: STS-42
+    value: 6
+  - label: STS-43
+    value: 127
+  - label: STS-44
+    value: 111
+  - label: STS-45
+    value: 112
+  - label: STS-46
+    value: 91
+  - label: STS-47
+    value: 4
+  - label: STS-48
+    value: 92
+  - label: STS-49
+    value: 131
+  - label: STS-5
+    value: 74
+  - label: STS-50
+    value: 132
+  - label: STS-51
+    value: 86
+  - label: STS-51B
+    value: 11
+  - label: STS-51C
+    value: 133
+  - label: STS-51D
+    value: 80
+  - label: STS-51F
+    value: 10
+  - label: STS-51I
+    value: 170
+  - label: STS-51J
+    value: 171
+  - label: STS-52
+    value: 113
+  - label: STS-53
+    value: 124
+  - label: STS-54
+    value: 83
+  - label: STS-55
+    value: 5
+  - label: STS-56
+    value: 125
+  - label: STS-57
+    value: 114
+  - label: STS-58
+    value: 7
+  - label: STS-59
+    value: 93
+  - label: STS-6
+    value: 75
+  - label: STS-60
+    value: 126
+  - label: STS-61
+    value: 68
+  - label: STS-61B
+    value: 138
+  - label: STS-61C
+    value: 77
+  - label: STS-62
+    value: 104
+  - label: STS-63
+    value: 84
+  - label: STS-64
+    value: 88
+  - label: STS-65
+    value: 8
+  - label: STS-66
+    value: 94
+  - label: STS-67
+    value: 69
+  - label: STS-68
+    value: 87
+  - label: STS-69
+    value: 82
+  - label: STS-7
+    value: 76
+  - label: STS-70
+    value: 85
+  - label: STS-71
+    value: 1
+  - label: STS-72
+    value: 81
+  - label: STS-73
+    value: 70
+  - label: STS-74
+    value: 2
+  - label: STS-75
+    value: 72
+  - label: STS-76
+    value: 46
+  - label: STS-77
+    value: 96
+  - label: STS-78
+    value: 45
+  - label: STS-8
+    value: 54
+  - label: STS-80
+    value: 103
+  - label: STS-81
+    value: 97
+  - label: STS-84
+    value: 98
+  - label: STS-9
+    value: 9
+  - label: STS-90
+    value: 44
+  - label: STS-93
+    value: 115
+  - label: STS-94
+    value: 73
+  - label: STS-95
+    value: 89
+
+## "research_area"
+- field_name: payload
+  label: Payload
+  preset: select
+  required: False
+  choices:
+  - label: Advanced Plant Experiments 01
+    value: APEX_01A
+  - label: Advanced Plant Experiments 01
+    value: APEX_01B
+  - label: Advanced Plant Experiments 01
+    value: APEX_01C
+  - label: Alternative Compression Garment (ACG) Study
+    value: ACG
+  - label: Apollo 10
+    value: Apollo 10
+  - label: Apollo 11
+    value: Apollo 11
+  - label: Apollo 12
+    value: Apollo 12
+  - label: Apollo 13
+    value: Apollo 13
+  - label: Apollo 14
+    value: Apollo 14
+  - label: Apollo 15
+    value: Apollo 15
+  - label: Apollo 16
+    value: Apollo 16
+  - label: Apollo 17
+    value: Apollo 17
+  - label: Apollo 7
+    value: Apollo 7
+  - label: Apollo 8
+    value: Apollo 8
+  - label: Apollo 9
+    value: Apollo 9
+  - label: Apollo-Soyuz Test Project
+    value: ASTP
+  - label: Biological Research in Canisters 19
+    value: BRIC_19
+  - label: Biological Research in Canisters 21
+    value: BRIC_21
+  - label: Biological Research in Canisters 23
+    value: BRIC_23
+  - label: Biomedical Research & Countermeasures Ground-based Studies
+    value: BRC
+  - label: Campaign 1 Flight Analog Bed Rest Study
+    value: Campaign 1
+  - label: Campaign 3 Flight Analog Bed Rest Study
+    value: Campaign 3
+  - label: Campaign 5 Flight Analog Bed Rest Study
+    value: Campaign 5
+  - label: Characterizing Arabidopsis Root Attractions
+    value: CARA
+  - label: Detailed Supplementary Objectives on STS-1
+    value: DSO1
+  - label: Detailed Supplementary Objectives on STS-109
+    value: DSO109
+  - label: Detailed Supplementary Objectives on STS-111
+    value: DSO111
+  - label: Detailed Supplementary Objectives on STS-113
+    value: DSO113
+  - label: Detailed Supplementary Objectives on STS-114
+    value: DSO114
+  - label: Detailed Supplementary Objectives on STS-2
+    value: DSO2
+  - label: Detailed Supplementary Objectives on STS-26
+    value: DSO26
+  - label: Detailed Supplementary Objectives on STS-27
+    value: DSO27
+  - label: Detailed Supplementary Objectives on STS-28
+    value: DSO28
+  - label: Detailed Supplementary Objectives on STS-29
+    value: DSO29
+  - label: Detailed Supplementary Objectives on STS-3
+    value: DSO3
+  - label: Detailed Supplementary Objectives on STS-30
+    value: DSO30
+  - label: Detailed Supplementary Objectives on STS-31
+    value: DSO31
+  - label: Detailed Supplementary Objectives on STS-32
+    value: DSO32
+  - label: Detailed Supplementary Objectives on STS-33
+    value: DSO33
+  - label: Detailed Supplementary Objectives on STS-34
+    value: DSO34
+  - label: Detailed Supplementary Objectives on STS-35
+    value: DSO35
+  - label: Detailed Supplementary Objectives on STS-36
+    value: DSO36
+  - label: Detailed Supplementary Objectives on STS-37
+    value: DSO37
+  - label: Detailed Supplementary Objectives on STS-39
+    value: DSO39
+  - label: Detailed Supplementary Objectives on STS-4
+    value: DSO4
+  - label: Detailed Supplementary Objectives on STS-40
+    value: DSO40
+  - label: Detailed Supplementary Objectives on STS-41
+    value: DSO41
+  - label: Detailed Supplementary Objectives on STS-41C
+    value: DSO41C
+  - label: Detailed Supplementary Objectives on STS-41D
+    value: DSO41D
+  - label: Detailed Supplementary Objectives on STS-41G
+    value: DSO41G
+  - label: Detailed Supplementary Objectives on STS-42
+    value: DSO42
+  - label: Detailed Supplementary Objectives on STS-43
+    value: DSO43
+  - label: Detailed Supplementary Objectives on STS-44
+    value: DSO44
+  - label: Detailed Supplementary Objectives on STS-45
+    value: DSO45
+  - label: Detailed Supplementary Objectives on STS-46
+    value: DSO46
+  - label: Detailed Supplementary Objectives on STS-47
+    value: DSO47
+  - label: Detailed Supplementary Objectives on STS-48
+    value: DSO48
+  - label: Detailed Supplementary Objectives on STS-49
+    value: DSO49
+  - label: Detailed Supplementary Objectives on STS-5
+    value: DSO5
+  - label: Detailed Supplementary Objectives on STS-50
+    value: DSO50
+  - label: Detailed Supplementary Objectives on STS-51
+    value: DSO51
+  - label: Detailed Supplementary Objectives on STS-51A
+    value: DSO51A
+  - label: Detailed Supplementary Objectives on STS-51B
+    value: DSO51B
+  - label: Detailed Supplementary Objectives on STS-51C
+    value: DSO51C
+  - label: Detailed Supplementary Objectives on STS-51D
+    value: DSO51D
+  - label: Detailed Supplementary Objectives on STS-51F
+    value: DSO51F
+  - label: Detailed Supplementary Objectives on STS-51G
+    value: DSO51G
+  - label: Detailed Supplementary Objectives on STS-51I
+    value: DSO51I
+  - label: Detailed Supplementary Objectives on STS-51J
+    value: DSO51J
+  - label: Detailed Supplementary Objectives on STS-52
+    value: DSO52
+  - label: Detailed Supplementary Objectives on STS-53
+    value: DSO53
+  - label: Detailed Supplementary Objectives on STS-54
+    value: DSO54
+  - label: Detailed Supplementary Objectives on STS-55
+    value: DSO55
+  - label: Detailed Supplementary Objectives on STS-56
+    value: DSO56
+  - label: Detailed Supplementary Objectives on STS-57
+    value: DSO57
+  - label: Detailed Supplementary Objectives on STS-58
+    value: DSO58
+  - label: Detailed Supplementary Objectives on STS-59
+    value: DSO59
+  - label: Detailed Supplementary Objectives on STS-6
+    value: DSO6
+  - label: Detailed Supplementary Objectives on STS-60
+    value: DSO60
+  - label: Detailed Supplementary Objectives on STS-61
+    value: DSO61
+  - label: Detailed Supplementary Objectives on STS-61B
+    value: DSO61B
+  - label: Detailed Supplementary Objectives on STS-61C
+    value: DSO61C
+  - label: Detailed Supplementary Objectives on STS-62
+    value: DSO62
+  - label: Detailed Supplementary Objectives on STS-63
+    value: DSO63
+  - label: Detailed Supplementary Objectives on STS-64
+    value: DSO64
+  - label: Detailed Supplementary Objectives on STS-65
+    value: DSO65
+  - label: Detailed Supplementary Objectives on STS-66
+    value: DSO66
+  - label: Detailed Supplementary Objectives on STS-67
+    value: DSO67
+  - label: Detailed Supplementary Objectives on STS-68
+    value: DSO68
+  - label: Detailed Supplementary Objectives on STS-69
+    value: DSO69
+  - label: Detailed Supplementary Objectives on STS-7
+    value: DSO7
+  - label: Detailed Supplementary Objectives on STS-70
+    value: DSO70
+  - label: Detailed Supplementary Objectives on STS-71
+    value: DSO71
+  - label: Detailed Supplementary Objectives on STS-72
+    value: DSO72
+  - label: Detailed Supplementary Objectives on STS-73
+    value: DSO73
+  - label: Detailed Supplementary Objectives on STS-74
+    value: DSO74
+  - label: Detailed Supplementary Objectives on STS-75
+    value: DSO75
+  - label: Detailed Supplementary Objectives on STS-76
+    value: DSO76
+  - label: Detailed Supplementary Objectives on STS-77
+    value: DSO77
+  - label: Detailed Supplementary Objectives on STS-78
+    value: DSO78
+  - label: Detailed Supplementary Objectives on STS-8
+    value: DSO8
+  - label: Detailed Supplementary Objectives on STS-82
+    value: DSO82
+  - label: Detailed Supplementary Objectives on STS-83
+    value: DSO83
+  - label: Detailed Supplementary Objectives on STS-84
+    value: DSO84
+  - label: Detailed Supplementary Objectives on STS-85
+    value: DSO85
+  - label: Detailed Supplementary Objectives on STS-87
+    value: DSO87
+  - label: Detailed Supplementary Objectives on STS-88
+    value: DSO88
+  - label: Detailed Supplementary Objectives on STS-9
+    value: DSO9
+  - label: Detailed Supplementary Objectives on STS-90
+    value: DSO90
+  - label: Detailed Supplementary Objectives on STS-93
+    value: DSO93
+  - label: Detailed Supplementary Objectives on STS-94
+    value: DSO94
+  - label: Detailed Supplementary Objectives on STS-95
+    value: DSO95
+  - label: Directed Ground Study
+    value: Ground
+  - label: EDEN ISS
+    value: EDEN_ISS
+  - label: Euromir 94
+    value: Euromir 94
+  - label: Euromir 95
+    value: Euromir 95
+  - label: EVA Physiology, Systems, and Performance
+    value: EPSP
+  - label: Fundamental Biology Investigations-1
+    value: Biorack 1
+  - label: Fundamental Biology Investigations-2
+    value: Biorack 2
+  - label: Fundamental Biology Investigations-3
+    value: Biorack 3
+  - label: Gemini 10
+    value: Gemini 10
+  - label: Gemini 11
+    value: Gemini 11
+  - label: Gemini 12
+    value: Gemini 12
+  - label: Gemini 3
+    value: Gemini 3
+  - label: Gemini 4
+    value: Gemini 4
+  - label: Gemini 5
+    value: Gemini 5
+  - label: Gemini 6
+    value: Gemini 6
+  - label: Gemini 7
+    value: Gemini 7
+  - label: Gemini 8
+    value: Gemini 8
+  - label: Gemini 9
+    value: Gemini 9
+  - label: Growth Hormone and Concentration Distribution
+    value: GHCD
+  - label: Human Research Facility on Expedition 10
+    value: HRF10
+  - label: Human Research Facility on Expedition 11
+    value: HRF11
+  - label: Human Research Facility on Expedition 12
+    value: HRF12
+  - label: Human Research Facility on Expedition 13
+    value: HRF13
+  - label: Human Research Facility on Expedition 14
+    value: HRF14
+  - label: Human Research Facility on Expedition 15
+    value: HRF15
+  - label: Human Research Facility on Expedition 16
+    value: HRF16
+  - label: Human Research Facility on Expedition 17
+    value: HRF17
+  - label: Human Research Facility on Expedition 18
+    value: HRF18
+  - label: Human Research Facility on Expedition 19
+    value: HRF19
+  - label: Human Research Facility on Expedition 2
+    value: HRF2
+  - label: Human Research Facility on Expedition 20
+    value: HRF20
+  - label: Human Research Facility on Expedition 21
+    value: HRF21
+  - label: Human Research Facility on Expedition 22
+    value: HRF22
+  - label: Human Research Facility on Expedition 23
+    value: HRF23
+  - label: Human Research Facility on Expedition 24
+    value: HRF24
+  - label: Human Research Facility on Expedition 25
+    value: HRF25
+  - label: Human Research Facility on Expedition 26
+    value: HRF26
+  - label: Human Research Facility on Expedition 27
+    value: HRF27
+  - label: Human Research Facility on Expedition 28
+    value: HRF28
+  - label: Human Research Facility on Expedition 29
+    value: HRF29
+  - label: Human Research Facility on Expedition 3
+    value: HRF3
+  - label: Human Research Facility on Expedition 30
+    value: HRF30
+  - label: Human Research Facility on Expedition 31
+    value: HRF31
+  - label: Human Research Facility on Expedition 32
+    value: HRF32
+  - label: Human Research Facility on Expedition 33
+    value: HRF33
+  - label: Human Research Facility on Expedition 34
+    value: HRF34
+  - label: Human Research Facility on Expedition 35
+    value: HRF35
+  - label: Human Research Facility on Expedition 36
+    value: HRF36
+  - label: Human Research Facility on Expedition 37
+    value: HRF37
+  - label: Human Research Facility on Expedition 38
+    value: HRF38
+  - label: Human Research Facility on Expedition 39
+    value: HRF39
+  - label: Human Research Facility on Expedition 4
+    value: HRF4
+  - label: Human Research Facility on Expedition 40
+    value: HRF40
+  - label: Human Research Facility on Expedition 41
+    value: HRF41
+  - label: Human Research Facility on Expedition 42
+    value: HRF42
+  - label: Human Research Facility on Expedition 43
+    value: HRF43
+  - label: Human Research Facility on Expedition 45
+    value: HRF45
+  - label: Human Research Facility on Expedition 5
+    value: HRF5
+  - label: Human Research Facility on Expedition 6
+    value: HRF6
+  - label: Human Research Facility on Expedition 7
+    value: HRF7
+  - label: Human Research Facility on Expedition 8
+    value: HRF8
+  - label: Human Research Facility on Expedition 9
+    value: HRF9
+  - label: Immune Response Experiment-1
+    value: Immune.1
+  - label: Immune Response Experiment-2
+    value: Immune.2
+  - label: Immune Response Experiment-3
+    value: Immune.3
+  - label: International Microgravity Laboratory 1
+    value: IML-1
+  - label: International Microgravity Laboratory 2
+    value: IML-2
+  - label: International Space Station (ISS) Assembly Flight UF-1
+    value: UF-1
+  - label: Life and Microgravity Spacelab
+    value: LMS
+  - label: Longitudinal Study of Astronaut Health
+    value: LSAH
+  - label: Lunar Analog Feasibility Study
+    value: LAFS
+  - label: Lunar Mars Life Support Test Project
+    value: LMLSTP
+  - label: Mir 17
+    value: Mir 17
+  - label: Mir 18
+    value: Mir 18
+  - label: Mir 19
+    value: Mir 19
+  - label: Mir 20
+    value: Mir 20
+  - label: Mir 21
+    value: Mir 21
+  - label: Mir 22
+    value: Mir 22
+  - label: Mir 23
+    value: Mir 23
+  - label: Mir 24
+    value: Mir 24
+  - label: Mir 25
+    value: Mir 25
+  - label: NASA Extreme Environment Mission Operations 1
+    value: NEEMO 1
+  - label: NASA Extreme Environment Mission Operations 2
+    value: NEEMO 2
+  - label: NASA Extreme Environment Mission Operations 3
+    value: NEEMO 3
+  - label: NASA Extreme Environment Mission Operations 4
+    value: NEEMO 4
+  - label: NASA Extreme Environment Mission Operations 5
+    value: NEEMO 5
+  - label: NASA-Mir Docking Mission 8
+    value: STS-89
+  - label: NASA-Mir Increment 2
+    value: NASA 2
+  - label: NASA-Mir Increment 3
+    value: NASA 3
+  - label: NASA-Mir Increment 4
+    value: NASA 4
+  - label: NASA-Mir Increment 5
+    value: NASA 5
+  - label: NASA-Mir Increment 6
+    value: NASA 6
+  - label: NASA-Mir Increment 7
+    value: NASA 7
+  - label: National Institutes of Health Cell Culture Module
+    value: CCM.08
+  - label: National Institutes of Health Rodents Experiment-1
+    value: NIH.R1
+  - label: National Institutes of Health Rodents Experiment-2
+    value: NIH.R2
+  - label: National Institutes of Health Rodents Experiment-3
+    value: NIH.R3
+  - label: National Institutes of Health Rodents Experiment-4
+    value: NIH.R4
+  - label: National Institutes of Health-B1
+    value: NIH.B1a
+  - label: National Institutes of Health-B1
+    value: NIH.B1b
+  - label: National Institutes of Health-Cells 1
+    value: NIH.C1
+  - label: National Institutes of Health-Cells 2
+    value: NIH.C2
+  - label: National Institutes of Health-Cells 3
+    value: NIH.C3
+  - label: National Institutes of Health-Cells 4
+    value: NIH.C4
+  - label: National Institutes of Health-Cells 5
+    value: NIH.C5
+  - label: National Institutes of Health-Cells 6
+    value: NIH.C6
+  - label: National Institutes of Health-Cells 7
+    value: NIH.C7
+  - label: Neurolab
+    value: Neurolab
+  - label: Phototropism_2
+    value: TROPI_2
+  - label: Physiological and Anatomical Rodent Experiment-1
+    value: PARE.01
+  - label: Physiological and Anatomical Rodent Experiment-3
+    value: PARE.03
+  - label: Physiological Systems Experiment-03
+    value: PSE.03
+  - label: Physiological Systems Experiment-1
+    value: PSE.01
+  - label: Pilot Study
+    value: Pilot
+  - label: Rapid Operational Investigations
+    value: ROI
+  - label: Rodent Research 1
+    value: RR1
+  - label: Rodent Research 2
+    value: RR2C
+  - label: Rodent Research 3
+    value: RR3
+  - label: Rodent Research 4
+    value: RR4
+  - label: Rodent Research 5
+    value: RR5
+  - label: Rodent Research 9
+    value: RR9
+  - label: Skylab 2
+    value: Skylab 2
+  - label: Skylab 3
+    value: Skylab 3
+  - label: Skylab 4
+    value: Skylab 4
+  - label: Spacelab 2
+    value: SL-2
+  - label: Spacelab 3
+    value: SL-3
+  - label: Spacelab Life Sciences 1
+    value: SLS-1
+  - label: Spacelab Life Sciences 2
+    value: SLS-2
+  - label: Spacelab-J
+    value: SL-J
+  - label: Spacelab-Mir
+    value: SL-M
+  - label: SporeSat
+    value: SporeSat
+  - label: VEGGIE Hardware Validation Test
+    value: VEG_01
+
+## "hardware"
+- field_name: hardware
+  label: Hardware Name
+  preset: select
+  required: False
+  choices:
+  - label: 4-Channel Ambient Temperature Recorder
+    value: 162
+  - label: Accelerometer Recording Unit (ARU)
+    value: 79
+  - label: Accelerometers and Amplifier System
+    value: 835
+  - label: Acetylene Rebreathing Cardiac Output System
+    value: 101
+  - label: Actillume
+    value: 173
+  - label: Activation Foils
+    value: 1274
+  - label: Active Dosimetry System
+    value: 1023
+  - label: Actiwatch
+    value: 1136
+  - label: Advanced Biological Research System (ABRS)
+    value: 1398
+  - label: Advanced Crew Escape Suit (ACES)
+    value: 1323
+  - label: Air Revitalization System (ARS)
+    value: 1099
+  - label: Air Revitalization System (ARS) Four-bed Molecular Sieve (4BMS)
+    value: 1100
+  - label: Air Revitalization System (ARS) Lithium Hydroxide Assembly for Backup Carbon Dioxide Removal
+    value: 1104
+  - label: Air Revitalization System (ARS) Trace Contaminant Control System (TCCS)
+    value: 1103
+  - label: Air Revitalization System (ARS) Saboteur Carbon Dioxide Reduction System (CRS)
+    value: 1101
+  - label: Air Revitalization System (ARS) Solid Polymer Electrolyte Oxygen Generation Subsystem (OGS)
+    value: 1102
+  - label: Airwalk Body-Weight Suspension System
+    value: 1195
+  - label: Aluminum Alloy Wedge
+    value: 777
+  - label: Ambient Temperature Recorder (ATR-4)
+    value: 848
+  - label: American Echocardiograph Research Imaging System (AERIS)
+    value: 657
+  - label: Analog Data Collection System
+    value: 805
+  - label: Analog Data Recorder (RACAL)
+    value: 91
+  - label: Animal Enclosure Module (AEM)
+    value: 133
+  - label: Anthropometer
+    value: 927
+  - label: Antihypotensive Garment
+    value: 768
+  - label: Apollo Light Flash Moving Emulsion Detector (ALFMED)
+    value: 776
+  - label: Apollo Lower Body Negative Pressure (LBNP) Device
+    value: 762
+  - label: Area Passive Dosimeter (APD)
+    value: 938
+  - label: Arm Cycle Ergometer
+    value: 1163
+  - label: ASTP Passive Personal Dosimeter
+    value: 943
+  - label: Atmospheric Analyzer
+    value: 1084
+  - label: Atmospheric Condensate Sampler
+    value: 1005
+  - label: Audio/Video Transmission and Recording Equipment
+    value: 1132
+  - label: Audiometer
+    value: 1121
+  - label: Automated Blood Pressure (ABP)/Finapres
+    value: 803
+  - label: Automated Blood Pressure (ABP)/Portapres
+    value: 1245
+  - label: Automatic Blood Pressure Monitoring (ABPM) System
+    value: 658
+  - label: Automatic Video Goniometer (AVG)
+    value: 1335
+  - label: Avian Development Facility (ADF)
+    value: 1001
+  - label: Bag Dryer Assembly
+    value: 107
+  - label: Bag-in-Box (BIB) Assembly
+    value: 84
+  - label: Bar Code Reader (BCR)
+    value: 164
+  - label: Baroreflex Measurement System
+    value: 74
+  - label: Beetle Kit
+    value: 896
+  - label: Begovaya Dorozhka BD-1 Treadmill
+    value: 1181
+  - label: Belt Pack Amplification System (BPAS) Vest Assembly
+    value: 754
+  - label: Bicycle Ergometer
+    value: 71
+  - label: Bioelectrical Impedance Spectroscopy (BIS) Machine
+    value: 1156
+  - label: Bioinstrumentation System
+    value: 642
+  - label: Biological Research In Canisters (BRIC-PDFU)
+    value: 1396
+  - label: Biological Sample Holding System (BSHS)
+    value: 599
+  - label: Biomedical Instrumentation Port (BIP) - Launch
+    value: 104
+  - label: Biomedical Instrumentation Port (BIP) - Reentry
+    value: 103
+  - label: Biorack
+    value: 240
+  - label: Biotechnology Specimen Temperature Controller (BSTC)
+    value: 1249
+  - label: Blood Collection Belt Assembly
+    value: 1008
+  - label: Blood Holding Kit (Freezer)
+    value: 59
+  - label: Blood Holding Kit (Refrigerator)
+    value: 60
+  - label: Blood Pressure Monitor, Continuous
+    value: 96
+  - label: Blood Pressure Monitor, Intermittent
+    value: 97
+  - label: Blood Pressure-Heart Rate Recorder
+    value: 1258
+  - label: Body Mass Measurement Device (BMMD)
+    value: 61
+  - label: Bone Densitometer Assembly
+    value: 747
+  - label: Bonner Spheres
+    value: 1273
+  - label: Busy Board
+    value: 1324
+  - label: Camcorder
+    value: 115
+  - label: Camera and Camera Systems
+    value: 1257
+  - label: Capsicum (Pepper Plant) Experiment Hardware
+    value: 20
+  - label: Carbon Monoxide Monitor
+    value: 1083
+  - label: Cardiopulmonary Control Unit (CCU)
+    value: 113
+  - label: Cardiopulmonary Rebreathing Unit (CRU)
+    value: 82
+  - label: Cardiovascular / Cardiopulmonary Interface Panel (CV/CP)
+    value: 92
+  - label: Cardiovascular Experiment Hardware
+    value: 37
+  - label: Cardiovascular Monitoring Prep Kit
+    value: 659
+  - label: Cassette Data Tape Recorder (CDTR)
+    value: 80
+  - label: Cell Culture Module (CCM)
+    value: 997
+  - label: Charged Particle Directional Spectrometer (CPDS)
+    value: 945
+  - label: Chibis Lower Body Negative Pressure (LBNP) Device
+    value: 736
+  - label: Chimpanzee Blood Pressure Sensor
+    value: 1030
+  - label: Chimpanzee Electrocardiogram Leads
+    value: 1026
+  - label: Chimpanzee Rectal Thermistor
+    value: 1028
+  - label: Chimpanzee Respiration Sensor
+    value: 1027
+  - label: Circadian Rhythm Experiment Hardware
+    value: 42
+  - label: Closed Equilibrated Biological Aquatic System (CEBAS)
+    value: 907
+  - label: Cognilab
+    value: 1167
+  - label: Collapsible Lower Body Negative Pressure (LBNP) System
+    value: 738
+  - label: Combustion Products Analyzer (CPA)
+    value: 722
+  - label: Commercial Ultrasound Machine and Magnetic Field Tracking System
+    value: 1168
+  - label: Computerized Dynamic Posturography System
+    value: 1235
+  - label: Computerized Exercise System (CES)
+    value: 1081
+  - label: Continuous Blood Pressure Device (CBPD)
+    value: 664
+  - label: COSMED K4b2
+    value: 1329
+  - label: Cosmic Particle Detector
+    value: 708
+  - label: Cosmos Centrifuge
+    value: 49
+  - label: Cosmos Fruit Fly Container
+    value: 50
+  - label: Cosmos Fundulus Chambers
+    value: 51
+  - label: Cosmos Primate-BIOS
+    value: 52
+  - label: Cosmos Rodent Cages
+    value: 53
+  - label: Cosmos Rodent-BIOS
+    value: 54
+  - label: CR-39 Plastic Nuclear Track Detector (PNTD)
+    value: 939
+  - label: Crew Microbiology Kit (CMK)
+    value: 671
+  - label: Crew Passive Dosimeter (CPD)
+    value: 940
+  - label: Crew Transport Vehicle
+    value: 873
+  - label: Cryogenic Freezer
+    value: 627
+  - label: Cybex Isokinetic Dynamometer
+    value: 1019
+  - label: Cycle Ergometer
+    value: 172
+  - label: Data Acquisition Camera (DAC)
+    value: 793
+  - label: Data Acquisition System (DAS)
+    value: 721
+  - label: Data Signal Collection and Analysis System
+    value: 759
+  - label: Dietary and Sample Logbooks
+    value: 970
+  - label: Disposable Mouthpiece Kit
+    value: 969
+  - label: Donning Stand
+    value: 1327
+  - label: Doppler Ultrasound (Echocardiography)
+    value: 852
+  - label: DOSMAP Dosimetry Package
+    value: 948
+  - label: Drink Container
+    value: 204
+  - label: Drosophila (Fruit Fly) Experiment Package
+    value: 21
+  - label: Drug Administration Kit
+    value: 720
+  - label: Dual Energy X-ray Absorptiometry (DXA, previously DEXA)
+    value: 168
+  - label: Dynamic Posturography System
+    value: 868
+  - label: ECDS/Microcomputer System (EMS)
+    value: 75
+  - label: Echocardiograph
+    value: 72
+  - label: Effects Of Gravity On Postnatal Motor Development Experiment Hardware
+    value: 998
+  - label: Electrocardiograph (ECG)
+    value: 694
+  - label: Electrocardiograph (ECG) Kit
+    value: 962
+  - label: Electrocardiograph (ECG) Simulator
+    value: 1150
+  - label: Electrode Impedance Meter (EIM)
+    value: 169
+  - label: Electromyograph (EMG)
+    value: 117
+  - label: Electron-Proton Spectrometer
+    value: 1120
+  - label: Electronics Control Assembly (ECA)
+    value: 94
+  - label: Electrooculograph (EOG)
+    value: 595
+  - label: Electrophoresis Column
+    value: 622
+  - label: Electrophoresis Flight Unit
+    value: 619
+  - label: Electrophoresis Unit
+    value: 628
+  - label: Enhanced Total Hydrocarbon Analyzer (ETHA)
+    value: 1348
+  - label: Environmental Chamber System
+    value: 877
+  - label: Ergometer Vibration Isolation System (EVIS)
+    value: 726
+  - label: Ethylene Glycol Detector Tube
+    value: 933
+  - label: European Modular Cultivation System (EMCS)
+    value: 1057
+  - label: Exercise ECG System
+    value: 1280
+  - label: Experiments with no Hardware
+    value: 1
+  - label: Extended Data Tape Recorder (EDTR)
+    value: 850
+  - label: External Dosimeter Array (EDA) Plastic Nuclear Track Detector (PNTD) Stack Holder
+    value: 1002
+  - label: External Dosimeter Array (EDA) Thermoluminescent Detector (TLD) Stack Holder
+    value: 1003
+  - label: Fleisch Pneumotachograph Flowmeter
+    value: 956
+  - label: Flight Couch
+    value: 1031
+  - label: Fluid Therapy System (FTS)
+    value: 1032
+  - label: Fluorescent Lamp
+    value: 1247
+  - label: Force Plates
+    value: 1320
+  - label: Formaldehyde Active Sampler (FAS) Cartridge
+    value: 937
+  - label: Formaldehyde Badge
+    value: 667
+  - label: Frog Environmental Unit (FEU)
+    value: 241
+  - label: Fundamental Biology Kit Hardware
+    value: 891
+  - label: Gamma-1 Medical Monitoring Device
+    value: 662
+  - label: Gas Analyzer System for Metabolic Analysis Physiology (GASMAP)
+    value: 175
+  - label: Gas Cylinder Assembly (GCA)
+    value: 85
+  - label: Gas Exchange Measurement System (GEMS)
+    value: 912
+  - label: Gas Tank Assembly (GTA)
+    value: 83
+  - label: Gaseous Nitrogen (GN2) Freezer
+    value: 929
+  - label: GASMAP Calibration Module
+    value: 1062
+  - label: General Purpose Transfer Unit (GPTU)
+    value: 4
+  - label: General Purpose Work Station (GPWS)
+    value: 5
+  - label: Gimbal Support Structure
+    value: 1321
+  - label: Grab Sample Container (GSC)
+    value: 636
+  - label: Green Record Book
+    value: 1169
+  - label: Growth Hormone Concentration and Distribution (GHCD) in Plants Experiment Hardware
+    value: 148
+  - label: Habrobracon (Wasp) Experiment Package
+    value: 22
+  - label: Hand Grip Dynamometer (HGD)
+    value: 176
+  - label: Haul System
+    value: 1331
+  - label: Heart Rate Monitor
+    value: 99
+  - label: Height Measurement Device
+    value: 1296
+  - label: Hematocrit Minicentrifuge
+    value: 62
+  - label: Hewlett Packard (HP) 5890 Gas Chromatograph (GC) with HP5971A Mass Spectrometer
+    value: 1012
+  - label: Hewlett Packard (HP) 5989 Mass Spectrometer (MS) with a 1090 Liquid Chromatograph with Particle Beam & Thermospray Interfaces
+    value: 1014
+  - label: Hewlett Packard (HP) 7694 Headspace Sampler with a HP 5890 Gas Chromatograph and 5972 Mass Selective Detector
+    value: 1013
+  - label: Holter Electrocardiograph (ECG) Monitor
+    value: 631
+  - label: Human Research Facility Portable Computer (HRF PC)
+    value: 971
+  - label: IBM ThinkPad Computer
+    value: 260
+  - label: Immunization System
+    value: 651
+  - label: Impaction Air Sampler (SAS)
+    value: 668
+  - label: In-flight Medical Support System Dental Kit
+    value: 1075
+  - label: In-Flight Urine Collection Absorber (IUCA)
+    value: 858
+  - label: In-suit Doppler Unit
+    value: 1135
+  - label: Inflight Blood Collection System (IBCS)
+    value: 63
+  - label: Infusion Pump
+    value: 95
+  - label: Institute of Biomedical Problems (IBMP) AK-1 Sorbent System
+    value: 638
+  - label: Instrumented Vest Assembly (IVA)
+    value: 178
+  - label: Interim Resistive Exercise Device (IRED)
+    value: 1279
+  - label: Intervalometer
+    value: 626
+  - label: Intravenous Fluid Infusion Pump (IV pump)
+    value: 746
+  - label: Isokinetic Ergometer
+    value: 1336
+  - label: Isotachophoresis Column
+    value: 623
+  - label: Jellyfish Kit
+    value: 6
+  - label: Kentavr Antigravity Suit
+    value: 1194
+  - label: Kistler Force Plate
+    value: 757
+  - label: Laptop Computer
+    value: 814
+  - label: Launch and Entry Suit (LES)
+    value: 976
+  - label: Leg Volume Measuring Kit
+    value: 748
+  - label: LIDO Active Isokinetic Multi-Joint Dynamometer
+    value: 309
+  - label: Life Sciences Laboratory Equipment (LSLE) Microcomputer
+    value: 89
+  - label: Life Sciences Laboratory Equipment (LSLE) Refrigerator/Freezer
+    value: 18
+  - label: LifeGuard Vital Signs Monitoring System
+    value: 1149
+  - label: Low-Gravity Centrifuge
+    value: 67
+  - label: Lower Body Negative Pressure Device (LBNP)
+    value: 98
+  - label: Lower Body Positive Pressure (LBPP) Device
+    value: 1164
+  - label: Lysogenic Bacteria Experiment Package
+    value: 24
+  - label: Macintosh Powerbook Computer
+    value: 799
+  - label: Magnetic Resonance Imaging (MRI) Device
+    value: 181
+  - label: Manual Breathing Valve (MBV)
+    value: 967
+  - label: Mark I (Mini-Gym)
+    value: 1020
+  - label: Mark I Rower
+    value: 723
+  - label: Mark II Rower (MK-2)
+    value: 1021
+  - label: Mark III Space Suit
+    value: 1314
+  - label: Mass Support Rig
+    value: 1328
+  - label: Maximum Expiratory Flow-Volume (MEFV) Assembly
+    value: 968
+  - label: Medex Modular System
+    value: 813
+  - label: Medical Anti-shock (MAS) Trouser
+    value: 1161
+  - label: Medilog Sleep Research Recorder (MSRR)
+    value: 182
+  - label: Mercury-in-Silastic "Whitney" Strain Gauge
+    value: 105
+  - label: Merieux Multitest Cell-Mediated Immunity System
+    value: 942
+  - label: Metabolic Analyzer
+    value: 617
+  - label: Microbial Air Sampler (MAS)
+    value: 752
+  - label: Microbial Ecology Evaluation Device (MEED)
+    value: 689
+  - label: Microbial Sample Collection Device
+    value: 690
+  - label: Minioscilloscope
+    value: 90
+  - label: Mir Blood Collection System
+    value: 646
+  - label: Mir Centrifuge
+    value: 652
+  - label: Mir Interface to Payloads System (MIPS)
+    value: 653
+  - label: Mir Urine Collection Kit
+    value: 308
+  - label: Motion Analysis Data Acquistion System
+    value: 758
+  - label: Motion Analysis System
+    value: 804
+  - label: Motion Capture System
+    value: 1176
+  - label: MVI Rotator Chair
+    value: 596
+  - label: Neck Chamber
+    value: 1162
+  - label: Neurolab Biotelemetry System (NBS)
+    value: 915
+  - label: Neurospora (Microorganism) Experiment Package
+    value: 25
+  - label: Night Headband Monitoring System
+    value: 798
+  - label: Ocular Counterrolling Measurement Device
+    value: 1262
+  - label: Off Vertical Rotation (OVR)
+    value: 1260
+  - label: OI 700 Carbon Analyzer
+    value: 1009
+  - label: Olympus 802 Camcorder
+    value: 19
+  - label: Operational Bioinstrumentation System (OBS) - Electrocardiograph (ECG) Monitor
+    value: 632
+  - label: Orbiter Refrigerator/Freezer (OR/F)
+    value: 64
+  - label: Oscillating Plate
+    value: 1159
+  - label: Partial Gravity Simulator (POGO)
+    value: 1322
+  - label: Particle Telescope Head (PTH)
+    value: 1074
+  - label: Passive Dosimeter Package
+    value: 1022
+  - label: Passive Radiation Detectors
+    value: 1116
+  - label: Passive Radiation Dosimeter (PRD)
+    value: 1271
+  - label: Passive Thermal Conditioning Unit (PTCU)
+    value: 918
+  - label: Payload General Support Computer (PGSC)
+    value: 184
+  - label: PCMCIA Data Kit
+    value: 973
+  - label: Pelomyxa (Amoeba) Experiment Package
+    value: 26
+  - label: Percutaneous Electrical Muscle Stimulator (PEMS)
+    value: 185
+  - label: Performance Test Apparatus
+    value: 1029
+  - label: Peripheral Mononuclear Cell Blood Collection Kit
+    value: 821
+  - label: Peripheral Mononuclear Cell Staining Kit
+    value: 820
+  - label: Personal Mouthpiece Kit
+    value: 252
+  - label: Photodiode Array
+    value: 621
+  - label: Photometer
+    value: 849
+  - label: Photomotograph
+    value: 614
+  - label: Physiological Monitoring System (PMS)
+    value: 70
+  - label: Physiological Signal Conditioner (PSC) Kit
+    value: 187
+  - label: Plant Canister
+    value: 928
+  - label: Pneumatic Cycling System
+    value: 683
+  - label: Portable Clinical Blood Analysis (PCBA) Kit
+    value: 311
+  - label: Portable In-flight Landing Operations Trainer (PILOT)
+    value: 1346
+  - label: Portable Life Support System (PLSS)
+    value: 772
+  - label: Portable Test System (PTS)
+    value: 1137
+  - label: Portable Ultrasound System
+    value: 1131
+  - label: Pressure Kit
+    value: 972
+  - label: Pressure Sensing Insoles
+    value: 1180
+  - label: Pressure Shoe Assembly
+    value: 755
+  - label: Pressure-Flow Module (PFM)
+    value: 964
+  - label: Primate Physiological Sensors
+    value: 28
+  - label: Primate Psychomotor Test System
+    value: 29
+  - label: PRO Balance Master
+    value: 1325
+  - label: Proton and Heavy Ion Detector Telescope (PHIDE)
+    value: 1275
+  - label: Q-Plex System
+    value: 1291
+  - label: Quail Incubator
+    value: 892
+  - label: Rack Mounted Centrifuge
+    value: 65
+  - label: Radiation Detectors
+    value: 152
+  - label: Radiation Source and Holder
+    value: 32
+  - label: Rana (Frog) Experiment Package
+    value: 33
+  - label: Real-Time Air Monitor (RTAM)
+    value: 853
+  - label: Rebreathing Assembly (RBA)
+    value: 86
+  - label: Reentry Anti-G Suit (REAGS)
+    value: 725
+  - label: Refrigerator/Incubator Module (R/IM)
+    value: 9
+  - label: Research Animal Holding Facility (RAHF)
+    value: 589
+  - label: Rodent Habitat (AEM-X)
+    value: 1379
+  - label: Rodent Mating Chamber
+    value: 57
+  - label: Rodent Neural Activity Hardware
+    value: 911
+  - label: Rotating Dome
+    value: 81
+  - label: Rotating Wall Vessel
+    value: 1248
+  - label: Saliva Collection Kit
+    value: 125
+  - label: Sample Container
+    value: 620
+  - label: Sample Slicing Device
+    value: 625
+  - label: Sample Slide
+    value: 624
+  - label: Scale
+    value: 1143
+  - label: Shirtsleeve Harness
+    value: 1315
+  - label: Shuttle Particulate Monitor (SPM)
+    value: 1111
+  - label: Shuttle Particulate Sampler (SPS)
+    value: 1110
+  - label: Single Pass Auxiliary Fan (SPAF)
+    value: 16
+  - label: Skeletal Muscle Stress Apparatus
+    value: 616
+  - label: Skin Temperature System
+    value: 665
+  - label: Sleep/Activity Log
+    value: 1070
+  - label: Slow Rotation Room Facility
+    value: 1138
+  - label: Small Animal Chamber System
+    value: 876
+  - label: Small Mass Measurement Instrument (SMMI)
+    value: 17
+  - label: Solid Sorbent Air Sampler (SSAS)
+    value: 637
+  - label: Sound Level Meter
+    value: 874
+  - label: Sound Level Meter and Frequency Analyzer
+    value: 779
+  - label: Space Exploration Vehicle (SEV)
+    value: 1330
+  - label: Space Tissue Loss-A (STL-A) Module or Cell Culture Module (CCM)
+    value: 920
+  - label: Space Tissue Loss-B (STL-B) Module
+    value: 921
+  - label: Spacelab Thermoelectric Freezer (STEF)
+    value: 191
+  - label: Spares Kit
+    value: 1063
+  - label: Spirometry Assembly
+    value: 87
+  - label: Spotmeter
+    value: 785
+  - label: Stability Kit
+    value: 1253
+  - label: Standometer
+    value: 1155
+  - label: Stethoscope
+    value: 1295
+  - label: Stocking Plethysmograph
+    value: 100
+  - label: Strain Gauge Dynamometer
+    value: 1165
+  - label: Strip Chart Recorder (SCR)
+    value: 88
+  - label: Superpocket Assembly
+    value: 192
+  - label: Surface Sampler Kit (SSK)
+    value: 670
+  - label: Svet Greenhouse
+    value: 922
+  - label: System for Measurement of Central Venous Pressure (SMCVP)
+    value: 77
+  - label: System for Venous Occlusion Plethysmography (SVOP)
+    value: 76
+  - label: TEAC Data Recorder
+    value: 634
+  - label: Thermoelectric Freezer (TEF)
+    value: 655
+  - label: Thermoelectric Freezing Module (TEFM)
+    value: 197
+  - label: Thermoelectric Holding Facility (TEHOF)
+    value: 656
+  - label: Thermoelectric Holding Module (TEHM)
+    value: 198
+  - label: Thermoluminescent Detector (TLD)
+    value: 941
+  - label: Thermoluminescent Dosimeter System
+    value: 838
+  - label: Thornton Kinesimeter
+    value: 1334
+  - label: Tilt Table
+    value: 926
+  - label: Tissue Culture Incubator
+    value: 69
+  - label: Tissue Equivalent Proportional Counter (TEPC)
+    value: 716
+  - label: Toluene Diisocyanate Monitor
+    value: 1082
+  - label: Tono-Pen
+    value: 1250
+  - label: Torque Velocity Dynamometer (TVD)
+    value: 199
+  - label: Total Organic Carbon (TOC) Supply Kit
+    value: 832
+  - label: Total Organic Carbon Analyzer (TOCA)
+    value: 827
+  - label: Tracer Kit
+    value: 66
+  - label: Tradescantia (Flowering Plant) Experiment Package
+    value: 34
+  - label: Transcranial Doppler (TCD)
+    value: 278
+  - label: Treadmill
+    value: 806
+  - label: Treadmill with Programmable Controller and Safety Harness System
+    value: 1025
+  - label: Treadmill with Vibration Isolation and Stabilization (TVIS)
+    value: 1191
+  - label: Tribolium (Flour Beetle) Experiment Package
+    value: 35
+  - label: Triticum (Wheat) Experiment Package
+    value: 36
+  - label: Urine Collection Bag (UCB)
+    value: 870
+  - label: Urine Collection Device (UCD)
+    value: 764
+  - label: Urine Collection Kit (UCK)
+    value: 959
+  - label: Urine Monitoring System (UMS)
+    value: 68
+  - label: Urine Monitoring System (UMS) Calibration Kit
+    value: 618
+  - label: Urine Tube Dispenser
+    value: 960
+  - label: VacuMed Oversized Treadmill
+    value: 1317
+  - label: Vacuum Interface Assembly (VIA)
+    value: 93
+  - label: Vegetable Production System (VEGGIE)
+    value: 1397
+  - label: Venous Occlusion Cuff Controller (VOCC)
+    value: 78
+  - label: Venous Occlusion Plethysmography - Cuff Gauge
+    value: 102
+  - label: Vestibular Function Experiment Unit (VFEU)
+    value: 924
+  - label: Video Ocular Measurement System
+    value: 1312
+  - label: Video-Based Motion Analysis System
+    value: 1113
+  - label: Volume Calibration Syringe
+    value: 978
+  - label: Waste Management System
+    value: 682
+  - label: Water Experiment Kit (WEK)
+    value: 669
+  - label: Water Microbiology Kit
+    value: 1107
+  - label: Water Recovery System (WRS)
+    value: 1085
+  - label: Water Recovery System (WRS) Immobilized Cell Bioreactor (ICB)
+    value: 1091
+  - label: Water Recovery System (WRS) Post-processing Subsystem
+    value: 1088
+  - label: Water Recovery System (WRS) Potable Water Subsystem
+    value: 1089
+  - label: Water Recovery System (WRS) Primary Treatment Subsystem
+    value: 1087
+  - label: Water Recovery System (WRS) Reverse Osmosis (RO) Subsystem
+    value: 1093
+  - label: Water Recovery System (WRS) Urine Treatment Subsystem
+    value: 1086
+  - label: Water Recovery System (WRS) Air Evaporation System (AES)
+    value: 1094
+  - label: Water Recovery System (WRS) Ammonium Removal System (NHRS)
+    value: 1095
+  - label: Water Recovery System (WRS) Trickling Filter Bioreactor (TFB)
+    value: 1092
+  - label: Water Sampling Kit (WSK)
+    value: 1010
+  - label: Waters Quanta 4000 Capillary Electrophoresis System
+    value: 1011
+  - label: Weighted Vest
+    value: 1196
+  - label: Woodlawn Wanderer
+    value: 1072
+  - label: X-ray
+    value: 761
+  - label: X-Vest
+    value: 1316
+
+## "investigator"
+- field_name: investigator
+  label: Investigator
+  preset: select
+  required: False
+  choices:
+  - label: Adams, Constance M.
+    value: 2549
+  - label: Alberts, Jeffrey R.
+    value: 6
+  - label: Alexander, Harold L.
+    value: 2574
+  - label: Alexander, W. Carter
+    value: 2184
+  - label: Alfrey, Clarence P.
+    value: 453
+  - label: Allen, Josephine
+    value: 4029
+  - label: Allen, Robert E.
+    value: 1523
+  - label: Amin, Shreyasee
+    value: 3303
+  - label: Anderson, Page A. W.
+    value: 2151
+  - label: Arzamozov, German S.
+    value: 843
+  - label: Badhwar, Gautam D.
+    value: 496
+  - label: Bagian, James P.
+    value: 436
+  - label: Bailey, Vernon J.
+    value: 2244
+  - label: Bakulin, A. V.
+    value: 21
+  - label: Baldwin, Kenneth M.
+    value: 22
+  - label: Bandurski, Robert S.
+    value: 534
+  - label: Bartelloni, Peter J.
+    value: 2333
+  - label: Benton, Eugene V.
+    value: 33
+  - label: Bergman, Stuart A.
+    value: 2314
+  - label: Berry, Charles A.
+    value: 2356
+  - label: Berthoz, Alain F.
+    value: 740
+  - label: Blomqvist, C. Gunnar
+    value: 479
+  - label: Bloomberg, Jacob J.
+    value: 504
+  - label: Blume, Jennifer
+    value: 2706
+  - label: Boskey, Adele L.
+    value: 1461
+  - label: Brady, Joseph V.
+    value: 2386
+  - label: Brockett, Royce M.
+    value: 2183
+  - label: Brown, Jeri W.
+    value: 1578
+  - label: Brown, Lee R.
+    value: 2526
+  - label: Buchanan, Paul
+    value: 2773
+  - label: Budinger, T. F.
+    value: 2510
+  - label: Bungo, Michael W.
+    value: 499
+  - label: Burchard, Eduard C.
+    value: 2268
+  - label: Burns, Fredric J.
+    value: 2746
+  - label: Butler, Bruce D.
+    value: 2728
+  - label: Callahan, Paul X.
+    value: 548
+  - label: Cann, Christopher E.
+    value: 52
+  - label: Charles, John B.
+    value: 495
+  - label: Chatterjee, Aloke
+    value: 2637
+  - label: Christofidou-Solomidou, Melpo
+    value: 3571
+  - label: Chylack, Leo T.
+    value: 2646
+  - label: Clark, Jonathan B.
+    value: 2671
+  - label: Clark, Kathryn I.
+    value: 1457
+  - label: Cogoli, Augusto
+    value: 456
+  - label: Connell, Richard
+    value: 1637
+  - label: Conrad, Gary W.
+    value: 2149
+  - label: Crandall, Craig G.
+    value: 3173
+  - label: Criswell, Sue B.
+    value: 489
+  - label: Cronin, M.
+    value: 563
+  - label: Czeisler, Charles A.
+    value: 1012
+  - label: Dalton, Bonnie P.
+    value: 76
+  - label: Deme, Sandor
+    value: 2546
+  - label: DeSantis, Mark Edward
+    value: 1458
+  - label: Dickman, D. J.
+    value: 84
+  - label: Dietlein, Lawrence F.
+    value: 1516
+  - label: diPrampero, Pietro E.
+    value: 749
+  - label: Doty, Stephen B.
+    value: 86
+  - label: Duntley, Seibert Q.
+    value: 1535
+  - label: Dyachkova, Ludmilla N.
+    value: 95
+  - label: Eckberg, Dwain L.
+    value: 494
+  - label: Edgerton, V. Reginald
+    value: 98
+  - label: Elefteriou, Florent
+    value: 4025
+  - label: Evetts, Simon
+    value: 3022
+  - label: Farhi, Leon E.
+    value: 458
+  - label: Ferguson, James Kelton
+    value: 1518
+  - label: Ferl, Robert
+    value: 2543
+  - label: Fermin, Cesar D.
+    value: 2148
+  - label: Ferrando, Arny A.
+    value: 844
+  - label: Fischer, Craig L.
+    value: 2181
+  - label: Fitts, Robert H.
+    value: 752
+  - label: Foley, Tico
+    value: 2668
+  - label: Fortney- Schneider, Suzanne M.
+    value: 1653
+  - label: Freed, Lisa E.
+    value: 3744
+  - label: Fritzsch, Bernd
+    value: 1459
+  - label: Fuller, Charles A.
+    value: 118
+  - label: Gabrion, Jacqueline
+    value: 121
+  - label: Gernhardt, Michael L.
+    value: 2692
+  - label: Gershtein, L. M.
+    value: 124
+  - label: Gerzer, Rupert
+    value: 125
+  - label: Gharib, Claude C.
+    value: 754
+  - label: Gilroy, Simon
+    value: 4591
+  - label: Globus, Ruth
+    value: 2270
+  - label: Gooch, Carolyn P.
+    value: 2399
+  - label: Goodwin, Thomas J.
+    value: 3041
+  - label: Graves, Richard C.
+    value: 2182
+  - label: Greenisen, Michael C.
+    value: 755
+  - label: Grigoriev, Anatoli I.
+    value: 2233
+  - label: Grindeland, Richard E.
+    value: 140
+  - label: Hagan, R. Donald
+    value: 2865
+  - label: Hannig, Kurt H.
+    value: 1550
+  - label: Hargens, Alan R.
+    value: 153
+  - label: Harm, Deborah L.
+    value: 506
+  - label: Harrison, Lynn
+    value: 4038
+  - label: Hawkins, Willard Royce
+    value: 2242
+  - label: Hayes, Judith C.
+    value: 1664
+  - label: Henry, James P.
+    value: 2366
+  - label: Highstein, Stephan M.
+    value: 964
+  - label: Hoath, Steven B.
+    value: 1463
+  - label: Hoban- Higgins, Tana M.
+    value: 1482
+  - label: Hobson, J. Allan
+    value: 2262
+  - label: Hoffler, G. Wyckliffe
+    value: 2315
+  - label: Hoffman, Rudolf A.
+    value: 2397
+  - label: Hoh, Joseph Foon- Yoong
+    value: 167
+  - label: Holland, Albert W.
+    value: 2715
+  - label: Holstein, Gay Robbins
+    value: 966
+  - label: Homick, Jerry L.
+    value: 1590
+  - label: Hordinsky, Jerry R.
+    value: 2772
+  - label: Horrigan, David J., Jr.
+    value: 2711
+  - label: Hsieh, Adam
+    value: 4033
+  - label: Hughes- Fulford, Millie
+    value: 2173
+  - label: Iliakis, George
+    value: 2734
+  - label: Inners, Lamar Daniel
+    value: 727
+  - label: Ivanova, Svetlana Y.
+    value: 174
+  - label: Jahns, Gary C.
+    value: 175
+  - label: James, John T.
+    value: 513
+  - label: Jaweed, Mazher
+    value: 508
+  - label: Johnson, Phillip C., Jr.
+    value: 616
+  - label: Johnson, Robert L.
+    value: 2666
+  - label: Johnson, Roger B.
+    value: 1464
+  - label: Kanas, Nick
+    value: 2192
+  - label: Kaplansky, Alexandre S.
+    value: 187
+  - label: Kaufmann, Horacio
+    value: 2745
+  - label: Keshishian, Haig S.
+    value: 2269
+  - label: Kimzey, Stephen L.
+    value: 1522
+  - label: Kiss, John Z.
+    value: 2276
+  - label: Kondo, Sohei
+    value: 2566
+  - label: Konstantinova, Irina V.
+    value: 204
+  - label: Kosik, Kenneth S.
+    value: 970
+  - label: Kozlovskaya, Inessa B.
+    value: 206
+  - label: Krasnov, Igor B.
+    value: 209
+  - label: Kubis, Joseph F.
+    value: 733
+  - label: Kulesh, David A.
+    value: 2271
+  - label: Lackner, James R.
+    value: 2579
+  - label: LaFevers, Earl V.
+    value: 2785
+  - label: Lambert, James L.
+    value: 1465
+  - label: Lambertsen, Christian J.
+    value: 1596
+  - label: Landis, William J.
+    value: 1466
+  - label: Lane, Helen W.
+    value: 763
+  - label: Lange, Robert D.
+    value: 217
+  - label: LaPinta, Charles K.
+    value: 2332
+  - label: Larina, Irina M.
+    value: 1575
+  - label: Layne, Charles S.
+    value: 1685
+  - label: Leach- Huntoon, Carolyn S.
+    value: 460
+  - label: LeBlanc, Adrian D.
+    value: 624
+  - label: Lee, Stuart M. C.
+    value: 1688
+  - label: Leontovich, T. A.
+    value: 224
+  - label: Lesnyak, Andrei T.
+    value: 225
+  - label: Lloyd, Charles W.
+    value: 522
+  - label: Lockhart, Lillian H.
+    value: 2565
+  - label: Logan, James S.
+    value: 2672
+  - label: Lupton, Joanne R.
+    value: 2804
+  - label: Mack, Pauline Berry
+    value: 232
+  - label: Mader, Thomas
+    value: 3099
+  - label: Majeska, Robert J.
+    value: 1467
+  - label: Markham, Charles H.
+    value: 2532
+  - label: Massa, Gioia D.
+    value: 4482
+  - label: Maule, Jake G.
+    value: 2700
+  - label: McCarron, David A.
+    value: 2273
+  - label: McCollum, Gary W.
+    value: 446
+  - label: McMonigal, Kathleen A.
+    value: 2551
+  - label: McNaughton, Bruce L.
+    value: 973
+  - label: Meck, Janice Fritsch- Yelle
+    value: 484
+  - label: Meehan, Richard T.
+    value: 2170
+  - label: Mengel, Charles E.
+    value: 2180
+  - label: Mieszkuc, Bernard J.
+    value: 1549
+  - label: Mikhaylov, Valeriy
+    value: 1564
+  - label: Miles, Judith S.
+    value: 1526
+  - label: Miller, Earl F., II
+    value: 2380
+  - label: Moldofsky, Harvey
+    value: 2251
+  - label: Monk, Timothy
+    value: 765
+  - label: Montgomery, P. O'Brien
+    value: 2398
+  - label: Moore, Alan D., Jr.
+    value: 1706
+  - label: Moore, Tom P.
+    value: 825
+  - label: Morey- Holton, Emily R.
+    value: 268
+  - label: Morrison, Dennis R.
+    value: 1489
+  - label: Mosely, John D.
+    value: 2367
+  - label: Mount, Frances E.
+    value: 851
+  - label: Musgrave, Mary E.
+    value: 992
+  - label: Natochin, Yuri V.
+    value: 278
+  - label: Newman, Dava J.
+    value: 1709
+  - label: Nicholson, Wayne
+    value: 4286
+  - label: Nickerson, Cheryl A.
+    value: 2682
+  - label: Nicogossian, Arnauld E.
+    value: 2267
+  - label: Novikova, Natalia D.
+    value: 2202
+  - label: Nowakowski, Richard S.
+    value: 976
+  - label: Oganov, Victor S.
+    value: 284
+  - label: Osborne, W. Zachary
+    value: 2395
+  - label: Ott, C. Mark
+    value: 2609
+  - label: Palmer, Peter T.
+    value: 1572
+  - label: Paloski, William H.
+    value: 768
+  - label: Pandey, Santosh
+    value: 4028
+  - label: Parker, Donald E.
+    value: 507
+  - label: Partridge, Nicola C.
+    value: 292
+  - label: Paul, Anna-Lisa
+    value: 4571
+  - label: Petrov, Vladislav
+    value: 2194
+  - label: Pierson, Duane L.
+    value: 512
+  - label: Pilmanis, Andrew A.
+    value: 2674
+  - label: Pompeiano, Ottavio
+    value: 978
+  - label: Ponomareva, Irina
+    value: 2259
+  - label: Popova, Irena A.
+    value: 305
+  - label: Purdy, Ralph E.
+    value: 2758
+  - label: Putcha, Lakshmi
+    value: 1585
+  - label: Rabin, Bernard M.
+    value: 2729
+  - label: Rambaut, Paul C.
+    value: 468
+  - label: Raven, Peter B.
+    value: 2733
+  - label: Raymond, Jacqueline
+    value: 979
+  - label: Reitz, Guenther F.
+    value: 2190
+  - label: Renegar, Randall Harrell
+    value: 1468
+  - label: Reschke, Millard F.
+    value: 503
+  - label: Rhoten, William R.
+    value: 3299
+  - label: Rice, Kelly
+    value: 4034
+  - label: Rickus, Jenna
+    value: 4687
+  - label: Riley, Danny A.
+    value: 323
+  - label: Rippstein, Wayland J., Jr.
+    value: 2548
+  - label: Ritzmann, Stephan E.
+    value: 2141
+  - label: Roberts, Donna
+    value: 3268
+  - label: Roberts, W. Eugene
+    value: 324
+  - label: Roden, Sean K.
+    value: 3021
+  - label: Ross, Charles E.
+    value: 2771
+  - label: Ross, Muriel D.
+    value: 327
+  - label: Rubin, Clinton T.
+    value: 2614
+  - label: Rummel, John A.
+    value: 2318
+  - label: Russo, Dane M.
+    value: 1728
+  - label: Salisbury, Frank B.
+    value: 2279
+  - label: Salnitskiy, Vyacheslav P.
+    value: 2193
+  - label: Sams, Clarence F.
+    value: 2138
+  - label: Sauer, Richard L.
+    value: 1565
+  - label: Savina, Valentina
+    value: 1573
+  - label: Sawin, Charles
+    value: 342
+  - label: Schaffler, Mitchell B.
+    value: 3240
+  - label: Schneider, Howard J.
+    value: 448
+  - label: Schnoes, Heinrich K.
+    value: 2583
+  - label: Schoeller, Dale A.
+    value: 1731
+  - label: Schott, Jobst Ulrich
+    value: 2384
+  - label: Schultz, John R.
+    value: 2260
+  - label: Seely, John F.
+    value: 2742
+  - label: Serova, Luba V.
+    value: 351
+  - label: Setlow, Richard B.
+    value: 2697
+  - label: Seubert, Christoph
+    value: 2765
+  - label: Shackelford, Linda Carol
+    value: 770
+  - label: Sheehan, Florence H.
+    value: 2741
+  - label: Shi, Shang- Jin
+    value: 2910
+  - label: Shimizu, Tsuyoshi
+    value: 980
+  - label: Sinyak, Yuri E.
+    value: 1566
+  - label: Smirnov, K. V.
+    value: 363
+  - label: Smith, Malcolm C., Jr.
+    value: 694
+  - label: Smith, Michael L.
+    value: 2807
+  - label: Smith, Scott M.
+    value: 1568
+  - label: Sonnenfeld, Gerald
+    value: 371
+  - label: Souza, Kenneth A.
+    value: 372
+  - label: Spangenberg, Dorothy B.
+    value: 374
+  - label: Spaulding, Glenn F.
+    value: 3118
+  - label: Stein, T. Peter
+    value: 378
+  - label: Stenger, B. Michael
+    value: 3035
+  - label: Stoecker, Barbara J.
+    value: 2738
+  - label: Stuster, Jack
+    value: 2814
+  - label: Szylit, Odette
+    value: 385
+  - label: Taylor, Gerald R.
+    value: 386
+  - label: Tesch, Per A.
+    value: 774
+  - label: Thomas, James D.
+    value: 2732
+  - label: Thornton, William E.
+    value: 824
+  - label: Tischler, Marc E.
+    value: 701
+  - label: Turner, Nancy D.
+    value: 2808
+  - label: Turner, Russell T.
+    value: 2622
+  - label: Tuxhorn, Jennifer
+    value: 3005
+  - label: Van Dongen, Hans P. A.
+    value: 2753
+  - label: Viktorov, Alexandre N.
+    value: 2235
+  - label: Waligora, James M.
+    value: 2710
+  - label: Walton, Kerry D.
+    value: 984
+  - label: Wassersug, Richard
+    value: 958
+  - label: Waters, Wendy W.
+    value: 2876
+  - label: Webb, James T.
+    value: 2675
+  - label: Weinstock, George M.
+    value: 1754
+  - label: Wentworth, Bernard C.
+    value: 2147
+  - label: West, John B.
+    value: 474
+  - label: Wheeler, Harry O.
+    value: 2530
+  - label: Whitmore, Mihriban
+    value: 1756
+  - label: Whitson, Peggy A.
+    value: 729
+  - label: Wiederhold, Michael L.
+    value: 956
+  - label: Wilfinger, William W.
+    value: 2278
+  - label: Wolgemuth, Debra J.
+    value: 424
+  - label: Wooley, Bennie C.
+    value: 2266
+  - label: Woolford, Barbara
+    value: 3334
+  - label: Zaloguev, S. N.
+    value: 2156
+  - label: Zieglschmid, John F.
+    value: 2243
+  - label: Zimmerman, Robert J.
+    value: 2277
+
+
+## "license_id"
+- field_name: license_id
+  label: License
+  form_snippet: license.html
+  help_text: License definitions and additional information can be found at http://opendefinition.org/
+
+## "program"
+- field_name: program
+  label: Program
+  form_snippet: text.html
+  form_placeholder: Program or cross functional team name.
+
+## "spatial_coverage"
+- field_name: spatial_coverage
+  label: Spatial Coverage
+  form_snippet: markdown.html
+  form_placeholder: Name of defined area or geometry of area data describes.
+
+## "temporal_coverage"
+- field_name: temporal_coverage
+  label: Temporal Coverage
+  form_snippet: markdown.html
+  form_placeholder: Start and end time of events described in data.
+
+## "frequency"
+- field_name: frequency
+  label: Frequency
+  preset: select
+  choices:
+  - label: Irregular
+    value: Irregular
+  - label: Daily
+    value: Daily
+  - label: Weekly
+    value: Weekly
+  - label: Monthly
+    value: Monthly
+  - label: Quarterly
+    value: Quarterly
+  - label: Semiannual
+    value: Semiannual
+  - label: Annual
+    value: Annual
+  - label: Decennial
+    value: Decennial
+  - label: Other
+    value: Other
+
+## "language"
+- field_name: language
+  label: Language
+  form_snippet: text.html
+  form_placeholder: English
+
+## "url"
+#  Use core CKAN datase url field
+- field_name: url
+  label: Homepage URL
+  form_placeholder: URL for the page with useful information on the program creating the data.
+  display_property: foaf:homepage
+  display_snippet: link.html
+
+## "limitations"
+- field_name: limitations
+  label: Limitations
+  form_snippet: markdown.html
+  form_placeholder: Appropriate usage notes, disclaimers and conditions of use.
+
+
+
+## CKAN Resource Fields
+resource_fields:
+
+- field_name: url
+  label: URL
+  preset: resource_url_upload
+
+## "title"
+#  Core CKAN resource field "name"
+- field_name: name
+  label: Title
+  form_placeholder: Descriptive name of the resource.
+
+## "description"
+#  Core CKAN resource field "description"
+- field_name: description
+  label: Description
+  form_snippet: markdown.html
+  form_placeholder: Summary explanation of file contents, purpose, origination, methods and usage guidance.
+
+- field_name: format
+  label: Format
+  preset: resource_format_autocomplete
+
+## "data_standard"
+- field_name: data_standard
+  label: Data Standard
+  form_snippet: text.html
+  form_placeholder: Established file structure defined for a particular use.

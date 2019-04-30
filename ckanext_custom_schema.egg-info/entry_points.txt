@@ -1,0 +1,6 @@
+
+        [ckan.plugins]
+        cademo_schema = ckanext.cademo.plugins:customSchema
+        fiscal_schema = ckanext.fiscal.plugins:customSchema
+        nasalsda_schema = ckanext.nasalsda.plugins:customSchema
+    
