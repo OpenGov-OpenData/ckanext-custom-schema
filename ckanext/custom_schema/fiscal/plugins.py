@@ -1,6 +1,6 @@
 import ckan.plugins as p
 import ckan.plugins.toolkit as toolkit
-from ckanext.custom_schema import helpers
+from ckanext.custom_schema.fiscal import helpers
 
 class customSchema(p.SingletonPlugin):
     p.implements(p.IConfigurer)
@@ -11,11 +11,11 @@ class customSchema(p.SingletonPlugin):
         toolkit.add_template_directory(config, "templates")       
  
         config['scheming.presets'] = """
-ckanext.custom_schema:schemas/presets.yaml
+ckanext.custom_schema:fiscal/schemas/presets.yaml
 """
 
         config['scheming.dataset_schemas'] = """
-ckanext.custom_schema:schemas/dataset.yaml
+ckanext.custom_schema:fiscal/schemas/dataset.yaml
 """
 
     def get_helpers(self):

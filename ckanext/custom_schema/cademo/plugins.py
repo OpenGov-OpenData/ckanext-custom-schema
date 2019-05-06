@@ -11,11 +11,11 @@ class customSchema(SingletonPlugin):
 
         config['scheming.presets'] = """
 ckanext.scheming:presets.json
-ckanext.custom_schema:schemas/presets.yaml
+ckanext.custom_schema:cademo/schemas/presets.yaml
 """
 
         config['scheming.dataset_schemas'] = """
-ckanext.custom_schema:schemas/dataset.yaml
+ckanext.custom_schema:cademo/schemas/dataset.yaml
 """
 
     def before_map(self,m):

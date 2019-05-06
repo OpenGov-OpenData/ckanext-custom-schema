@@ -12,5 +12,5 @@ ckanext.scheming:presets.json
 """
 
         config['scheming.dataset_schemas'] = """
-ckanext.custom_schema:schemas/dataset.yaml
+ckanext.custom_schema:nasalsda/schemas/dataset.yaml
 """
