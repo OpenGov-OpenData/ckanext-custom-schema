@@ -1,0 +1,196 @@
+scheming_version: 1
+dataset_type: dataset
+about: An implementation of a CKAN dataset schema
+about_url: https://github.com/OpenGov-OpenData/ckanext-custom-schema
+
+
+## CKAN Package/Dataset Fields
+dataset_fields:
+
+## "title"
+#  Use core CKAN field for title
+- field_name: title
+  label: Title
+  preset: title
+  form_placeholder: eg. A descriptive title
+  required: True
+
+## "name"
+#  Use core CKAN field for dataset URL slug, generated from title with JS
+- field_name: name
+  label: URL
+  preset: dataset_slug
+  form_placeholder: eg. my-dataset
+
+## "notes"
+#  Use core CKAN field for notes
+- field_name: notes
+  label: Description
+  form_snippet: markdown.html
+  form_placeholder: eg. Some useful notes about the data
+
+## "keywords"
+#  Use core CKAN free-form tag field
+- field_name: tag_string
+  label: Tags
+  preset: tag_string_autocomplete
+  form_placeholder: eg. economy, mental health, government
+
+## "license_id"
+#  Use core CKAN field for license_id
+- field_name:  license_id
+  label:  License
+  form_snippet: license.html
+  help_text: License definitions and additional information can be found at http://opendefinition.org/
+
+## "organization"
+- field_name: owner_org
+  label: Organization
+  preset: dataset_organization
+
+## "url"
+#  Use core CKAN field for url
+- field_name: url
+  label: Source
+  form_placeholder: http://example.com/dataset.json
+  display_property: foaf:homepage
+  display_snippet: link.html
+
+## "issued"
+- field_name: issued
+  label:  Release Date
+  preset:  date
+
+## "accrualPeriodicity"
+#  ISO8601FTW
+- field_name: accrualPeriodicity
+  label: Frequency
+  preset: select
+  required: True
+  choices:
+  - label: Not Specified
+    value: irregular
+  - label: Daily
+    value: R/P1D
+  - label: Semiweekly
+    value: R/P3.5D
+  - label: Weekly
+    value: R/P1W
+  - label: Biweekly
+    value: R/P2W
+  - label: Monthly
+    value: R/P1M
+  - label: Bimonthly
+    value: R/P2M
+  - label: Quarterly
+    value: R/P3M
+  - label: Semiannual
+    value: R/P6M
+  - label: Annual
+    value: R/P1Y
+  - label: Biennial
+    value: R/P2Y
+  - label: Triennial
+    value: R/P3Y
+  - label: Quadrennial
+    value: R/P4Y
+  - label: Decennial
+    value: R/P10Y
+  - label: Continuously updated
+    value: R/PT1S
+  - label: Three times a week
+    value: R/P0.33W
+  - label: Three times a month
+    value: R/P0.33M
+  - label: Three times a year
+    value: R/P4M
+
+## "version"
+- field_name: version
+  label:  Version
+  validators:  ignore_missing unicode package_version_validator
+  form_placeholder: 1.0
+
+## "author"
+#  Use core CKAN field for author
+- field_name: author
+  label: Author
+  form_placeholder: Joe Bloggs
+  preset: user
+  display_property: dc:creator
+
+## "author_email"
+#  Use core CKAN field for author_email
+- field_name: author_email
+  label: Author Email
+  form_placeholder: joe@example.com
+  preset: email
+  display_property: dc:creator
+  display_snippet: email.html
+
+## "maintainer"
+#  Use core CKAN field for maintainer
+- field_name: maintainer
+  label: Maintainer
+  form_placeholder: Joe Bloggs
+  preset: user
+  display_property: dc:contributor
+
+## "maintainer_email"
+#  Use core CKAN field for maintainer_email
+- field_name: maintainer_email
+  label: Maintainer Email
+  form_placeholder: joe@example.com
+  preset: email
+  display_property: dc:contributor
+  display_snippet: email.html
+
+## "approvalStatus"
+- field_name: approvalStatus
+  label: Status
+  preset: select
+  required: True
+  choices:
+  - label: Not Specified
+    value: not_specified
+  - label: Pending
+    value: pending
+  - label: On Hold
+    value: on_hold
+  - label: Rejected
+    value: rejected
+  - label: Approved
+    value: approved
+
+## "view_users"
+- field_name:  view_users
+  label:  View Permissions
+  preset:  multiple_select
+  choices_helper:  nonsysadmin_user_choices
+  form_snippet:  multiple_select_search.html
+  display_snippet:  null
+
+
+## CKAN Resource Fields
+resource_fields:
+
+- field_name: url
+  label: URL
+  preset: resource_url_upload
+
+## "title"
+#  Core CKAN resource field "name"
+- field_name: name
+  label: Name
+  form_placeholder: eg. January 2011 Gold Prices
+
+## "description"
+#  Core CKAN resource field "description"
+- field_name: description
+  label: Description
+  form_snippet: markdown.html
+  form_placeholder: Some useful notes about the data
+
+- field_name: format
+  label: Format
+  preset: resource_format_autocomplete
