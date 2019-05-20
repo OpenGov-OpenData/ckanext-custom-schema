@@ -1,9 +1,0 @@
-setup.py
-ckanext/custom_schema/__init__.py
-ckanext_custom_schema.egg-info/PKG-INFO
-ckanext_custom_schema.egg-info/SOURCES.txt
-ckanext_custom_schema.egg-info/dependency_links.txt
-ckanext_custom_schema.egg-info/entry_points.txt
-ckanext_custom_schema.egg-info/namespace_packages.txt
-ckanext_custom_schema.egg-info/not-zip-safe
-ckanext_custom_schema.egg-info/top_level.txt
