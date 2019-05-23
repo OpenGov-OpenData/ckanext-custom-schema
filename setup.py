@@ -17,5 +17,6 @@ setup(
         cademo_schema = ckanext.custom_schema.cademo.plugins:customSchema
         fiscal_schema = ckanext.custom_schema.fiscal.plugins:customSchema
         nasalsda_schema = ckanext.custom_schema.nasalsda.plugins:customSchema
+        sanjose_schema = ckanext.custom_schema.sanjose.plugins:customSchema
     """
 )
