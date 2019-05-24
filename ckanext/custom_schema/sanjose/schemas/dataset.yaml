@@ -1,0 +1,173 @@
+scheming_version: 1
+dataset_type: dataset
+about: San Jose CA
+
+
+## CKAN Package/Dataset Fields
+dataset_fields:
+
+## "title"
+#  Use core CKAN field for title
+- field_name: title
+  label: Title
+  preset: title
+  form_placeholder: eg. A descriptive title
+  required: True
+
+## "name"
+#  Use core CKAN field for dataset URL slug, generated from title with JS
+- field_name: name
+  label: URL
+  preset: dataset_slug
+  form_placeholder: eg. my-dataset
+
+## "notes"
+#  Use core CKAN field for notes
+- field_name: notes
+  label: Description
+  form_snippet: markdown.html
+  form_placeholder: eg. Some useful notes about the data
+  required: True
+
+## "keywords"
+#  Use core CKAN free-form tag field
+- field_name: tag_string
+  label: Tags
+  preset: tag_string_autocomplete
+  form_placeholder: eg. economy, mental health, government
+
+## "license_id"
+- field_name: license_id
+  label: License
+  form_snippet: license.html
+  help_text: License definitions and additional information can be found at http://opendefinition.org/
+
+## "department"
+#  The Department field will be mapped to CKAN organizations
+- field_name: owner_org
+  label: Department
+  preset: dataset_organization
+
+## "contact_name"
+- field_name: contact_name
+  label: Contact Name
+  form_placeholder: eg. Division of Traffic Operations, Office of Performance, Traffic Data Branch
+  required: True
+
+## "contact_email"
+- field_name: contact_email
+  label: Contact Email
+  display_snippet: email.html
+  form_placeholder: eg. opendata@dot.ca.gov
+  required: True
+
+## "homepage_url"
+- field_name: landingPage
+  label: Homepage URL
+  form_placeholder: http://example.com
+  display_property: foaf:homepage
+  display_snippet: link.html
+
+## "temporalNotes"
+- field_name: temporal
+  label: Temporal Coverage
+  form_snippet: markdown.html
+
+## "spatial"
+- field_name: spatial
+  label: Spatial
+
+## "language"
+- field_name: language
+  label: Language
+  form_snippet: text.html
+
+## "accrualPeriodicity"
+#  ISO8601FTW
+- field_name: accrualPeriodicity
+  label: Frequency
+  preset: select
+  choices:
+  - label: Irregular
+    value: irregular
+  - label: Continuously updated
+    value: R/PT1S
+  - label: Hourly
+    value: R/PT1H
+  - label: Daily
+    value: R/P1D
+  - label: Twice a week
+    value: R/P0.5W
+  - label: Semiweekly
+    value: R/P3.5D
+  - label: Weekly
+    value: R/P1W
+  - label: Semimonthly
+    value: R/P0.5M
+  - label: Monthly
+    value: R/P1M
+  - label: Every Two Months
+    value: R/P2M
+  - label: Quarterly
+    value: R/P3M
+  - label: Semiannual
+    value:  R/P6M
+  - label: Annual
+    value:  R/P1Y
+  - label: Biennial
+    value:  R/P2Y
+  - label: Decennial
+    value:  R/P10Y
+
+## "url"
+#  Use core CKAN datase url field
+- field_name: url
+  label: Source Link
+  form_placeholder: http://example.com/dataset.json
+  display_property: foaf:homepage
+  display_snippet: link.html
+
+## "additional_information"
+- field_name: additional_information
+  label: Additional Information
+  form_snippet: markdown.html
+
+## "related_resources"
+- field_name: related_resources
+  label: Related Resources
+  form_snippet: markdown.html
+
+## "secondary_sources"
+- field_name: secondary_sources
+  label: Secondary Sources
+  form_snippet: markdown.html
+
+## "citation"
+- field_name: citation
+  label: Citation
+  form_snippet: markdown.html
+
+
+## CKAN Resource Fields
+resource_fields:
+
+- field_name: url
+  label: URL
+  preset: resource_url_upload
+
+## "title"
+#  Core CKAN resource field "name"
+- field_name: name
+  label: Title
+  form_placeholder: eg. January 2015 Gold Prices
+
+## "description"
+#  Core CKAN resource field "description"
+- field_name: description
+  label: Description
+  form_snippet: markdown.html
+  form_placeholder: Some useful notes about the data
+
+- field_name: format
+  label: Format
+  preset: resource_format_autocomplete
