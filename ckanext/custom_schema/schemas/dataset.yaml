@@ -36,12 +36,18 @@ dataset_fields:
   label: Tags
   preset: tag_string_autocomplete
   form_placeholder: eg. economy, mental health, government
+  required: True
 
 ## "license_id"
 - field_name: license_id
   label: License
   form_snippet: license.html
   help_text: License definitions and additional information can be found at http://opendefinition.org/
+
+## "topics"
+- field_name: group
+  label: Topic
+  preset: group
 
 ## "department"
 #  The Publisher field will be mapped to CKAN organizations
@@ -61,11 +67,13 @@ dataset_fields:
     value: restricted public
   - label: Non-public
     value: non-public
+  required: True
     
 ## "rights"
 - field_name: rights
   label: Rights
   form_placeholder: eg. No restrictions on public use
+  required: True
   
 ## "contact_name"
 - field_name: contact_name
@@ -129,6 +137,7 @@ dataset_fields:
     value:  R/P2Y
   - label: Decennial
     value:  R/P10Y
+  required: True
     
 ## "temporalNotes"
 ## This field needs revisiting regarding the free form nature of the text box vs. dropdown
