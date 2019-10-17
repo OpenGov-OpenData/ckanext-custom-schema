@@ -45,7 +45,7 @@ dataset_fields:
   help_text: License definitions and additional information can be found at http://opendefinition.org/
 
 ## "topics"
-- field_name: group
+- field_name: topic
   label: Topic
   preset: group
 

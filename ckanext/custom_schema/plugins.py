@@ -30,9 +30,9 @@ ckanext.custom_schema:schemas/dataset.yaml
     # IPackageController
     def after_create(self, context, pkg_dict):
         if 'group' in pkg_dict:
-            if pkg_dict['group']:
+            if pkg_dict['topic']:
                 data = {
-                    'id': pkg_dict['group'],
+                    'id': pkg_dict['topic'],
                     'object': pkg_dict['id'],
                     'object_type': 'package',
                     'capacity': 'public'
@@ -41,9 +41,9 @@ ckanext.custom_schema:schemas/dataset.yaml
 
     def after_update(self, context, pkg_dict):
         if 'group' in pkg_dict:
-            if pkg_dict['group']:
+            if pkg_dict['topic']:
                 data = {
-                    'id': pkg_dict['group'],
+                    'id': pkg_dict['topic'],
                     'object': pkg_dict['id'],
                     'object_type': 'package',
                     'capacity': 'public'
