@@ -12,8 +12,8 @@
     <div class="controls">
         <select id="field-{{ field.field_name }}" name="{{ field.field_name }}">\
             <option></option>
-            {% for group  in groups %}
-                <option  value="{{group.name}}"{% if group.name==sel %} selected="selected"{% endif %}>{{group.title}}</option>
+            {% for group in groups %}
+                <option value="{{group.name}}"{% if group.name==sel %} selected="selected"{% endif %}>{{group.title}}</option>
             {% endfor %}
         </select>
         {%- snippet 'scheming/form_snippets/help_text.html', field=field -%}
