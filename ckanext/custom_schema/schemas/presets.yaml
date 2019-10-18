@@ -23,3 +23,10 @@ presets:
       value: census tract
     - label: Location Point
       value: location point
+
+- preset_name: group
+  values: 
+    form_snippet: group.html
+    display_snippet: group.html
+    output_validators: scheming_required
+
