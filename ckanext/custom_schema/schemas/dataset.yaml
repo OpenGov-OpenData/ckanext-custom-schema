@@ -34,7 +34,7 @@ dataset_fields:
 #  Use core CKAN free-form tag field
 - field_name: tag_string
   label: Tags
-  preset: tag_string_autocomplete
+  preset: tag_string_autocomplete_required
   form_placeholder: eg. economy, mental health, government
   required: True
 
