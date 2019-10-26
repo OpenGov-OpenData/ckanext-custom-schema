@@ -28,6 +28,8 @@ def tag_not_empty(field, schema):
                 pkg = session.query(model.Package).get(package.id)
                 pkg_tags = pkg.get_tags()
                 if pkg_tags:
+                    tag_list = [t.name for t in pkg_tags]
+                    data[key] = ",".join(tag_list)
                     return ignore_missing(key, data, errors, context)
 
         return not_empty(key, data, errors, context)
