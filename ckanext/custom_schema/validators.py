@@ -10,6 +10,8 @@ not_empty = get_validator('not_empty')
 
 @scheming_validator
 def tag_not_empty(field, schema):
+    # Default validator for tag_string is not_empty
+    # If tag_string is empty set it to current package tags
     def validator(key, data, errors, context):
         # get list of tags from tag_string
         if isinstance(data[key], string_types):
@@ -19,14 +21,16 @@ def tag_not_empty(field, schema):
         else:
             tags = data[key]
 
-        # ignore missing tag_string if tags is present
+        # check if tag_string is missing or empty
         if tags is missing or not tags:
             package = context.get('package')
+            # check if there's a package
             if package:
                 model = context['model']
                 session = context['session']
                 pkg = session.query(model.Package).get(package.id)
                 pkg_tags = pkg.get_tags()
+                # check if package has tags and adds them to tag_string
                 if pkg_tags:
                     tag_list = [t.name for t in pkg_tags]
                     data[key] = ",".join(tag_list)
