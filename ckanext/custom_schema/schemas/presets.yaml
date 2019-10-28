@@ -32,8 +32,8 @@ presets:
 
 - preset_name: tag_string_autocomplete_required
   values: 
-    validators: not_empty tag_string_convert
-    classes: control-full
+    validators: tag_not_empty tag_string_convert
+    classes: [control-full]
     form_attrs: 
       data-module: autocomplete
       data-module-tags: 

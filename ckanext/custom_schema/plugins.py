@@ -1,9 +1,23 @@
-from ckan.plugins import toolkit, IConfigurer, IRoutes, IPackageController, SingletonPlugin, implements, toolkit
+from ckan.plugins import (
+    toolkit,
+    IConfigurer,
+    IRoutes,
+    IPackageController,
+    IValidators,
+    SingletonPlugin,
+    implements,
+    toolkit
+)
+
+from ckanext.custom_schema.validators import (
+    tag_not_empty
+)
 
 class customSchema(SingletonPlugin):
     implements(IConfigurer)
     implements(IRoutes,inherit=True)
     implements(IPackageController, inherit=True)
+    implements(IValidators)
 
     def update_config(self, config):
         toolkit.add_public_directory(config, "static")
@@ -57,3 +71,7 @@ ckanext.custom_schema:schemas/dataset.yaml
             if group['name'] != package['group']:
                 toolkit.get_action('member_delete')(context, {'id': group['id'], 'object': package['id'], 'object_type': 'package'})
 
+    def get_validators(self):
+        return {
+            'tag_not_empty': tag_not_empty
+            }
