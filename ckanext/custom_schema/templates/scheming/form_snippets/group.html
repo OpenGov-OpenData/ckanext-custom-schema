@@ -1,6 +1,5 @@
 {% set error = errors[field.field_name] %}
-{% set sel = data[field.field_name] or '' %}
-{% set groups = h.groups_available(True) or [] %}
+{% set groups = h.og_get_group_list() or [] %}
 
 <div class="control-group{% if error %} error{% endif %}" >
     <label class="control-label" for="field-{{ field.field_name }}">
@@ -10,13 +9,12 @@
         {{ h.scheming_language_text(field.label) }}
     </label>
     <div class="controls">
-        <select id="field-{{ field.field_name }}" name="{{ field.field_name }}">\
+        <select id="field-{{ field.field_name }}" name="{{ field.field_name }}">
             <option></option>
             {% for group in groups %}
-                <option value="{{group.name}}"{% if group.name==sel %} selected="selected"{% endif %}>{{group.title}}</option>
+                <option value="{{group.name}}">{{group.title}}</option>
             {% endfor %}
         </select>
         {%- snippet 'scheming/form_snippets/help_text.html', field=field -%}
     </div>
 </div>
-

@@ -28,7 +28,7 @@ presets:
   values: 
     form_snippet: group.html
     display_snippet: group.html
-    output_validators: scheming_required
+    validators: ignore_missing
 
 - preset_name: tag_string_autocomplete_required
   values: 
