@@ -50,7 +50,6 @@ ckanext.custom_schema:schemas/dataset.yaml
 
     # IPackageController
     def after_create(self, context, pkg_dict):
-        user = context.get('user')
         group_name = pkg_dict.get('group')
 
         # Add dataset to "groups" based on custom field "group"
@@ -67,13 +66,12 @@ ckanext.custom_schema:schemas/dataset.yaml
             raise toolkit.ValidationError({
                 'message': [
                     'User "{0}" not authorized to add dataset to topic {1}'.format(
-                        user, group_name
+                        context.get('user'), group_name
                     )
                 ]
             })
 
     def after_update(self, context, pkg_dict):
-        user = context.get('user')
         group_name = pkg_dict.get('group')
 
         if group_name:
@@ -95,7 +93,7 @@ ckanext.custom_schema:schemas/dataset.yaml
                     raise toolkit.ValidationError({
                         'message': [
                             'User "{0}" not authorized to add dataset to topic {1}'.format(
-                                user, group_name
+                                context.get('user'), group_name
                             )
                         ]
                     })
@@ -114,7 +112,7 @@ ckanext.custom_schema:schemas/dataset.yaml
                     raise toolkit.ValidationError({
                         'message': [
                             'User "{0}" not authorized to remove dataset from topic {1}'.format(
-                                user, group_dict.get('name')
+                                context.get('user'), group_dict.get('name')
                             )
                         ]
                     })
