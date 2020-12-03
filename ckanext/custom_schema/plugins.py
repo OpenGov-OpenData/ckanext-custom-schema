@@ -14,6 +14,9 @@ from ckanext.custom_schema.validators import (
 import ckanext.custom_schema.helpers as schema_helpers
 
 
+get_action = toolkit.get_action
+
+
 class customSchema(SingletonPlugin):
     implements(IConfigurer)
     implements(IRoutes, inherit=True)
@@ -59,10 +62,14 @@ ckanext.custom_schema:schemas/dataset.yaml
                     'object_type': 'package',
                     'capacity': 'public'
                 }
-                toolkit.get_action('member_create')(context, data_dict)
+                get_action('member_create')(context, data_dict)
         except toolkit.NotAuthorized:
             raise toolkit.ValidationError({
-                'message': ['User {0} not authorized to add dataset to topic {1}'.format(user, group_name)]
+                'message': [
+                    'User "{0}" not authorized to add dataset to topic {1}'.format(
+                        user, group_name
+                    )
+                ]
             })
 
     def after_update(self, context, pkg_dict):
@@ -70,18 +77,12 @@ ckanext.custom_schema:schemas/dataset.yaml
         group_name = pkg_dict.get('group')
 
         if group_name:
-            existing_package = toolkit.get_action('package_show')(context, {'id': pkg_dict.get('id')})
+            existing_package = get_action('package_show')(context, {'id': pkg_dict.get('id')})
             existing_groups = existing_package.get('groups', [])
-            is_group_set = False
+            existing_group_names = [item.get('name') for item in existing_groups]
 
-            # Check if group is in current groups
-            for existing_group_dict in existing_groups:
-                if existing_group_dict.get('name') == group_name:
-                    is_group_set = True
-                    break
-
-            # Add dataset to "groups" based on custom field "group"
-            if not is_group_set:
+            # Add dataset to "groups" if not in any existing groups
+            if group_name not in existing_group_names:
                 try:
                     data_dict = {
                         'id': group_name,
@@ -89,10 +90,33 @@ ckanext.custom_schema:schemas/dataset.yaml
                         'object_type': 'package',
                         'capacity': 'public'
                     }
-                    toolkit.get_action('member_create')(context, data_dict)
+                    get_action('member_create')(context, data_dict)
                 except toolkit.NotAuthorized:
                     raise toolkit.ValidationError({
-                        'message': ['User {0} not authorized to add dataset to topic {1}'.format(user, group_name)]
+                        'message': [
+                            'User "{0}" not authorized to add dataset to topic {1}'.format(
+                                user, group_name
+                            )
+                        ]
+                    })
+
+                # Remove dataset from other groups
+                try:
+                    for group_dict in existing_groups:
+                        if group_name != group_dict.get('name'):
+                            data_deletion_dict = {
+                                'id': group_dict['id'],
+                                'object': pkg_dict['id'],
+                                'object_type': 'package'
+                            }
+                            get_action('member_delete')(context, data_deletion_dict)
+                except toolkit.NotAuthorized:
+                    raise toolkit.ValidationError({
+                        'message': [
+                            'User "{0}" not authorized to remove dataset from topic {1}'.format(
+                                user, group_dict.get('name')
+                            )
+                        ]
                     })
 
 
@@ -105,5 +129,6 @@ ckanext.custom_schema:schemas/dataset.yaml
     # ITemplateHelpers
     def get_helpers(self):
         return {
-            'og_get_group_list': schema_helpers.get_group_list
+            'og_get_group_list': schema_helpers.get_group_list,
+            'og_get_selected_group': schema_helpers.get_selected_group
         }

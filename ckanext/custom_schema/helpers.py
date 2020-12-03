@@ -14,3 +14,13 @@ def get_group_list():
         return global_results
     except ValidationError:
         return []
+
+def get_selected_group(data):
+    try:
+        group_list = data.get('groups', [])
+        for item in group_list:
+            if item.get('name'):
+                return item.get('name')
+    except TypeError, ValueError:
+        pass
+    return ''

@@ -46,7 +46,7 @@ dataset_fields:
 
 ## "topics"
 - field_name: group
-  label: Add to Topic
+  label: Topic
   preset: group
   help_text: For data curation purposes users should be a member of a topic to add a dataset to the topic
 
