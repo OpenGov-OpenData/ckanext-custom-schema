@@ -124,6 +124,7 @@ ckanext.custom_schema:schemas/dataset.yaml
             'tag_not_empty': tag_not_empty
             }
 
+
     # ITemplateHelpers
     def get_helpers(self):
         return {

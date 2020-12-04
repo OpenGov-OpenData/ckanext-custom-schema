@@ -19,24 +19,17 @@ class TestGetGroupList(object):
         ckan.lib.search.clear_all()
 
     def test_group_list_no_results(self):
-        assert (
-            get_group_list() == []
-        )
+        assert get_group_list() == []
 
     def test_group_list_with_results(self):
         group1 = factories.Group(name='water')
         group2 = factories.Group(name='transportation')
         group3 = factories.Group(name='economy')
         group_from_helpers = get_group_list()
-        assert (
-            group_from_helpers[0]['name'] == 'economy'
-        )
-        assert (
-            group_from_helpers[1]['name'] == 'transportation'
-        )
-        assert (
-            group_from_helpers[2]['name'] == 'water'
-        )
+
+        assert group_from_helpers[0]['name'] == 'economy'
+        assert group_from_helpers[1]['name'] == 'transportation'
+        assert group_from_helpers[2]['name'] == 'water'
 
 
 class TestGetSelectedGroup(object):
@@ -59,9 +52,8 @@ class TestGetSelectedGroup(object):
             rights='No restrictions on public use',
             accrualPeriodicity='R/P1W'
         )
-        assert (
-            get_selected_group(dataset) == ''
-        )
+
+        assert get_selected_group(dataset) == ''
 
     def test_selected_group_with_several_groups(self):
         group1 = factories.Group(name='economy')
@@ -79,6 +71,5 @@ class TestGetSelectedGroup(object):
                 {'name': group3['name']}
             ]
         )
-        assert (
-            get_selected_group(dataset) == 'transportation'
-        )
+
+        assert get_selected_group(dataset) == 'transportation'
