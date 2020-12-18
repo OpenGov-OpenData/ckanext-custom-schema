@@ -1,24 +1,30 @@
 from ckan.plugins import (
     toolkit,
+    implements,
     IConfigurer,
     IRoutes,
     IPackageController,
     IValidators,
-    SingletonPlugin,
-    implements,
-    toolkit
+    ITemplateHelpers,
+    SingletonPlugin
 )
-
 from ckanext.custom_schema.validators import (
     tag_not_empty
 )
+import ckanext.custom_schema.helpers as schema_helpers
+
+
+get_action = toolkit.get_action
+
 
 class customSchema(SingletonPlugin):
     implements(IConfigurer)
-    implements(IRoutes,inherit=True)
+    implements(IRoutes, inherit=True)
     implements(IPackageController, inherit=True)
     implements(IValidators)
+    implements(ITemplateHelpers)
 
+    # IConfigurer
     def update_config(self, config):
         toolkit.add_public_directory(config, "static")
         toolkit.add_template_directory(config, "templates")
@@ -33,6 +39,7 @@ ckanext.custom_schema:schemas/presets.yaml
 ckanext.custom_schema:schemas/dataset.yaml
 """
 
+    # IRoutes
     def before_map(self,m):
         m.connect(
             '/metadata_download/{package_id}',
@@ -43,35 +50,84 @@ ckanext.custom_schema:schemas/dataset.yaml
 
     # IPackageController
     def after_create(self, context, pkg_dict):
-        if 'group' in pkg_dict:
-            if pkg_dict['group']:
-                data = {
-                    'id': pkg_dict['group'],
+        group_name = pkg_dict.get('group')
+
+        # Add dataset to "groups" based on custom field "group"
+        try:
+            if group_name:
+                data_dict = {
+                    'id': group_name,
                     'object': pkg_dict['id'],
                     'object_type': 'package',
                     'capacity': 'public'
                 }
-                toolkit.get_action('member_create')(context, data)
+                get_action('member_create')(context, data_dict)
+        except toolkit.NotAuthorized:
+            raise toolkit.ValidationError({
+                'message': [
+                    'User "{0}" not authorized to add dataset to topic {1}'.format(
+                        context.get('user'), group_name
+                    )
+                ]
+            })
 
     def after_update(self, context, pkg_dict):
-        if 'group' in pkg_dict:
-            if pkg_dict['group']:
-                data = {
-                    'id': pkg_dict['group'],
-                    'object': pkg_dict['id'],
-                    'object_type': 'package',
-                    'capacity': 'public'
-                }
-                toolkit.get_action('member_create')(context, data)
-            self.remove_from_other_groups(context, pkg_dict['id'])
+        group_name = pkg_dict.get('group')
 
-    def remove_from_other_groups(self, context, package_id):
-        package = toolkit.get_action('package_show')(context, {'id': package_id})
-        for group in package['groups']:
-            if group['name'] != package['group']:
-                toolkit.get_action('member_delete')(context, {'id': group['id'], 'object': package['id'], 'object_type': 'package'})
+        if group_name:
+            existing_package = get_action('package_show')(context, {'id': pkg_dict.get('id')})
+            existing_groups = existing_package.get('groups', [])
+            existing_group_names = [item.get('name') for item in existing_groups]
 
+            # Add dataset to "groups" if not in any existing groups
+            if group_name not in existing_group_names:
+                try:
+                    data_dict = {
+                        'id': group_name,
+                        'object': pkg_dict['id'],
+                        'object_type': 'package',
+                        'capacity': 'public'
+                    }
+                    get_action('member_create')(context, data_dict)
+                except toolkit.NotAuthorized:
+                    raise toolkit.ValidationError({
+                        'message': [
+                            'User "{0}" not authorized to add dataset to topic {1}'.format(
+                                context.get('user'), group_name
+                            )
+                        ]
+                    })
+
+                # Remove dataset from other groups
+                try:
+                    for group_dict in existing_groups:
+                        if group_name != group_dict.get('name'):
+                            data_deletion_dict = {
+                                'id': group_dict['id'],
+                                'object': pkg_dict['id'],
+                                'object_type': 'package'
+                            }
+                            get_action('member_delete')(context, data_deletion_dict)
+                except toolkit.NotAuthorized:
+                    raise toolkit.ValidationError({
+                        'message': [
+                            'User "{0}" not authorized to remove dataset from topic {1}'.format(
+                                context.get('user'), group_dict.get('name')
+                            )
+                        ]
+                    })
+
+
+    # IValidators
     def get_validators(self):
         return {
             'tag_not_empty': tag_not_empty
             }
+
+
+    # ITemplateHelpers
+    def get_helpers(self):
+        return {
+            'og_get_group_list': schema_helpers.get_group_list,
+            'og_get_selected_group': schema_helpers.get_selected_group
+        }

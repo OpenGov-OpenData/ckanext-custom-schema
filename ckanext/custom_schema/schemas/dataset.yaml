@@ -48,6 +48,7 @@ dataset_fields:
 - field_name: group
   label: Topic
   preset: group
+  help_text: For data curation purposes users should be a member of a topic to add a dataset to the topic
 
 ## "department"
 #  The Publisher field will be mapped to CKAN organizations
