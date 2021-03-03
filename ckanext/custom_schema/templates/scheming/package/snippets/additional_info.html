@@ -60,24 +60,28 @@
             </td>
           </tr>
         {% endif %}
-        {% for extra in h.sorted_extras(pkg_dict.extras) %}
-          {% set key, value = extra %}
-          {% if key == 'dcat_modified' %}
-            <tr>
-              <th scope="row" class="dataset-label">{{ _("DCAT Modified Date") }}</th>
-              <td class="dataset-details">
-                {% snippet 'snippets/local_friendly_datetime.html', datetime_obj=value %}
-              </td>
-            </tr>
-          {% elif key == 'dcat_issued' %}
-            <tr>
-              <th scope="row" class="dataset-label">{{ _("DCAT Issued Date") }}</th>
-              <td class="dataset-details">
-                {% snippet 'snippets/local_friendly_datetime.html', datetime_obj=value %}
-              </td>
-            </tr>
-          {% endif %}
-        {% endfor %}
+
+        {% block extras scoped %}
+          {% for extra in h.sorted_extras(pkg_dict.extras) %}
+            {% set key, value = extra %}
+            {% if key == 'dcat_issued' %}
+              <tr>
+                <th scope="row" class="dataset-label">{{ _("DCAT Issued Date") }}</th>
+                <td class="dataset-details">
+                  {% snippet 'snippets/local_friendly_datetime.html', datetime_obj=value %}
+                </td>
+              </tr>
+            {% elif key == 'dcat_modified' %}
+              <tr>
+                <th scope="row" class="dataset-label">{{ _("DCAT Modified Date") }}</th>
+                <td class="dataset-details">
+                  {% snippet 'snippets/local_friendly_datetime.html', datetime_obj=value %}
+                </td>
+              </tr>
+            {% endif %}
+          {% endfor %}
+        {% endblock %}
+
     {% endblock %}
     </tbody>
   </table>
