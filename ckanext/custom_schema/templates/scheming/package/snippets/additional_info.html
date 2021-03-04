@@ -62,18 +62,12 @@
         {% endif %}
 
         {% block extras scoped %}
-          {% for extra in h.sorted_extras(pkg_dict.extras) %}
+          {% set sorted_extras = h.sorted_extras(pkg_dict.extras, subs={"dcat_issued": "DCAT Issued Date", "dcat_modified": "DCAT Modified Date"}) %}
+          {% for extra in sorted_extras %}
             {% set key, value = extra %}
-            {% if key == 'dcat_issued' %}
+            {% if key in ["DCAT Issued Date", "DCAT Modified Date"] %}
               <tr>
-                <th scope="row" class="dataset-label">{{ _("DCAT Issued Date") }}</th>
-                <td class="dataset-details">
-                  {% snippet 'snippets/local_friendly_datetime.html', datetime_obj=value %}
-                </td>
-              </tr>
-            {% elif key == 'dcat_modified' %}
-              <tr>
-                <th scope="row" class="dataset-label">{{ _("DCAT Modified Date") }}</th>
+                <th scope="row" class="dataset-label">{{ key }}</th>
                 <td class="dataset-details">
                   {% snippet 'snippets/local_friendly_datetime.html', datetime_obj=value %}
                 </td>
