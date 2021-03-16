@@ -122,6 +122,8 @@ dataset_fields:
     value: R/P3.5D
   - label: Weekly
     value: R/P1W
+  - label: Biweekly
+    value: R/P2W
   - label: Semimonthly
     value: R/P0.5M
   - label: Monthly
@@ -131,13 +133,13 @@ dataset_fields:
   - label: Quarterly
     value: R/P3M
   - label: Semiannual
-    value:  R/P6M
+    value: R/P6M
   - label: Annual
-    value:  R/P1Y
+    value: R/P1Y
   - label: Biennial
-    value:  R/P2Y
+    value: R/P2Y
   - label: Decennial
-    value:  R/P10Y
+    value: R/P10Y
   required: True
     
 ## "temporalNotes"
