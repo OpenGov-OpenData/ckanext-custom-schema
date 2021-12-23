@@ -34,14 +34,21 @@ dataset_fields:
 #  Use core CKAN free-form tag field
 - field_name: tag_string
   label: Tags
-  preset: tag_string_autocomplete
+  preset: tag_string_autocomplete_required
   form_placeholder: eg. economy, mental health, government
+  required: True
 
 ## "license_id"
 - field_name: license_id
   label: License
   form_snippet: license.html
   help_text: License definitions and additional information can be found at http://opendefinition.org/
+
+## "topics"
+- field_name: group
+  label: Topic
+  preset: group
+  help_text: For data curation purposes users should be a member of a topic to add a dataset to the topic
 
 ## "department"
 #  The Publisher field will be mapped to CKAN organizations
@@ -61,11 +68,13 @@ dataset_fields:
     value: restricted public
   - label: Non-public
     value: non-public
+  required: True
     
 ## "rights"
 - field_name: rights
   label: Rights
   form_placeholder: eg. No restrictions on public use
+  required: True
   
 ## "contact_name"
 - field_name: contact_name
@@ -113,6 +122,8 @@ dataset_fields:
     value: R/P3.5D
   - label: Weekly
     value: R/P1W
+  - label: Biweekly
+    value: R/P2W
   - label: Semimonthly
     value: R/P0.5M
   - label: Monthly
@@ -122,13 +133,14 @@ dataset_fields:
   - label: Quarterly
     value: R/P3M
   - label: Semiannual
-    value:  R/P6M
+    value: R/P6M
   - label: Annual
-    value:  R/P1Y
+    value: R/P1Y
   - label: Biennial
-    value:  R/P2Y
+    value: R/P2Y
   - label: Decennial
-    value:  R/P10Y
+    value: R/P10Y
+  required: True
     
 ## "temporalNotes"
 ## This field needs revisiting regarding the free form nature of the text box vs. dropdown
