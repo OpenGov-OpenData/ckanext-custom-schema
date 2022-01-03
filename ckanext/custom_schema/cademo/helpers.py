@@ -21,6 +21,6 @@ def get_selected_group(data):
         for item in group_list:
             if item.get('name'):
                 return item.get('name')
-    except TypeError, ValueError:
+    except (TypeError, ValueError):
         pass
     return ''
