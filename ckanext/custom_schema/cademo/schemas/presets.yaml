@@ -23,3 +23,18 @@ presets:
       value: census tract
     - label: Location Point
       value: location point
+
+- preset_name: group
+  values: 
+    form_snippet: group.html
+    display_snippet: group.html
+    validators: ignore_missing
+
+- preset_name: tag_string_autocomplete_required
+  values: 
+    validators: tag_not_empty tag_string_convert
+    classes: [control-full]
+    form_attrs: 
+      data-module: autocomplete
+      data-module-tags: 
+      data-module-source: /api/2/util/tag/autocomplete?incomplete=?

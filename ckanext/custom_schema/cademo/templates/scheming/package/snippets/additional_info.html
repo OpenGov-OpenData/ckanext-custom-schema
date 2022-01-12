@@ -6,7 +6,7 @@
     'tag_string',
     'license_id',
     'owner_org',
-    'twitter_popup',
+    'group'
     ] -%}
 
 <section class="additional-info">
@@ -48,29 +48,34 @@
           <tr>
             <th scope="row" class="dataset-label">{{ _("Last Updated") }}</th>
             <td class="dataset-details">
-                {% snippet 'snippets/local_friendly_datetime.html', datetime_obj=pkg_dict.metadata_modified %}
+              {% snippet 'snippets/local_friendly_datetime.html', datetime_obj=pkg_dict.metadata_modified %}
             </td>
           </tr>
         {% endif %}
         {% if pkg_dict.metadata_created %}
           <tr>
             <th scope="row" class="dataset-label">{{ _("Created") }}</th>
-
             <td class="dataset-details">
-                {% snippet 'snippets/local_friendly_datetime.html', datetime_obj=pkg_dict.metadata_created %}
+              {% snippet 'snippets/local_friendly_datetime.html', datetime_obj=pkg_dict.metadata_created %}
             </td>
           </tr>
         {% endif %}
+
+        {% block extras scoped %}
+          {% set sorted_extras = h.sorted_extras(pkg_dict.extras, subs={"dcat_issued": "DCAT Issued Date", "dcat_modified": "DCAT Modified Date"}) %}
+          {% for extra in sorted_extras %}
+            {% set key, value = extra %}
+            {% if key in ["DCAT Issued Date", "DCAT Modified Date"] %}
+              <tr>
+                <th scope="row" class="dataset-label">{{ key }}</th>
+                <td class="dataset-details">{{ value }}</td>
+              </tr>
+            {% endif %}
+          {% endfor %}
+        {% endblock %}
+
     {% endblock %}
     </tbody>
   </table>
 </section>
-{% resource 'custom_schema/resource_popup.css' %}
-{% resource 'custom_schema/resource_popup.js' %}
-<div id="overlay">
-  <div id="popup">
-    <h2>Accept OPA Terms of Use</h2>
-    <p>Users of this data file provided by the Office of the Patient Advocate (OPA) shall not have the right to alter, enhance, or otherwise modify the data. Anyone desiring to use or reproduce the data without modification for a noncommercial purpose may do so without obtaining approval. All commercial uses must be approved and may be subject to a license. See the data file for data source and disclaimer information. Contact the Office of the Patient Advocate for more information.</p>
-    <div class="btn btn-success round-corner-btn popup-close-btn" data-resourceurl="" >OK</div>
-  </div>
-</div>
+
