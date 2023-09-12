@@ -58,7 +58,7 @@ def metadata_download(package_id, response):
                 org_alias,
                 result['organization']['title']
             ])
-        elif field['field_name'] == 'groups':
+        elif field['field_name'] in ['group', 'groups']:
             group_alias = str(config.get('ckan.group_alias', 'Group'))+'s'
             value = get_package_groups(result.get('groups'))
             wr.writerow([
