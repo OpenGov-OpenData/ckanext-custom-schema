@@ -2,7 +2,6 @@ from ckan.plugins import (
     toolkit,
     implements,
     IConfigurer,
-    IRoutes,
     IPackageController,
     IValidators,
     ITemplateHelpers,
@@ -13,22 +12,25 @@ from ckanext.custom_schema.cademo.validators import (
 )
 import ckanext.custom_schema.cademo.helpers as schema_helpers
 
+if toolkit.check_ckan_version(u'2.9'):
+    from ckanext.custom_schema.cademo.plugins.flask_plugin import MixinPlugin
+else:
+    from ckanext.custom_schema.cademo.plugins.pylons_plugin import MixinPlugin
 
 get_action = toolkit.get_action
 
 
-class customSchema(SingletonPlugin):
+class customSchema(MixinPlugin, SingletonPlugin):
     implements(IConfigurer)
-    implements(IRoutes, inherit=True)
     implements(IPackageController, inherit=True)
     implements(IValidators)
     implements(ITemplateHelpers)
 
     # IConfigurer
     def update_config(self, config):
-        toolkit.add_public_directory(config, "static")
-        toolkit.add_template_directory(config, "templates")
-        toolkit.add_resource('fanstatic', 'custom_schema')
+        toolkit.add_public_directory(config, "../static")
+        toolkit.add_template_directory(config, "../templates")
+        toolkit.add_resource('../fanstatic', 'custom_schema')
 
         config['scheming.presets'] = """
 ckanext.scheming:presets.json
@@ -38,15 +40,6 @@ ckanext.custom_schema:cademo/schemas/presets.yaml
         config['scheming.dataset_schemas'] = """
 ckanext.custom_schema:cademo/schemas/dataset.yaml
 """
-
-    # IRoutes
-    def before_map(self,m):
-        m.connect(
-            '/metadata_download/{package_id}',
-            controller='ckanext.custom_schema.cademo.controller:CustomSchemaController',
-            action='metadata_download'
-        )
-        return m
 
     # IPackageController
     def after_create(self, context, pkg_dict):
