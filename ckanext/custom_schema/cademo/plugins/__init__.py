@@ -20,6 +20,15 @@ else:
 get_action = toolkit.get_action
 
 
+def is_data_dict_active(ddict):
+    """"Returns True if data dictionary is populated"""
+    for col in ddict:
+        info = col.get('info', {})
+        if info.get('label') or info.get('notes'):
+            return True
+    return False
+
+
 class customSchema(MixinPlugin, SingletonPlugin):
     implements(IConfigurer)
     implements(IPackageController, inherit=True)
@@ -122,5 +131,6 @@ ckanext.custom_schema:cademo/schemas/dataset.yaml
     def get_helpers(self):
         return {
             'og_get_group_list': schema_helpers.get_group_list,
-            'og_get_selected_group': schema_helpers.get_selected_group
+            'og_get_selected_group': schema_helpers.get_selected_group,
+            'og_is_data_dict_active': is_data_dict_active
         }
