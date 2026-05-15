@@ -10,7 +10,7 @@ from ckan.plugins import (
 from ckanext.custom_schema.cademo.validators import (
     tag_not_empty
 )
-import ckanext.custom_schema.cademo.helpers as schema_helpers
+from ckanext.custom_schema import helpers as schema_helpers
 
 if toolkit.check_ckan_version(u'2.9'):
     from ckanext.custom_schema.cademo.plugins.flask_plugin import MixinPlugin
@@ -18,15 +18,6 @@ else:
     from ckanext.custom_schema.cademo.plugins.pylons_plugin import MixinPlugin
 
 get_action = toolkit.get_action
-
-
-def is_data_dict_active(ddict):
-    """"Returns True if data dictionary is populated"""
-    for col in ddict:
-        info = col.get('info', {})
-        if info.get('label') or info.get('notes'):
-            return True
-    return False
 
 
 class customSchema(MixinPlugin, SingletonPlugin):
@@ -119,18 +110,12 @@ ckanext.custom_schema:cademo/schemas/dataset.yaml
                         ]
                     })
 
-
     # IValidators
     def get_validators(self):
         return {
             'tag_not_empty': tag_not_empty
         }
 
-
     # ITemplateHelpers
     def get_helpers(self):
-        return {
-            'og_get_group_list': schema_helpers.get_group_list,
-            'og_get_selected_group': schema_helpers.get_selected_group,
-            'og_is_data_dict_active': is_data_dict_active
-        }
+        return schema_helpers.get_shared_template_helpers()
